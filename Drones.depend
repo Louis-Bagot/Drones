@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1522077042 source:/home/louis/Dropbox/GM4/Projets/C++/TrackBallTest/main.cpp
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cstdlib>
+	"sdlglutils.h"
+	"trackballcamera.h"
+
+1521917854 /home/louis/Dropbox/GM4/Projets/C++/TrackBallTest/sdlglutils.h
+	<GL/gl.h>
+	<SDL/SDL.h>
+
+1150144953 /home/louis/Dropbox/GM4/Projets/C++/TrackBallTest/trackballcamera.h
+	<SDL/SDL.h>
+
+1521929897 source:/home/louis/Dropbox/GM4/Projets/C++/TrackBallTest/sdlglutils.cpp
+	"sdlglutils.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<GL/glu.h>
+	<cstring>
+	<cstdlib>
+
+1521917840 source:/home/louis/Dropbox/GM4/Projets/C++/TrackBallTest/trackballcamera.cpp
+	"trackballcamera.h"
+	<GL/glu.h>
+	<cmath>
+	"sdlglutils.h"
+
+1522077042 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/main.cpp
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cstdlib>
+	"sdlglutils.h"
+	"trackballcamera.h"
+
+1521917854 /home/louis/Dropbox/GM4/Projets/C++/Drones/sdlglutils.h
+	<GL/gl.h>
+	<SDL/SDL.h>
+
+1150144953 /home/louis/Dropbox/GM4/Projets/C++/Drones/trackballcamera.h
+	<SDL/SDL.h>
+
+1521929897 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/sdlglutils.cpp
+	"sdlglutils.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<GL/glu.h>
+	<cstring>
+	<cstdlib>
+
+1521917840 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/trackballcamera.cpp
+	"trackballcamera.h"
+	<GL/glu.h>
+	<cmath>
+	"sdlglutils.h"
+
