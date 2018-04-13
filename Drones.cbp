@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lSDL_image" />
@@ -28,6 +29,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -48,11 +50,37 @@
 			<Add library="SDL" />
 		</Linker>
 		<Unit filename="cb.bmp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="sdlglutils.cpp" />
-		<Unit filename="sdlglutils.h" />
-		<Unit filename="trackballcamera.cpp" />
-		<Unit filename="trackballcamera.h" />
+		<Unit filename="include/Affichage.h" />
+		<Unit filename="include/Capteur.h" />
+		<Unit filename="include/Comportement.h" />
+		<Unit filename="include/Cubique.h" />
+		<Unit filename="include/Dlite.h" />
+		<Unit filename="include/Drone.h" />
+		<Unit filename="include/Environnement.h" />
+		<Unit filename="include/Essaim.h" />
+		<Unit filename="include/Formation.h" />
+		<Unit filename="include/Naif.h" />
+		<Unit filename="include/Obstacle.h" />
+		<Unit filename="include/Pyramidale.h" />
+		<Unit filename="include/VecteurR3.h" />
+		<Unit filename="include/sdlglutils.h" />
+		<Unit filename="include/trackballcamera.h" />
+		<Unit filename="src/Affichage.cpp" />
+		<Unit filename="src/Capteur.cpp" />
+		<Unit filename="src/Comportement.cpp" />
+		<Unit filename="src/Cubique.cpp" />
+		<Unit filename="src/Dlite.cpp" />
+		<Unit filename="src/Drone.cpp" />
+		<Unit filename="src/Environnement.cpp" />
+		<Unit filename="src/Essaim.cpp" />
+		<Unit filename="src/Formation.cpp" />
+		<Unit filename="src/Naif.cpp" />
+		<Unit filename="src/Obstacle.cpp" />
+		<Unit filename="src/Pyramidale.cpp" />
+		<Unit filename="src/VecteurR3.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/sdlglutils.cpp" />
+		<Unit filename="src/trackballcamera.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

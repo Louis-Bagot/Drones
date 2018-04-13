@@ -1,4 +1,5 @@
-#include "sdlglutils.h"
+
+#include "../include/sdlglutils.h"
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include <GL/glu.h>

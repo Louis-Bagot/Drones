@@ -3,8 +3,8 @@
 #include <GL/glu.h>
 #include <cstdlib>
 
-#include "sdlglutils.h"
-#include "trackballcamera.h"
+#include "../include/sdlglutils.h"
+#include "../include/trackballcamera.h"
 
 #define FPS 50
 #define LARGEUR_FENETRE 1366
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
 
-    earth = loadTexture("DroneText.jpg");
+    earth = loadTexture("image/DroneText.jpg");
     camera = new TrackBallCamera();
     camera->setScrollSensivity(0.1);
 

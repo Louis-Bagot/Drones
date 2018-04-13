@@ -28,7 +28,7 @@
 	<cmath>
 	"sdlglutils.h"
 
-1522077042 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/main.cpp
+1522407146 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -53,6 +53,40 @@
 
 1521917840 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/trackballcamera.cpp
 	"trackballcamera.h"
+	<GL/glu.h>
+	<cmath>
+	"sdlglutils.h"
+
+1523601525 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Drone.cpp
+	"Drone.h"
+
+1523602797 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Drone.h
+
+1523601922 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/main.cpp
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cstdlib>
+	"../include/sdlglutils.h"
+	"../include/trackballcamera.h"
+
+1523602289 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/sdlglutils.h
+	<GL/gl.h>
+	<SDL/SDL.h>
+
+1523602221 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/trackballcamera.h
+	<SDL/SDL.h>
+
+1523602083 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/sdlglutils.cpp
+	"../include/sdlglutils.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<GL/glu.h>
+	<cstring>
+	<cstdlib>
+
+1523602335 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/trackballcamera.cpp
+	"../include/trackballcamera.h"
 	<GL/glu.h>
 	<cmath>
 	"sdlglutils.h"

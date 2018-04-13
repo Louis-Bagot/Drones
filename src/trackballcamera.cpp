@@ -1,4 +1,4 @@
-#include "trackballcamera.h"
+#include "../include/trackballcamera.h"
 
 #include <GL/glu.h>
 #include <cmath>
@@ -146,4 +146,5 @@ void TrackBallCamera::look()
     glRotated(_angleY,0,1,0);
     glRotated(_angleZ,0,0,1);
 }
+
 
