@@ -13,7 +13,7 @@
 class VecteurR3
 {
     float x,y,z;
-    vector<float> v;
+    vector<double> v;
     
     public:
     
@@ -97,14 +97,14 @@ class VecteurR3
     //Produit scalaire de deux vecteurs :
     float operator*(Vecteur V)
     {
-        float res = 0;
+        double res = 0;
         for (int i=0;i<3;i++)
             res += v[i]*V(i);
         return res;
     }
     
     //Multiplication d'un vecteur par un scalaire :
-    Vecteur operator*(float scal)
+    Vecteur operator*(double scal)
     {
         Vecteur res(3);
         for(int i=0;i<3;i++)
@@ -122,7 +122,7 @@ class VecteurR3
     }
     
     //Affectation d'une composante d'un vecteur :
-    void set(int l,float val)
+    void set(int l,double val)
     {
         v[l] = val;
     }
@@ -130,7 +130,7 @@ class VecteurR3
     //Calcul de la norme du vecteur :
     float norme2()
     {
-        float res = 0 ;
+        double res = 0 ;
         for (int i=0; i<3; i++) {
             res += v[i]*v[i];
         }
