@@ -1,142 +1,65 @@
 #ifndef VECTEURR3_H
 #define VECTEURR3_H
 
-#include <math.h>
 /**
- * \brief gestion du type VecteurR3
- * \authors : Margot, Morgan, Théau
- * \version 1.0
- * \13 avril 2018
- * \Implementation des méthodes permettant l'initialisation d'un vecteur dans R3 + Comparaison et opérations (+,-,*,/,produit scalaire, norme)
+ * Classe d'un vecteur dans R3, avec trois coordonnées et les opérations classiques des ensembles vectoriels.
+ * @authors : Margot, Morgan, Théau, Louis
+ * @version 1.0
+ * @13 avril 2018
  */
 
-class VecteurR3
-{
+class VecteurR3 {
+  private:
     float x,y,z;
-    vector<float> v;
-    
-    public:
-    
+
+  public:
+
     /**
-    * \fn Vecteur()
-    * \brief Création d'un vecteur avec composantes nulles :
+    * Constructeur de VecteurR3 initilisant les coordonnées à l'origine.
     */
-    Vecteur()
-    {
-        for(int i=0; i<3;i++)
-        {
-            v.push_back(0.0);
-        }
-    }
-    
-    // Remplissage d'un vecteur :
-    VecteurR3(float x,y,z)
-    {
-        V([1])=x;
-        V([2])=y;
-        V([3])=z;
-    }
-    
-    //Comparaison de deux vecteurs :
-    bool operator== (Vecteur V)
-    {
-        bool res = true;
-        int i = 0;
-        while(res && i < 3)
-        {
-            if(v[i] != V(i))
-                res = false;
-            i++;
-        }
-        return res;
-    }
-    
-    //Addition de deux vecteurs composantes par composantes :
-    VecteurR3 operator+(Vecteur V)
-    {
-        Vecteur Vres(3);
-        for(int i=0;i<3;i++)
-        {
-            Vres.set(i, v[i]+V(i));
-        }
-        return Vres;
-    }
-    
-    //Comparaison de deux vecteurs composantes par composantes :
-    bool operator== (Vecteur V)
-    {
-        bool res = true;
-        int i = 0;
-        while(res && i < 3)
-        {
-            if(v[i] != V(i))
-                res = false;
-            i++;
-        }
-        return res;
-    }
-    
-    //Affectation d'un vecteur :
-    void operator=(Vecteur V)
-    {
-        for(int i=0;i<3;i++)
-            v[i] = V(i);
-    }
-    
-    //Soustraction de deux vecteurs composantes par composantes :
-    Vecteur operator-(Vecteur V)
-    {
-        Vecteur Vres(3);
-        for(int i=0;i<3;i++)
-        {
-            Vres.set(i, v[i]-V(i));
-        }
-        return Vres;
-    }
-    
-    //Produit scalaire de deux vecteurs :
-    float operator*(Vecteur V)
-    {
-        float res = 0;
-        for (int i=0;i<3;i++)
-            res += v[i]*V(i);
-        return res;
-    }
-    
-    //Multiplication d'un vecteur par un scalaire :
-    Vecteur operator*(float scal)
-    {
-        Vecteur res(3);
-        for(int i=0;i<3;i++)
-            res.set(i,v[i]*scal);
-        return res;
-    }
-    
-    //Division de deux vecteurs composantes par composantes :
-    Vecteur operator/(double scal)
-    {
-        Vecteur res(3);
-        for(int i=0;i<3;i++)
-            res.set(i,v[i]/scal);
-        return res;
-    }
-    
-    //Affectation d'une composante d'un vecteur :
-    void set(int l,float val)
-    {
-        v[l] = val;
-    }
-    
-    //Calcul de la norme du vecteur :
-    float norme2()
-    {
-        float res = 0 ;
-        for (int i=0; i<3; i++) {
-            res += v[i]*v[i];
-        }
-        return sqrt(res);
-    }
-    
+    VecteurR3();
+    /** Constructeur de VecteurR3 à partir de trois coordonnées données. */
+    VecteurR3(const float& x,y,z);
+    /** Destructeur d'un VecteurR3. */
+    virtual ~Vecteur();
+
+    // Getters des coordonnées
+    float getX() const;
+    float getY() const;
+    float getZ() const;
+    /** Alternative aux getters : operateur [] */
+    float operator[](const int&) const;
+
+    /**Comparaison de deux vecteurs à un voisinage de rayon donné près
+     * @param vComp le VecteurR3 auquel se comparer
+     * @param epsilon la marge d'erreur que l'on se laisse
+     * @return si le vecteur est bien le même que celui en entrée, à une précision epsilon
+     */
+    bool operator== (const VecteurR3& vComp, const float& epsilon=0) const;
+
+    /**Addition de deux vecteurs composante par composante */
+    VecteurR3 operator+(const VecteurR3&) const;
+
+    /**Soustraction de deux vecteurs composante par composante */
+    VecteurR3 operator-(const VecteurR3&) const;
+
+    /**Affectation d'un vecteur à partir d'un autre*/
+    void operator=(const VecteurR3&);
+
+    /** Addition des coordonnées acutelles avec celles d'un autre (raccourci +=)*/
+    void operator+=(const VecteurR3&);
+
+    /** Produit scalaire de ce vecteur avec un autre*/
+    float operator*(const VecteurR3&) const;
+
+    /**Multiplication d'un vecteur par un scalaire */
+    VecteurR3 operator*(const float&) const;
+
+    /** Norme AU CARRE du vecteur (pour optimisation, lorsque la distance même n'est pas nécessaire) */
+    float norme22() const;
+
+    /** Norme (ou distance à l'origine) du vecteur. Calcule simplement la racine de norme22. */
+    float norme2() const;
 };
 
 #endif // VECTEURR3_H

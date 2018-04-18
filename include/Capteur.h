@@ -1,9 +1,7 @@
 #ifndef CAPTEUR_H
 #define CAPTEUR_H
 
-
-class Capteur
-{
+class Capteur {
     public:
         Capteur();
         virtual ~Capteur();

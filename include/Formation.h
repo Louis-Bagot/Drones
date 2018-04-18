@@ -2,32 +2,29 @@
 #define FORMATION_H
 
 /**
- * \file formation.h
- * \brief classe abstraite
- * \author Margot, Théau et Morgan
- * \date 13/04/18
- *
+ * Classe abstraite correspondant à une figure géométrique aérienne que peut réaliser une parte ou l'ensemble de l'essaim.
+ * @author Margot, Théau et Morgan
+ * @date 13/04/18
  */
-
-
-class Formation
-{
-	
+class Formation {
     public:
+				/** Constructeur inutilisable (classe abstraite) */
         Formation();
+				/** Destructeur inutilisable (classe abstraite) */
         virtual ~Formation();
-        
+
  /**
- * \fn virtual Vector<VecteurR3> générerMaillage() = 0;
- * \brief Fonction permettant de générer le maillage
- * \return Retourne une nouvelle liste de vecteurs
- */
+  * Méthode permettant de générer le maillage à partir des points et des contraintes de taille de Formation.
+  * @return Retourne une nouvelle liste de vecteurs
+  */
         virtual Vector<VecteurR3> générerMaillage() = 0;
 
     protected:
-    float altitude; /*! Altitude de la formation */
-	int nbDrones; /*! Le nombre de drones qui composent la formation */
-	
+    /** Altitude de la formation */
+    float altitude;
+    /** Le nombre de drones qui composent la formation */
+    int nbDrones;
+
     private:
 };
 

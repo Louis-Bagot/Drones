@@ -2,8 +2,7 @@
 #define OBSTACLE_H
 
 
-class Obstacle
-{
+class Obstacle {
     public:
         Obstacle();
         virtual ~Obstacle();

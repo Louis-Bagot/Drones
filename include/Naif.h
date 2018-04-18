@@ -4,8 +4,7 @@
 #include <Comportement.h>
 
 
-class Naif : public Comportement
-{
+class Naif : public Comportement {
     public:
         Naif();
         virtual ~Naif();

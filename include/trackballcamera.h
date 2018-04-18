@@ -3,6 +3,11 @@
 
 #include <SDL/SDL.h>
 
+/**
+  * Class gestionnaire de tous les mouvements de la caméra; permet d'effectuer des rotations autour du centre à la souris.
+  * Récupéré d'Openclassrooms.
+  * @author Louis, Openclassrooms
+  */
 class TrackBallCamera
 {
 public:

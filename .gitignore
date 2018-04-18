@@ -1,0 +1,5 @@
+# Les fichiers suivants seront ignorés lors d'un push :
+
+*.dll
+*.lib
+

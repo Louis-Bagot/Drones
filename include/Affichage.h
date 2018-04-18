@@ -2,23 +2,25 @@
 #define AFFICHAGE_H
 
 /**
-* @author Timothé, Simon
-* Classe qui permet d'afficher en 3D l'environnement
-* i.e. drones, obstacles
-* utilise openGL et SDL
+* @author TimothÃ©, Simon
+* Classe qui permet d'afficher en 3D l'Environnement.
+* Cela inclut principalement les Drones et les Obstacles.
+* Utilise openGL et SDL
 */
-class Affichage
-{
+class Affichage {
+    private:
+        /** Attribut passÃ© dans le constructeur et Environnement vers lequel pointer; contient tous les Ã©lÃ©ments Ã  afficher. */
+        Environnement env;
     public:
-        Affichage(const &Environnement);
+        /** Un constructeur utilisant un environnement pour s'y lier par pointeur.
+        * @param env l'Environnement vers lequel pointer; sur lequel Affichage devra faire son travail.
+        */
+        Affichage(const &Environnement env);
+        /** Simple Destructeur de l'Affichage. */
         virtual ~Affichage();
-        /// affiche l'envrionnement
+        /** MÃ©thode principale, affichant l'Environnement en attribut */
         void draw();
     protected:
-
-    private:
-        /// attribut passé dans le constructeur, contient tous les éléments à afficher
-        Environnement env;
 };
 
 #endif // AFFICHAGE_H

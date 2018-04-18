@@ -2,34 +2,33 @@
 #define ENVIRONNEMENT_H
 
 /**
-* @author Timothé, Simon
-* Classe contenant les éléments de l'environnement et leurs positions (i.e Essaim, Obstacles, colis)
-* Gère la détection de collision et le calcul de la position des drones.
+* @author TimothÃ©, Simon
+* Classe contenant les Ã©lÃ©ments de l'environnement et leurs positions (i.e Essaim, Obstacles, colis)
+* GÃ¨re la dÃ©tection de collision et le calcul de la position des drones.
 * C'est le moteur physique du projet.
 */
-class Environnement
-{
+class Environnement {
+    private:
+        /** Liste des obstacles de l'environnement */
+        vector<Obstacle> vObstacles;
+        /** Essaim de drone, c'est l'ensemble de drones */
+        Essaim essaim;
+        /** Constante de gravitÃ©, perpÃ©tuellement subie par les drones */
+        const float g;
+        /** Liste des colis prÃ©sents dans l'environnement */
+        vector<VecteurR3> vColis;
+
+        /** Calcule la position d'un drone en prenant en compte le vecteur accÃ©lÃ©ration du drone et la gravitÃ© de l'environnement */
+        void calculerPos(Drone);
+        /** VÃ©rifie si un drone entre en collision avec un obstacle ou un autre drone. */
+        bool collision(Drone);
     public:
         Environnement();
         virtual ~Environnement();
-        ///Surchage de l'opérateur ++, afin de passer au temps+1
+        /** Surchage de l'opÃ©rateur ++, afin de passer au temps+1 */
         operator++();
 
     protected:
-
-    private:
-        /// Liste des obstacles de l'environnement
-        vector<Obstacle> vObstacles;
-        /// Essaim de drone, c'est l'ensemble de drone
-        Essaim essaim;
-        /// constante gravité subit par les drones
-        const float g;
-        /// liste des colis présents dans l'environnement
-        vector<VecteurR3> vColis;
-        /// calcule la position d'un drone en prenant en compte le vecteur accélération du drone et la gravité de l'environnement
-        void calculerPos(Drone);
-        /// vérifie si un drone entre en collision et un obstacle ou un autre drone.
-        bool collision(Drone);
 };
 
 #endif // ENVIRONNEMENT_H

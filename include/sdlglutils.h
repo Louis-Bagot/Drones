@@ -10,7 +10,11 @@
 
 GLuint loadTexture(const char * filename,bool useMipMap = true);
 int takeScreenshot(const char * filename);
+/** Dessine les axes
+  * @param scale la taille des arêtes */
 void drawAxis(double scale = 1);
+/** Dessine une boîte*
+  * @param sideLength la taille d'une arête */
 void drawBox(double sideLength = 4);
 int initFullScreen(unsigned int * width = NULL,unsigned int * height = NULL);
 int XPMFromImage(const char * imagefile, const char * XPMfile);
