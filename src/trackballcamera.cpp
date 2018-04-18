@@ -2,7 +2,7 @@
 
 #include <GL/glu.h>
 #include <cmath>
-#include "sdlglutils.h"
+#include "../include/sdlglutils.h"
 
 TrackBallCamera::TrackBallCamera()
 {

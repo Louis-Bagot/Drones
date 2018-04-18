@@ -1,4 +1,4 @@
-#include "Dlite.h"
+#include "../include/Dlite.h"
 
 Dlite::Dlite()
 {

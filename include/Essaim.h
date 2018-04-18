@@ -1,5 +1,15 @@
 #ifndef ESSAIM_H
 #define ESSAIM_H
+
+#include<vector>
+#include "../include/VecteurR3.h"
+#include "../include/Formation.h"
+#include "../include/Comportement.h"
+#include "../include/Capteur.h"
+#include "../include/Drone.h"
+
+using namespace std;
+
 /**
 * @author Timothé, Simon
 * La classe Essaim est celle qui contient l'ensemble des drones
@@ -17,7 +27,7 @@ class Essaim {
         void retirerColis(VecteurR3 retrait, VecteurR3 depot);
 
         /** Ordre aux drones de l'essaim de réaliser une formation */
-        void formation(Formation F);
+        //void formation(Formation F);
     protected:
 
     private:

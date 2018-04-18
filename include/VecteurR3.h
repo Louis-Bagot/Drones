@@ -19,9 +19,9 @@ class VecteurR3 {
     */
     VecteurR3();
     /** Constructeur de VecteurR3 à partir de trois coordonnées données. */
-    VecteurR3(const float& x,y,z);
+    VecteurR3(const float& x,const float &y, const float& z);
     /** Destructeur d'un VecteurR3. */
-    virtual ~Vecteur();
+    virtual ~VecteurR3();
 
     // Getters des coordonnées
     float getX() const;
@@ -35,7 +35,7 @@ class VecteurR3 {
      * @param epsilon la marge d'erreur que l'on se laisse
      * @return si le vecteur est bien le même que celui en entrée, à une précision epsilon
      */
-    bool operator== (const VecteurR3& vComp, const float& epsilon=0) const;
+    bool operator== (const VecteurR3& vComp) const; //const float& epsilon=0) const;
 
     /**Addition de deux vecteurs composante par composante */
     VecteurR3 operator+(const VecteurR3&) const;

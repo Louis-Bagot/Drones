@@ -1,4 +1,4 @@
-#include "Pyramidale.h"
+#include "../include/Pyramidale.h"
 
 Pyramidale::Pyramidale()
 {

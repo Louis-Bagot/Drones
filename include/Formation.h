@@ -1,6 +1,10 @@
 #ifndef FORMATION_H
 #define FORMATION_H
 
+#include<vector>
+#include "../include/VecteurR3.h"
+
+using namespace std;
 /**
  * Classe abstraite correspondant à une figure géométrique aérienne que peut réaliser une parte ou l'ensemble de l'essaim.
  * @author Margot, Théau et Morgan
@@ -17,7 +21,7 @@ class Formation {
   * Méthode permettant de générer le maillage à partir des points et des contraintes de taille de Formation.
   * @return Retourne une nouvelle liste de vecteurs
   */
-        virtual Vector<VecteurR3> générerMaillage() = 0;
+        virtual vector<VecteurR3> genererMaillage() = 0;
 
     protected:
     /** Altitude de la formation */

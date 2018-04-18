@@ -1,4 +1,4 @@
-#include "Capteur.h"
+#include "../include/Capteur.h"
 
 Capteur::Capteur()
 {

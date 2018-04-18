@@ -1,6 +1,6 @@
-#include "Affichage.h"
+#include "../include/Affichage.h"
 
-Affichage::Affichage()
+Affichage::Affichage(const Environnement& env)
 {
     //ctor
 }

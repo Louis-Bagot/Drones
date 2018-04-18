@@ -1,6 +1,8 @@
 #ifndef AFFICHAGE_H
 #define AFFICHAGE_H
 
+#include "../include/Environnement.h"
+
 /**
 * @author Timothé, Simon
 * Classe qui permet d'afficher en 3D l'Environnement.
@@ -15,7 +17,7 @@ class Affichage {
         /** Un constructeur utilisant un environnement pour s'y lier par pointeur.
         * @param env l'Environnement vers lequel pointer; sur lequel Affichage devra faire son travail.
         */
-        Affichage(const &Environnement env);
+        Affichage(const Environnement& env);
         /** Simple Destructeur de l'Affichage. */
         virtual ~Affichage();
         /** Méthode principale, affichant l'Environnement en attribut */

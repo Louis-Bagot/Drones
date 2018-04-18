@@ -1,6 +1,9 @@
 #ifndef COMPORTEMENT_H
 #define COMPORTEMENT_H
 
+#include<vector>
+#include "../include/Capteur.h"
+#include "../include/VecteurR3.h"
 /**
 * Interface donnant la fonction fondamentale de comportement de chaque Drone: le choix d'un nouveau vecteur accélération.
 * @author Louis
@@ -18,7 +21,7 @@ class Comportement {
         * @param vCapteurs, le vecteur des Capteurs donnant l'information sensorielle du Drone.
         * @return le vecteur accélération
         */
-        VecteurR3 allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector<Capteur> vCapteurs)
+        VecteurR3 allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector<Capteur> vCapteurs);
     protected:
 
     private:

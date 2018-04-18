@@ -1,4 +1,4 @@
-#include "Cubique.h"
+#include "../include/Cubique.h"
 
 Cubique::Cubique()
 {

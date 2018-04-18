@@ -1,7 +1,7 @@
 #ifndef DLITE_H
 #define DLITE_H
 
-#include <Comportement.h>
+#include "../include/Comportement.h"
 
 /**
 * Type de Comportement: algorithme Dlite: amélioration dynamique de l'algorithme de pathfinding conventionnel A*. */

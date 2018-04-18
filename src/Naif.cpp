@@ -1,4 +1,4 @@
-#include "Naif.h"
+#include "../include/Naif.h"
 
 Naif::Naif()
 {

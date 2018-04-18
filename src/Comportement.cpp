@@ -1,4 +1,4 @@
-#include "Comportement.h"
+#include "../include/Comportement.h"
 
 Comportement::Comportement()
 {

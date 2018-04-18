@@ -1,8 +1,10 @@
 #ifndef CUBIQUE_H
 #define CUBIQUE_H
 
-#include <Formation.h>
+#include "../include/Formation.h"
+#include<vector>
 
+using namespace std;
 /**
  * Classe fille de Formation, qui permet de dessiner un cube.
  * @author Margot, Théau et Morgan
@@ -17,7 +19,7 @@ class Cubique : public Formation {
 
     protected:
     /** Liste des points formant le cube. */
-    Vector<VecteurR3> vPointsCube;
+    vector<VecteurR3> vPointsCube;
     /** Longueur du côté du cube*/
     float longueurCote;
 

@@ -1,6 +1,14 @@
 #ifndef ENVIRONNEMENT_H
 #define ENVIRONNEMENT_H
 
+#include<vector>
+#include "../include/Obstacle.h"
+#include "../include/Essaim.h"
+#include "../include/Drone.h"
+#include "../include/VecteurR3.h"
+
+using namespace std;
+
 /**
 * @author Timothé, Simon
 * Classe contenant les éléments de l'environnement et leurs positions (i.e Essaim, Obstacles, colis)
@@ -14,7 +22,7 @@ class Environnement {
         /** Essaim de drone, c'est l'ensemble de drones */
         Essaim essaim;
         /** Constante de gravité, perpétuellement subie par les drones */
-        const float g;
+        const float g=9.81;
         /** Liste des colis présents dans l'environnement */
         vector<VecteurR3> vColis;
 
@@ -26,7 +34,7 @@ class Environnement {
         Environnement();
         virtual ~Environnement();
         /** Surchage de l'opérateur ++, afin de passer au temps+1 */
-        operator++();
+        void operator++();
 
     protected:
 };

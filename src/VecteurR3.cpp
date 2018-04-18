@@ -1,4 +1,4 @@
-#include "VecteurR3.h"
+#include "../include/VecteurR3.h"
 #include <math.h>
 
 VecteurR3::VecteurR3() {
@@ -17,9 +17,9 @@ VecteurR3::~VecteurR3() {
   // Destructeur vide (suppression de type float géré par le langage)
 }
 
-float getX() const {return x};
-float getY() const {return y};
-float getZ() const {return z};
+float getX() const {return x;};
+float getY() const {return y;};
+float getZ() const {return z;};
 
 float VecteurR3::operator[](const int& index) const {
   switch (index) {

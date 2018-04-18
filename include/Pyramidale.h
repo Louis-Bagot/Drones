@@ -1,7 +1,8 @@
 #ifndef PYRAMIDALE_H
 #define PYRAMIDALE_H
 
-#include <Formation.h>
+#include "../include/Formation.h"
+#include "../include/VecteurR3.h"
 
 /**
  * Classe fille de Formation; dessine une pyramide.
@@ -17,7 +18,7 @@ class Pyramidale : public Formation
 
     protected:
   /** Points formant la base de la pyramide*/
-	Vector<VecteurR3> vPointsBase;
+	vector<VecteurR3> vPointsBase;
   /** Point sommet de la pyramide*/
 	VecteurR3 sommet;
 
