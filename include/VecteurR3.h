@@ -35,7 +35,7 @@ class VecteurR3 {
      * @param epsilon la marge d'erreur que l'on se laisse
      * @return si le vecteur est bien le même que celui en entrée, à une précision epsilon
      */
-    bool operator== (const VecteurR3& vComp) const; //const float& epsilon=0) const;
+    bool egal (const VecteurR3& vComp, const float& epsilon=0) const;
 
     /**Addition de deux vecteurs composante par composante */
     VecteurR3 operator+(const VecteurR3&) const;

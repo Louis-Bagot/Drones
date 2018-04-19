@@ -1,5 +1,6 @@
 #include "../include/VecteurR3.h"
-#include <math.h>
+#include <cmath>
+#include <stdexcept>
 
 VecteurR3::VecteurR3() {
   x=0;
@@ -7,7 +8,7 @@ VecteurR3::VecteurR3() {
   z=0;
 }
 
-VecteurR3::VecteurR3(const float &cx, &cy, &cz) {
+VecteurR3::VecteurR3(const float & cx,const float & cy,const float & cz) {
   x=cx;
   y=cy;
   z=cz;
@@ -17,9 +18,9 @@ VecteurR3::~VecteurR3() {
   // Destructeur vide (suppression de type float géré par le langage)
 }
 
-float getX() const {return x;};
-float getY() const {return y;};
-float getZ() const {return z;};
+float VecteurR3::getX() const {return x;};
+float VecteurR3::getY() const {return y;};
+float VecteurR3::getZ() const {return z;};
 
 float VecteurR3::operator[](const int& index) const {
   switch (index) {
@@ -33,17 +34,17 @@ float VecteurR3::operator[](const int& index) const {
   }
 }
 
-bool VecteurR3::operator== (const VecteurR3 &vComp, const float &epsilon) const {
-  return((abs(x-vComp.getX())<epsilon)&&abs(y-vComp.getY())<epsilon)
-                                      &&abs(z-vComp.getZ())<epsilon));
+bool VecteurR3::egal (const VecteurR3 &vComp, const float &epsilon) const {
+  return((std::abs(x-vComp.getX())<epsilon)&&std::abs(y-vComp.getY())<epsilon)
+                                      &&std::abs(z-vComp.getZ())<epsilon;
 }
 
 VecteurR3 VecteurR3::operator+(const VecteurR3 &v) const {
-  return(VecteurR3(x+v.getX(), y+v.get(Y), z+v.getZ()));
+  return(VecteurR3(x+v.getX(), y+v.getY(), z+v.getZ()));
 }
 
 VecteurR3 VecteurR3::operator-(const VecteurR3 &v) const {
-  return(VecteurR3(x-v.getX(), y-v.get(Y), z-v.getZ()));
+  return(VecteurR3(x-v.getX(), y-v.getY(), z-v.getZ()));
 }
 
 void VecteurR3::operator=(const VecteurR3 &v) {
@@ -62,10 +63,13 @@ float VecteurR3::operator*(const VecteurR3 &v) const {
   return(x*v.getX()+y*v.getY()+z*v.getZ());
 }
 
-VecteurR3 VecteurR3::operator*(const float &scal) const {
-  x*=scal;
-  y*=scal;
-  z*=scal;
+VecteurR3 VecteurR3::operator*(const float &scal) const{
+    float new_x, new_y, new_z;
+  new_x=x*scal;
+  new_y=y*scal;
+  new_z=z*scal;
+
+  return VecteurR3(x,y,z);
 }
 
 float VecteurR3::norme22() const {
