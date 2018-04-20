@@ -15,11 +15,10 @@ void testsVecteurR3::testMultiplication(void){
 }
 void testsVecteurR3::setUp(void)
 {
-    //Methode appelé dès le debut, c'est ici qu'on est censé créer les objets
+    //Methode appelï¿½ dï¿½s le debut, c'est ici qu'on est censï¿½ crï¿½er les objets
 }
 
 void testsVecteurR3::tearDown(void)
 {
-    //C'est ici qu'on détruit les objets
+    //C'est ici qu'on dï¿½truit les objets
 }
-

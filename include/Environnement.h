@@ -22,7 +22,7 @@ class Environnement {
         /** Essaim de drone, c'est l'ensemble de drones */
         Essaim essaim;
         /** Constante de gravité, perpétuellement subie par les drones */
-        const float g=9.81;
+        float g;
         /** Liste des colis présents dans l'environnement */
         vector<VecteurR3> vColis;
 
@@ -31,7 +31,10 @@ class Environnement {
         /** Vérifie si un drone entre en collision avec un obstacle ou un autre drone. */
         bool collision(Drone);
     public:
+        /** Constructeur vide */
         Environnement();
+        /** Constructeur principal de l'Environnement */
+        Environnement(const std::vector<Obstacle>&, const Essaim&, const float&);
         virtual ~Environnement();
         /** Surchage de l'opérateur ++, afin de passer au temps+1 */
         void operator++();
