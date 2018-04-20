@@ -27,6 +27,7 @@ class testsVecteurR3 : public CppUnit::TestFixture
     CPPUNIT_TEST(testMultiplicationScalaire);
     CPPUNIT_TEST(testIncrementation);
     CPPUNIT_TEST(testNorme22);
+    CPPUNIT_TEST(testprodVec);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -40,6 +41,7 @@ class testsVecteurR3 : public CppUnit::TestFixture
         void testMultiplicationScalaire(void);
         void testIncrementation(void);
         void testNorme22(void);
+        void testprodVec(void);
     
     private:
 };
