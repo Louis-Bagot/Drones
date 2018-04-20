@@ -7,7 +7,7 @@ void testsVecteurR3::testAddition(void)
     vec2 = new VecteurR3(3,2,1);
     VecteurR3 vecRes = vec1 + vec2;
 
-    CPPUNIT_ASSERT(vecRes.getX()==4 && vecRes.getY()==4 && vecRes.getZ());
+    CPPUNIT_ASSERT(vecRes.getX()==4 && vecRes.getY()==4 && vecRes.getZ()==4);
 }
 
 void testsVecteurR3::testMultiplication(void){

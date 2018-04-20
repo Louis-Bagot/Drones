@@ -31,6 +31,8 @@ class Drone {
   public:
     /** Constructeur de Drone, initialisant les attributs. */
     Drone();
+    /** Constructeur de Drone, initialisant les attributs avec le VecteurR3 en entrée. */
+    Drone(VecteurR3);
     /** Destructeur de Drone. */
     virtual ~Drone();
     /**
