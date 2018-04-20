@@ -32,6 +32,8 @@ class Drone {
 
     /** Constructeur de Drone pour tests */
     Drone();
+    /** Constructeur avec simplement la position initiale */
+    Drone(const VecteurR3&);
     /** Constructeur de Drone pour tests : avec direction Capteurs */
     Drone(const std::vector<VecteurR3>&);
     /** Constructeur de Drone, initialisant les attributs spatio-temporels à 0. Nécessite un Comportement, une taille, un nombre de capteurs */

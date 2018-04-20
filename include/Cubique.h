@@ -2,6 +2,7 @@
 #define CUBIQUE_H
 
 #include "../include/Formation.h"
+#include "../include/VecteurR3.h"
 #include<vector>
 
 using namespace std;
@@ -13,15 +14,17 @@ using namespace std;
 class Cubique : public Formation {
     public:
         /** Constructeur de la Formation. */
-        Cubique();
+        Cubique(VecteurR3,float, int);
         /** Destructeur usuel de la Formation. */
         virtual ~Cubique();
+        /** Méthode héritée, calcule le maillage adapté à la formation cubique */
+        virtual vector<VecteurR3> genererMaillage();
 
     protected:
-    /** Liste des points formant le cube. */
-    vector<VecteurR3> vPointsCube;
     /** Longueur du côté du cube*/
     float longueurCote;
+    /** Orgine du cube */
+    VecteurR3 origine;
 
     private:
 };

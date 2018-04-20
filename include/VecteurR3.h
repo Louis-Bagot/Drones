@@ -60,6 +60,9 @@ class VecteurR3 {
 
     /** Norme (ou distance à l'origine) du vecteur. Calcule simplement la racine de norme22. */
     float norme2() const;
+    
+    /** Calcul du produit vectoriel. (Useful pour verifier la colinearite). */
+    VecteurR3 prodVec(const VecteurR3&) const;
 };
 
 #endif // VECTEURR3_H

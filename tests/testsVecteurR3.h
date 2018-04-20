@@ -21,7 +21,13 @@ class testsVecteurR3 : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(testsVecteurR3);
     CPPUNIT_TEST(testAddition);
+    CPPUNIT_TEST(testSoustraction);
+    CPPUNIT_TEST(testAffectation);
     CPPUNIT_TEST(testMultiplication);
+    CPPUNIT_TEST(testMultiplicationScalaire);
+    CPPUNIT_TEST(testIncrementation);
+    CPPUNIT_TEST(testNorme22);
+    CPPUNIT_TEST(testprodVec);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -29,7 +35,14 @@ class testsVecteurR3 : public CppUnit::TestFixture
         void tearDown(void);
     protected:
         void testAddition(void);
+        void testSoustraction(void);
+        void testAffectation(void);
         void testMultiplication(void);
+        void testMultiplicationScalaire(void);
+        void testIncrementation(void);
+        void testNorme22(void);
+        void testprodVec(void);
+    
     private:
 };
 
