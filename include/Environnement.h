@@ -24,12 +24,7 @@ class Environnement {
         Essaim essaim;
 
         /** Constante de gravité, perpétuellement subie par les drones */
-<<<<<<< HEAD
-        const float g=9.81;
-
-=======
         float g;
->>>>>>> 4795c64c287cd3a69ae091bcd1594f299def4441
         /** Liste des colis présents dans l'environnement */
         vector<VecteurR3> vColis;
 

@@ -4,7 +4,7 @@
 
 void testsCapteur::testUpdateDistanceDetectee(void)
 {
-  capteur = new Capteur(50,50,direction = new VecteurR3(), env = new Environnement());
+  Capteur capteur = new Capteur(50,50,direction = new VecteurR3(), env = new Environnement());
   vector<VecteurR3> posObstacle(4);
 
   /** Je crée un obstacle carré je vais placer dans l'environnement*/
@@ -14,7 +14,7 @@ void testsCapteur::testUpdateDistanceDetectee(void)
   posObstacle[3] =new VecteurR3(2,2,3);
 
 /** J'ajoute l'obstacle à l'environnement*/
-  env.ajouterObstacle(new Obstacle());
+  env.ajouterObstacle(new Obstacle(posObstacle));
 
   /** Je lance la detection*/
   capteur.updateDistanceDetectee();

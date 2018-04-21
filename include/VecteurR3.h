@@ -30,6 +30,7 @@ class VecteurR3 {
     /** Alternative aux getters : operateur [] */
     float operator[](const int&) const;
 
+    bool operator==(const VecteurR3& vComp) const;
     /**Comparaison de deux vecteurs à un voisinage de rayon donné près
      * @param vComp le VecteurR3 auquel se comparer
      * @param epsilon la marge d'erreur que l'on se laisse
@@ -60,7 +61,7 @@ class VecteurR3 {
 
     /** Norme (ou distance à l'origine) du vecteur. Calcule simplement la racine de norme22. */
     float norme2() const;
-    
+
     /** Calcul du produit vectoriel. (Useful pour verifier la colinearite). */
     VecteurR3 prodVec(const VecteurR3&) const;
 };

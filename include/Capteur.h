@@ -13,13 +13,13 @@ class Capteur {
     public:
 
 
-      /** Constructeur de Capteur */
+      /** Constructeur de Capteur initialisant tous ses paramètres à des valeurs données en entrée. */
         Capteur(const float &p, const float &d, const VecteurR3 &dir, const Environnement &environnement);
 
-     /** Deconstructeur de Capteur */
+     /** Déstructeur de Capteur */
         virtual ~Capteur();
 
-    /*
+    /**
      * Calcul la distance entre le drone et les obstacles alentours. La fonction sera appelée par drone,
     de manière itérative.
      */
@@ -27,17 +27,19 @@ class Capteur {
     protected:
 
     private:
+      /** Distance maximale à laquelle peut "voir" un Capteur */
       float portee;
+      /** Distance actuellement détectée. <= portee. */
       float distanceDectectee
+      /** Direction dans laquelle le Capteur regarde, relativement au Drone. */
       VecteurR3 direction;
+      /** Environnement dans lequel se trouve le Drone et donc son Capteur. Permet à se dernier de se donner une valeur à chaque instant. */
       Environnement env;
-      /** Elle sera recalculé à chaque déplacement du drone. Indispensable pour connaitre
-      * la distance avec l'obstacle detectée
+      /** Position du Drone associé au Capteur, permettant le calcul de distanceDectectee
       */
-      VecteurR3 positionCapteur;
-      /** Sera initiliasité lors de l'attribution du drone*/
+      VecteurR3 positionDrone;
+      /** Sera initiliasité lors de l'attribution du drone */
       float tailleDrone;
-
 };
 
 #endif // CAPTEUR_H

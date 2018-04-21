@@ -35,8 +35,12 @@ float VecteurR3::operator[](const int& index) const {
 }
 
 bool VecteurR3::egal (const VecteurR3 &vComp, const float &epsilon) const {
-  return((std::abs(x-vComp.getX())<epsilon)&&std::abs(y-vComp.getY())<epsilon)
-                                      &&std::abs(z-vComp.getZ())<epsilon;
+  return((std::abs(x-vComp.getX())<epsilon)&&(std::abs(y-vComp.getY())<epsilon)
+                                      &&(std::abs(z-vComp.getZ())<epsilon);
+}
+
+bool VecteurR3::operator== (const VecteurR3 &vComp) const {
+  return(x==vComp.getX()&&y==vComp.getY()&&z==vComp.getZ());
 }
 
 VecteurR3 VecteurR3::operator+(const VecteurR3 &v) const {
