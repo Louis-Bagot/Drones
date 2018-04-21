@@ -4,10 +4,10 @@
 #include "../include/Environnement.h"
 
 /**
-* @author Timothé, Simon
 * Classe qui permet d'afficher en 3D l'Environnement.
 * Cela inclut principalement les Drones et les Obstacles.
 * Utilise openGL et SDL
+* @authors Timothé, Simon
 */
 class Affichage {
     private:

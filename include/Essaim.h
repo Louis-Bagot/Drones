@@ -11,9 +11,10 @@
 using namespace std;
 
 /**
-* @author Timothé, Simon
 * La classe Essaim est celle qui contient l'ensemble des drones
 * Elle a pour objectif de contrôler leurs objectifs (Attribution des colis aux drones, formations, ...)
+*
+* @authors Timothé, Simon
 */
 
 class Essaim {

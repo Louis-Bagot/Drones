@@ -7,18 +7,19 @@
 #include "../include/Drone.h"
 #include "../include/VecteurR3.h"
 
-using namespace std;
 
 /**
-* @author Timothé, Simon
+*
 * Classe contenant les éléments de l'environnement et leurs positions (i.e Essaim, Obstacles, colis)
 * Gère la détection de collision et le calcul de la position des drones.
 * C'est le moteur physique du projet.
+*
+* @authors Timothé, Simon
 */
 class Environnement {
     private:
         /** Liste des obstacles de l'environnement */
-        vector<Obstacle> vObstacles;
+        std::vector<Obstacle> vObstacles;
 
         /** Essaim de drone, c'est l'ensemble de drones */
         Essaim essaim;
@@ -26,7 +27,7 @@ class Environnement {
         /** Constante de gravité, perpétuellement subie par les drones */
         float g;
         /** Liste des colis présents dans l'environnement */
-        vector<VecteurR3> vColis;
+        std::vector<VecteurR3> vColis;
 
         /** Calcule la position d'un drone en prenant en compte le vecteur accélération du drone et la gravité de l'environnement */
         void calculerPos(Drone);

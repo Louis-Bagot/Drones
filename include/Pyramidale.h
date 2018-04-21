@@ -3,6 +3,7 @@
 
 #include "../include/Formation.h"
 #include "../include/VecteurR3.h"
+#include<vector>
 
 /**
  * Classe fille de Formation; dessine une pyramide.

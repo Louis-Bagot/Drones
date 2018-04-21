@@ -1,20 +1,22 @@
 #ifndef CAPTEUR_H
 #define CAPTEUR_H
+
+#include "../include/Environnement.h"
+#include "../include/VecteurR3.h"
 /**
 * @authors Timothé
-* @ 20 Avril 2018
+* @date 20 Avril 2018
 *
 * Les capteurs sont les outils nécéssaires aux drones pour detecter les
 * obstacles alentours à une distance donnée.
 */
-
 
 class Capteur {
     public:
 
 
       /** Constructeur de Capteur initialisant tous ses paramètres à des valeurs données en entrée. */
-        Capteur(const float &p, const float &d, const VecteurR3 &dir, const Environnement &environnement);
+        Capteur(const float &p, const float &d, const VecteurR3 &dir, const Environnement& environnement);
 
      /** Déstructeur de Capteur */
         virtual ~Capteur();
@@ -30,7 +32,7 @@ class Capteur {
       /** Distance maximale à laquelle peut "voir" un Capteur */
       float portee;
       /** Distance actuellement détectée. <= portee. */
-      float distanceDectectee
+      float distanceDectectee;
       /** Direction dans laquelle le Capteur regarde, relativement au Drone. */
       VecteurR3 direction;
       /** Environnement dans lequel se trouve le Drone et donc son Capteur. Permet à se dernier de se donner une valeur à chaque instant. */
