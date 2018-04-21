@@ -27,7 +27,11 @@ class Essaim {
         void retirerColis(VecteurR3 retrait, VecteurR3 depot);
 
         /** Ordre aux drones de l'essaim de réaliser une formation */
-        //void formation(Formation F);
+        void formation(Formation F);
+
+        /** Ajoute un drone à l'essaim (dans le vector de drone) */
+        void ajouterDrone(Drone);
+
     protected:
 
     private:

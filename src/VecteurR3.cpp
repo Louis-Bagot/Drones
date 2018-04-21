@@ -79,3 +79,7 @@ float VecteurR3::norme22() const {
 float VecteurR3::norme2() const {
   return(sqrt(VecteurR3::norme22()));
 }
+
+VecteurR3 VecteurR3::prodVec(const VecteurR3 &v) const {
+    return VecteurR3(y*v.getZ()-z*getY(),z*v.getX()-x*getZ(),x*v.getY()-y*getX());
+}

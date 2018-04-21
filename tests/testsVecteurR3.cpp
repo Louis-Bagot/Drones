@@ -61,14 +61,22 @@ void testVecteurR3::testNorme22(void)
     CPPUNIT_ASSERT(res==3);
 }
 
+void testVecteurR3::testprodVec(void)
+{
+    vec1 = new VecteurR3(1,2,3);
+    vec2 = new VecteurR3(3,2,1);
+    VecteurR3 vecRes = vec1.prodVec(vec2);
+    
+    CPPUNIT_ASSERT(vec1.getX()==-4 && vec1.getY()==8 && vec1.getZ()==-4);
+}
+
 
 void testsVecteurR3::setUp(void)
 {
-    //Methode appelé dès le debut, c'est ici qu'on est censé créer les objets
+    //Methode appelï¿½ dï¿½s le debut, c'est ici qu'on est censï¿½ crï¿½er les objets
 }
 
 void testsVecteurR3::tearDown(void)
 {
-    //C'est ici qu'on détruit les objets
+    //C'est ici qu'on dï¿½truit les objets
 }
-

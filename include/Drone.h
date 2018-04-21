@@ -29,10 +29,27 @@ class Drone {
     std::vector<VecteurR3> objectifs;
 
   public:
-    /** Constructeur de Drone, initialisant les attributs. */
+
+    /** Constructeur de Drone pour tests */
     Drone();
+    /** Constructeur avec simplement la position initiale */
+    Drone(const VecteurR3&);
+    /** Constructeur de Drone pour tests : avec direction Capteurs */
+    Drone(const std::vector<VecteurR3>&);
+    /** Constructeur de Drone, initialisant les attributs spatio-temporels à 0. Nécessite un Comportement, une taille, un nombre de capteurs */
+    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&);
+    /** Constructeur de Drone, initialisant la position à celle demandée. */
+    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&, const VecteurR3&);
+    /** Constructeur de Drone, initialisant la position et la vitesse à celles demandées. */
+    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&, const VecteurR3&, const VecteurR3&);
+
     /** Destructeur de Drone. */
     virtual ~Drone();
+
+    /** Getter des objectifs du Drone */
+      std::vector<VecteurR3> getObjectifs() const;
+      /** Getter du vecteur de capteurs */
+      std::vector<Capteur> getvCapteurs() const;
     /**
     * Méthode qui ajoute une destination à la liste des objectifs.
     * @param obj le point de R3 à ajouter à la liste d'objectifs.
