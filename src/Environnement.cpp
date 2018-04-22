@@ -1,10 +1,17 @@
 #include "../include/Environnement.h"
+#include "../include/Obstacle.h"
+#include "../include/Drone.h"
+#include "../include/Essaim.h"
+#include<vector>
+
 /**
-* @authors Timothé
+* @authors Timothé, Simon
 */
-Environnement::Environnement()
+Environnement::Environnement( const float _g)
 {
-    //ctor
+    g = _g;
+    essaim = new Essaim();
+
 }
 
 Environnement::~Environnement()
@@ -12,7 +19,28 @@ Environnement::~Environnement()
     //dtor
 }
 
-Environnement::ajouterObstacle(vector<VecteurR3> &positionObstacle)
+void Environnement::ajouterObstacle(std::vector<VecteurR3> &positionObstacle)
 {
-  Environnement.vObstacles.push_back(new Obstacle(positionObstacle));
+  vObstacles.push_back(new Obstacle(positionObstacle));
+}
+
+void Environnement::operator++()
+{
+    vector<Drone> vDrones = essaim.getVDrones();
+    for(std::vector<Drone>::iterator it = vDrones.begin(); it !=vDrones.end(); ++it)
+    {
+        collision(*it);
+        calculerPos(*it);
+    }
+}
+
+
+void Environnement::calculerPos(Drone &drone)
+{
+
+}
+
+bool Environnement::collision(const Drone drone)
+{
+    return false;
 }

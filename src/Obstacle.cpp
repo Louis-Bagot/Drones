@@ -1,11 +1,15 @@
 #include "../include/Obstacle.h"
 
-Obstacle::Obstacle()
+Obstacle::Obstacle(vector<VecteurR3>);
 {
-    //ctor
+
 }
 
 Obstacle::~Obstacle()
 {
     //dtor
+}
+Obstacle::vector<VecteurR3> getVSommets()
+{
+    return vSommets;
 }

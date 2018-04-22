@@ -18,6 +18,10 @@
 */
 class Environnement {
     private:
+        /** Point le plus négatif dans le cube de travail */
+        VecteurR3 origineEnv;
+        /** coté du cube */
+        int cote;
         /** Liste des obstacles de l'environnement */
         std::vector<Obstacle> vObstacles;
 
@@ -30,20 +34,20 @@ class Environnement {
         std::vector<VecteurR3> vColis;
 
         /** Calcule la position d'un drone en prenant en compte le vecteur accélération du drone et la gravité de l'environnement */
-        void calculerPos(Drone);
+        void calculerPos(&Drone);
 
         /** Vérifie si un drone entre en collision avec un obstacle ou un autre drone. */
         bool collision(Drone);
 
     public:
         /** Constructeur vide */
-        Environnement();
+        Environnement(const float);
         /** Constructeur principal de l'Environnement */
         Environnement(const std::vector<Obstacle>&, const Essaim&, const float&);
         virtual ~Environnement();
         /** Surchage de l'opérateur ++, afin de passer au temps+1 */
         void operator++();
-        void ajouterObstacle(vector<VecteurR3> &positionObstacle);
+        void ajouterObstacle(std::vector<VecteurR3> &positionObstacle);
     protected:
 };
 

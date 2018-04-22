@@ -17,12 +17,12 @@ class Obstacle {
     public:
         Obstacle(vector<VecteurR3>);
         virtual ~Obstacle();
-        /** Renvoie la vector des sommets */
-        vector<VecteurR3> getSommets();
+        /** Renvoie le vector des sommets */
+        vector<VecteurR3> getVSommets();
     protected:
 
     private:
-        vector<VecteurR3> sommets;
+        vector<VecteurR3> vSommets;
 };
 
 #endif // OBSTACLE_H

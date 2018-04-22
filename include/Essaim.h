@@ -32,7 +32,9 @@ class Essaim {
 
         /** Ajoute un drone à l'essaim (dans le vector de drone) */
         void ajouterDrone(Drone);
-
+        
+        /** getter du vector de Drone */
+        vector<Drone> getVDrones();
     protected:
 
     private:
