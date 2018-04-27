@@ -7,6 +7,7 @@
 #include "../include/Comportement.h"
 #include "../include/Capteur.h"
 #include "../include/Drone.h"
+#include "../include/Environnement.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ using namespace std;
 
 class Essaim {
     public:
-        Essaim();
+        Essaim(const Environnement &);
         virtual ~Essaim();
         /** Ordre d'aller retirer un colis. Le drone qui doit aller le colis au point B est determiné dans le corps de la fonction et non passé en entrée
           * @param retrait point de retrait du colis

@@ -16,7 +16,7 @@ class Capteur {
 
 
      /** Constructeur de Capteur initialisant tous ses paramètres à des valeurs données en entrée. */
-        Capteur(const float &p, const float &d, const VecteurR3 &dir, const Environnement& environnement);
+        Capteur(const float &p, const VecteurR3 &dir, const Environnement& environnement);
 
      /** Déstructeur de Capteur */
         virtual ~Capteur();
