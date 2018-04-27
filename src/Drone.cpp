@@ -2,9 +2,9 @@
 #include "../include/VecteurR3.h"
 
 
-Drone::Drone(const std::vector<Capteur>& _vCapteurs)
+Drone::Drone(const float r, const std::vector<Capteur>& _vCapteurs)
 {
-    rayon = 0.05;
+    rayon = r;
     porteColis = false;
     fonctionne = true;
     comportement = new Naif();
@@ -13,9 +13,9 @@ Drone::Drone(const std::vector<Capteur>& _vCapteurs)
     vCapteurs = _vCapteurs;
 }
 
-Drone::Drone(const std::vector<Capteur>& _vCapteurs,const VecteurR3 pos )
+Drone::Drone(const float r,const std::vector<Capteur>& _vCapteurs,const VecteurR3 pos )
 {
-    rayon = 0.05;
+    rayon = 2000; // Louis t'es un gros con
     porteColis = false;
     fonctionne = true;
     comportement = new Naif();
@@ -23,9 +23,9 @@ Drone::Drone(const std::vector<Capteur>& _vCapteurs,const VecteurR3 pos )
     acceleration = new VecteurR3(0,0,0);
     vCapteurs = _vCapteurs;
 }
-Drone::Drone(const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 pos)
+Drone::Drone(const float r,const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 pos)
 {
-    rayon = 0.05;
+    rayon = r;
     porteColis = false;
     fonctionne = true;
     comportement = _comportement;
@@ -34,9 +34,9 @@ Drone::Drone(const std::vector<Capteur>& _vCapteurs, const Comportement& _compor
     vCapteurs = _vCapteurs;
 }
 
-Drone::Drone(const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 pos)
+Drone::Drone(const float r,const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 pos)
 {
-    rayon = 0.05;
+    rayon = r;
     porteColis = false;
     fonctionne = true;
     comportement = _comportement;
@@ -45,9 +45,9 @@ Drone::Drone(const std::vector<Capteur>& _vCapteurs, const Comportement& _compor
     vCapteurs = _vCapteurs;
 }
 
-Drone::Drone(const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 _pos, const VecteurR3 _acc)
+Drone::Drone(const float r, const std::vector<Capteur>& _vCapteurs, const Comportement& _comportement, const VecteurR3 _pos, const VecteurR3 _acc)
 {
-    rayon = 0.05;
+    rayon = r;
     porteColis = false;
     fonctionne = true;
     comportement = _comportement;
@@ -60,9 +60,26 @@ VecteurR3 Drone::getObjectif() const
 {
     return vObjectifs.front();
 }
-VecteurR3 Drone::objectifDone()
+VecteurR3 Drone::getVitesse() const
 {
-
+    return vitesse;
+}
+void Drone::setVitesse(_vitesse)
+{
+    vitesse = _vitesse;
+}
+bool Drone::objectifDone()
+{
+    if(Drone.position.egal(Drone.getObjectif()))
+    {
+        vObjectifs.pop();
+        return true;
+    }else return false;
+}
+void Drone::operator++()
+{
+    objectifDone();
+    setAcceleration(comportement.allerPoint());
 }
 std::vector<Capteur> Drone::getvCapteurs() const
 {
@@ -76,6 +93,10 @@ void Drone::livrerColis(const VecteurR3& retrait, const VecteurR3& depot)
 {
     ajouterObjectif(retrait);
     ajouterObjectif(depot);
+}
+void Drone::setAcceleration(const VecteurR3& _acc)
+{
+    acceleration = _acc;
 }
 Drone::~Drone()
 {
