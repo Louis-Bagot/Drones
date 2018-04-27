@@ -1,8 +1,10 @@
 #ifndef CAPTEUR_H
 #define CAPTEUR_H
 
-#include "../include/Environnement.h"
+
 #include "../include/VecteurR3.h"
+
+class Environnement;
 /**
 * @authors Timothé
 * @date 20 Avril 2018
@@ -36,7 +38,7 @@ class Capteur {
       /** Direction dans laquelle le Capteur regarde, relativement au Drone. */
       VecteurR3 direction;
       /** Environnement dans lequel se trouve le Drone et donc son Capteur. Permet à se dernier de se donner une valeur à chaque instant. */
-      Environnement env;
+      Environnement *env;
       /** Position du Drone associé au Capteur, permettant le calcul de distanceDectectee
       */
       VecteurR3 positionDrone;
