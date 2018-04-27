@@ -18,11 +18,21 @@ class testsDrone : public CppUnit::TestFixture {
         void setUp(void);
         void tearDown(void);
     protected:
-        /** Teste l'ajout d'un objectif */
+        /** Teste l'ajout d'un objectif dans la liste des points à atteindre du Drone.
+         * ASSERT si l'objectif a bien été ajouté; c'est-à-dire que la liste est plus grande d'un élément, qui est celui affiché.
+         * La vérification de la validité du point n'est pas du ressort du Drone (et donc de cette fonction).
+         */
         void testAjouterObjectif(void);
-        /** Teste l'ordre de livraison de colis */
+
+        /** Teste l'ordre de livraison de colis.
+          * Réalise globalement les mêmes tests que testAjouterObjectif, sur deux points.
+          * @see testAjouterObjectif
+          */
         void testLivrerColis(void);
-        /** Teste la modification des capteurs */
+
+        /** Teste la modification des capteurs.
+          * Vérifie que les méthodes updateDistanceDetectee ont bien été appelées. 
+          */
         void testUpdateCapteurs(void);
     private:
 };

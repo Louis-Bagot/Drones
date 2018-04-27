@@ -34,7 +34,7 @@ class Environnement {
         std::vector<VecteurR3> vColis;
 
         /** Calcule la position d'un drone en prenant en compte le vecteur accélération du drone et la gravité de l'environnement */
-        void calculerPos(&Drone);
+        void calculerPos(Drone&);
 
         /** Vérifie si un drone entre en collision avec un obstacle ou un autre drone. */
         bool collision(Drone);

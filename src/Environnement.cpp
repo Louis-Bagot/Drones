@@ -19,8 +19,7 @@ Environnement::~Environnement()
     //dtor
 }
 
-void Environnement::ajouterObstacle(std::vector<VecteurR3> &positionObstacle)
-{
+void Environnement::ajouterObstacle(std::vector<VecteurR3> &positionObstacle) {
   vObstacles.push_back(new Obstacle(positionObstacle));
 }
 
