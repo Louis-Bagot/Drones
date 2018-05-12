@@ -1,6 +1,8 @@
 #ifndef VECTEURR3_H
 #define VECTEURR3_H
 
+#include <iostream>
+
 /**
  * Classe d'un vecteur dans R3, avec trois coordonnées et les opérations classiques des ensembles vectoriels.
  * @authors : Margot, Morgan, Théau, Louis
@@ -27,6 +29,10 @@ class VecteurR3 {
     float getX() const;
     float getY() const;
     float getZ() const;
+    // Setters des coordonnées
+    void setX(const float&);
+    void setY(const float&);
+    void setZ(const float&);
     /** Alternative aux getters : operateur [] */
     float operator[](const int&) const;
 
@@ -47,8 +53,10 @@ class VecteurR3 {
     /**Affectation d'un vecteur à partir d'un autre*/
     void operator=(const VecteurR3&);
 
-    /** Addition des coordonnées acutelles avec celles d'un autre (raccourci +=)*/
+    /** Addition des coordonnées actuelles avec celles d'un autre (raccourci +=)*/
     void operator+=(const VecteurR3&);
+    /** Soustraction des coordonnées actuelles avec celles d'un autre (raccourci -=)*/
+    void operator-=(const VecteurR3&);
 
     /** Produit scalaire de ce vecteur avec un autre*/
     float operator*(const VecteurR3&) const;
@@ -64,6 +72,12 @@ class VecteurR3 {
 
     /** Calcul du produit vectoriel. (Useful pour verifier la colinearite). */
     VecteurR3 prodVec(const VecteurR3&) const;
+    /** Calcul le produit de la matrice de Householder générée par ce VecteurR3 (this)
+     * avec un vecteur donné en entrée. Cela donne le vecteur de reflexion par rapport
+     * au plan orthogonal à ce vecteur. */ 
+    VecteurR3 reflexionPlanOrtho(const VecteurR3&) const;
+    /** Methode d'affichage pour debug */
+    friend std::ostream& operator<<(std::ostream& os, const VecteurR3&);
 };
 
 #endif // VECTEURR3_H

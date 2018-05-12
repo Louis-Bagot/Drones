@@ -67,7 +67,7 @@ TrackBallCamera::TrackBallCamera()
     _hold = false;
     _angleY = 0;
     _angleZ = 0;
-    _distance = 4;
+    _distance = 2;
     _motionSensivity = 0.3;
     _scrollSensivity = 1;
 }
@@ -146,5 +146,3 @@ void TrackBallCamera::look()
     glRotated(_angleY,0,1,0);
     glRotated(_angleZ,0,0,1);
 }
-
-

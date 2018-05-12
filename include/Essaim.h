@@ -1,7 +1,9 @@
 #ifndef ESSAIM_H
 #define ESSAIM_H
 
-#include<vector>
+#include <vector>
+#include <iostream>
+#include <stdexcept>
 #include "../include/VecteurR3.h"
 #include "../include/Formation.h"
 #include "../include/Comportement.h"
@@ -19,7 +21,10 @@ using namespace std;
 
 class Essaim {
     public:
+        /** Constructeur vide */
         Essaim();
+        /** Constructeur principal (utilisé dans le main de l'application) prenant l'Environnement et le nombre de Drones */
+        Essaim(Environnement, int nbDrones);
         virtual ~Essaim();
         /** Ordre d'aller retirer un colis. Le drone qui doit aller le colis au point B est determiné dans le corps de la fonction et non passé en entrée
           * @param retrait point de retrait du colis
@@ -34,12 +39,12 @@ class Essaim {
         void ajouterDrone(Drone&);
 
         /** getter du vector de Drone */
-        vector<Drone> getVDrones();
+        vector<Drone*> getVDrones() const;
     protected:
 
     private:
         /** L'ensemble des drones qui composent l'essaim */
-        vector<Drone> vDrones;
+        vector<Drone*> vDrones;
         /**
         * A partir de la liste des objectifs à atteindre, y affecte les Drones en fonction de leur position actuelle.
         * ex : vector<int> = [2, 1, 3], le drone numéro 2 ira à vPosFormation[1]

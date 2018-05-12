@@ -15,7 +15,7 @@ int takeScreenshot(const char * filename);
 void drawAxis(double scale = 1);
 /** Dessine une boîte*
   * @param sideLength la taille d'une arête */
-void drawBox(double sideLength = 4);
+void drawBox(double sideLength);
 int initFullScreen(unsigned int * width = NULL,unsigned int * height = NULL);
 int XPMFromImage(const char * imagefile, const char * XPMfile);
 SDL_Cursor * cursorFromXPM(const char * xpm[]);

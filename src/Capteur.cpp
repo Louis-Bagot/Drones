@@ -1,14 +1,17 @@
 #include "../include/Capteur.h"
 
-Capteur::Capteur(const float &p, const float &d, const VecteurR3 &dir, const Environnement &environnement);
-{
+Capteur::Capteur(const float &p, const VecteurR3 &dir, Environnement *environnement) {
   portee = p;
-  distanceDectectee = d;
-  Environnement = env;
+  env = environnement;
   direction = dir;
+  distanceDectectee = updateDistanceDetectee();
 }
 
-Capteur::~Capteur()
-{
+Capteur::~Capteur() {
 
+}
+
+float Capteur::updateDistanceDetectee() {
+  // TODO
+  return portee;
 }

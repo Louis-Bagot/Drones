@@ -57,22 +57,28 @@
 	<cmath>
 	"sdlglutils.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Drone.cpp
+1525887526 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Drone.cpp
 	"../include/Drone.h"
+	"../include/VecteurR3.h"
+	<cstddef>
 
-1524222136 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Drone.h
+1525626613 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Drone.h
 	"../include/VecteurR3.h"
 	"../include/Comportement.h"
+	<cstddef>
 
-1523601922 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/main.cpp
+1525887189 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	<cstdlib>
-	"../include/sdlglutils.h"
 	"../include/trackballcamera.h"
+	"../include/sdlglutils.h"
+	"../include/Environnement.h"
+	"../include/Essaim.h"
+	"../include/Affichage.h"
 
-1523856722 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/sdlglutils.h
+1525447902 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/sdlglutils.h
 	<GL/gl.h>
 	<SDL/SDL.h>
 
@@ -87,23 +93,30 @@
 	<cstring>
 	<cstdlib>
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/trackballcamera.cpp
+1525438666 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/trackballcamera.cpp
 	"../include/trackballcamera.h"
 	<GL/glu.h>
 	<cmath>
 	"../include/sdlglutils.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Affichage.cpp
+1525887464 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Affichage.cpp
 	"../include/Affichage.h"
 
-1524205693 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Affichage.h
+1525803840 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Affichage.h
 	"../include/Environnement.h"
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cstdlib>
+	"../include/sdlglutils.h"
+	"../include/trackballcamera.h"
+	<iostream>
+	<vector>
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Capteur.cpp
+1525423146 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Capteur.cpp
 	"../include/Capteur.h"
 
-1524392975 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Capteur.h
-	"../include/Environnement.h"
+1525450603 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Capteur.h
 	"../include/VecteurR3.h"
 
 1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Comportement.cpp
@@ -114,11 +127,12 @@
 	"../include/Capteur.h"
 	"../include/VecteurR3.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Cubique.cpp
+1525423301 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Cubique.cpp
 	"../include/Cubique.h"
 
-1524205693 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Cubique.h
+1524221889 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Cubique.h
 	"../include/Formation.h"
+	"../include/VecteurR3.h"
 	<vector>
 
 1524205693 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Formation.h
@@ -131,21 +145,30 @@
 1524383232 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Dlite.h
 	"../include/Comportement.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Environnement.cpp
+1526145542 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Environnement.cpp
 	"../include/Environnement.h"
-
-1524391305 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Environnement.h
+	"../include/Obstacle.h"
+	"../include/Drone.h"
+	"../include/Essaim.h"
+	<iostream>
 	<vector>
+
+1525888907 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Environnement.h
+	<vector>
+	<iostream>
 	"../include/Obstacle.h"
 	"../include/Essaim.h"
 	"../include/Drone.h"
 	"../include/VecteurR3.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Essaim.cpp
+1526036529 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Essaim.cpp
 	"../include/Essaim.h"
+	"../include/Environnement.h"
 
-1524391271 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Essaim.h
+1525448679 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Essaim.h
 	<vector>
+	<iostream>
+	<stdexcept>
 	"../include/VecteurR3.h"
 	"../include/Formation.h"
 	"../include/Comportement.h"
@@ -161,19 +184,19 @@
 1524383232 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Naif.h
 	"../include/Comportement.h"
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Obstacle.cpp
+1526036414 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Obstacle.cpp
 	"../include/Obstacle.h"
 
-1524390832 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Obstacle.h
+1526036381 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/Obstacle.h
 	"../include/VecteurR3.h"
 	<vector>
 
-1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/VecteurR3.cpp
+1525775059 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/VecteurR3.cpp
 	"../include/VecteurR3.h"
 	<cmath>
-	<stdexcept>
 
-1524327531 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/VecteurR3.h
+1525624923 /home/louis/Dropbox/GM4/Projets/C++/Drones/include/VecteurR3.h
+	<iostream>
 
 1524205693 source:/home/louis/Dropbox/GM4/Projets/C++/Drones/src/Pyramidale.cpp
 	"../include/Pyramidale.h"

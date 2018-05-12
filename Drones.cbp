@@ -41,6 +41,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="`sdl-config --cflags`" />
 		</Compiler>
 		<Linker>

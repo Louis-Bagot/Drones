@@ -3,8 +3,11 @@
 #include <GL/glu.h>
 #include <cstdlib>
 
-#include "../include/sdlglutils.h"
 #include "../include/trackballcamera.h"
+#include "../include/sdlglutils.h"
+#include "../include/Environnement.h"
+#include "../include/Essaim.h"
+#include "../include/Affichage.h"
 
 /**
  * \file main.cpp
@@ -15,9 +18,6 @@
 #define LARGEUR_FENETRE 1366
 #define HAUTEUR_FENETRE 700
 
-void DrawGL();
-
-GLuint droneText; //droneText : texture drone
 TrackBallCamera * camera;
 
 void stop() {
@@ -26,12 +26,21 @@ void stop() {
 }
 
 int main(int argc, char *argv[]) {
-    //-- INITIALISATION DE L'ENVIRONNEMENT, ESSAIM
-    int nbDrones = 1;
-    Environnement env = new Environnement();
-    Essaim essaim = new Essaim(env);
+    //-- INITIALISATION DE L'ENVIRONNEMENT, ESSAIM, AFFICHAGE
+    int nbDrones = 4;
+    float envTailleCote = 2.;
+    // Création des instances d'Essaim et Environnement
+    Environnement env = Environnement(envTailleCote);
+    env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
+    env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
+    Essaim essaim = Essaim(env, nbDrones);
+    // attribution de l'essaim  l'Environnement
+    env.associerEssaim(essaim);
+    // création de l'Affichage et lien à l'Environnement
+    Affichage aff = Affichage(env);
 
-    // INITIALISATIONS AFFICHAGE (SDL / OPENGL)
+    //-- INITIALISATIONS SDL / OPENGL
+
     SDL_Event event;
     const Uint32 time_per_frame = 1000/FPS;
     unsigned int width = LARGEUR_FENETRE;
@@ -53,7 +62,9 @@ int main(int argc, char *argv[]) {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_TEXTURE_2D);
 
-    droneText = loadTexture("image/DroneText.jpg");
+
+    GLuint droneText = loadTexture("image/DroneText.jpg");
+
     camera = new TrackBallCamera();
     camera->setScrollSensivity(0.1);
 
@@ -95,11 +106,11 @@ int main(int argc, char *argv[]) {
         last_time = current_time;
 
         // NOUVELLE FRAME ENVIONNEMENT
-
+        env++;
         // UPDATE VECTEURS ACC DRONES
 
         // FONCTION D'AFFICHAGE
-        DrawGL();
+        aff.draw(camera, droneText);
 
         // Gestion du temps en cas de besoin (retardement si boucle trop rapide)
         stop_time = SDL_GetTicks();
@@ -109,32 +120,4 @@ int main(int argc, char *argv[]) {
     }
 
     return 0;
-}
-
-
-void DrawGL() {
-    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-
-    glMatrixMode( GL_MODELVIEW );
-    glLoadIdentity( );
-
-    camera->look();
-    glClearColor(0.1,0.1,0.1,0.1);
-    drawAxis();
-    drawBox();
-
-    GLUquadric* params = gluNewQuadric();
-    gluQuadricTexture(params,GL_TRUE);
-    glBindTexture(GL_TEXTURE_2D,droneText);
-
-    glTranslated(0.5,0,0);
-    gluSphere(params,0.25,10,10);
-    glTranslated(-1,0,0);
-    gluSphere(params,0.25,10,10);
-    glTranslated(0.5,0,0);
-
-    gluDeleteQuadric(params);
-
-    glFlush();
-    SDL_GL_SwapBuffers();
 }

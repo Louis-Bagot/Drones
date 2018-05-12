@@ -3,6 +3,8 @@
 
 #include "../include/VecteurR3.h"
 #include "../include/Comportement.h"
+#include <cstddef>
+
 /**
 * Agent du réseau qui a pour principale fonctionnalité de pouvoir se rendre d'un point à un autre, en suivant liste d'objectifs. Il se déplace en se donnant un vecteur accélération, qui donnera sa vitesse et position en temps t+1 via la classe Environnement.
 * @author Louis, Quentin
@@ -37,19 +39,42 @@ class Drone {
     /** Constructeur de Drone pour tests : avec direction Capteurs */
     Drone(const std::vector<VecteurR3>&);
     /** Constructeur de Drone, initialisant les attributs spatio-temporels à 0. Nécessite un Comportement, une taille, un nombre de capteurs */
-    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&);
+    Drone(const Comportement&, std::vector<VecteurR3>);
     /** Constructeur de Drone, initialisant la position à celle demandée. */
-    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&, const VecteurR3&);
+    Drone(const Comportement&, std::vector<VecteurR3>, VecteurR3);
     /** Constructeur de Drone, initialisant la position et la vitesse à celles demandées. */
-    Drone(const float&, const Comportement&, const std::vector<VecteurR3>&, const VecteurR3&, const VecteurR3&);
+    Drone(const Comportement&, std::vector<VecteurR3>, VecteurR3, const VecteurR3&);
+    /** Constructeur effectif de Drone. Prend une position initiale, un rayon et un vecteur de Capteurs. */
+    Drone(float rayon, VecteurR3, std::vector<Capteur>);
+    /** Constructeur effectif de Drone. Prend une position et vitesse initiales, un rayon et un vecteur de Capteurs. */
+    Drone(float rayon, VecteurR3 pos, VecteurR3 vit, std::vector<Capteur>);
 
     /** Destructeur de Drone. */
     virtual ~Drone();
 
     /** Getter des objectifs du Drone */
-      std::vector<VecteurR3> getObjectifs() const;
-      /** Getter du vecteur de capteurs */
-      std::vector<Capteur> getvCapteurs() const;
+    std::vector<VecteurR3> getObjectifs() const;
+    /** Getter du vecteur de capteurs */
+    std::vector<Capteur> getvCapteurs() const;
+    /** Getter du vecteur position */
+    VecteurR3 getPosition() const;
+    /** Getter du vecteur vitesse */
+    VecteurR3 getVitesse() const;
+    /** Getter du vecteur acceleration */
+    VecteurR3 getAcceleration() const;
+    /** Setter du vecteur position */
+    void setPosition(const VecteurR3);
+    /** Setter du vecteur vitesse */
+    void setVitesse(const VecteurR3);
+    /** Setter du vecteur acceleration */
+    void setAcceleration(const VecteurR3);
+    /** Getter du rayon du Drone */
+    float getRayon() const;
+    /** affecte au bool 'fonctionne' la valeur false. */
+    void neFonctionnePlus();
+    /** Getter sur l'état du drone */
+    bool estFonctionnel() const;
+
     /**
     * Méthode qui ajoute une destination à la liste des objectifs.
     * @param obj le point de R3 à ajouter à la liste d'objectifs.
