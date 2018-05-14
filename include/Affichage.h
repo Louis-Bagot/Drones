@@ -28,9 +28,11 @@ class Affichage {
          * @see draw */
         void drawDrone(const Drone&,GLUquadric*) const;
         void drawObstacles();
+        void drawColis();
         /** Fonction d'affichage appelée dans la fonction principale 'draw',
         * gère l'affichage des Obstacles. @see draw */
         void drawObstacle();
+        
     public:
 
         /** Un constructeur utilisant un environnement pour s'y lier par pointeur.
