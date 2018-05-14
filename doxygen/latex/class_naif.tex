@@ -1,0 +1,52 @@
+\hypertarget{class_naif}{}\section{Naif Class Reference}
+\label{class_naif}\index{Naif@{Naif}}
+
+
+{\ttfamily \#include $<$Naif.\+h$>$}
+
+Inheritance diagram for Naif\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_naif}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}{aller\+Point}} (\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} pos\+Actuelle, \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} destination, std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$ v\+Capteurs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe héritant de \mbox{\hyperlink{class_comportement}{Comportement}}, c\textquotesingle{}est donc un algo possible de déplacement des drones. Il consiste à monter en altitude lorsque le drone rencontre un obstacle devant lui afin de passer au dessus.
+
+\begin{DoxyAuthor}{Author}
+Simon 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}\label{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}} 
+\index{Naif@{Naif}!aller\+Point@{aller\+Point}}
+\index{aller\+Point@{aller\+Point}!Naif@{Naif}}
+\subsubsection{\texorpdfstring{aller\+Point()}{allerPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::aller\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{pos\+Actuelle,  }\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{destination,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$}]{v\+Capteurs }\end{DoxyParamCaption})}
+
+Méthode fondamentale de \mbox{\hyperlink{class_comportement}{Comportement}} des Drones. A partir des positions du \mbox{\hyperlink{class_drone}{Drone}}, de son premier objectif et des capteurs, détermine le vecteur accélération pour la frame suivante. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+Actuelle} & la position du \mbox{\hyperlink{class_drone}{Drone}} au temps t. \\
+\hline
+{\em destination} & la position à atteindre. \\
+\hline
+{\em v\+Capteurs,le} & vecteur des Capteurs donnant l\textquotesingle{}information sensorielle du \mbox{\hyperlink{class_drone}{Drone}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le vecteur accélération 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Naif.\+h\item 
+Naif.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\hypertarget{class_comportement}{}\section{Comportement Class Reference}
+\label{class_comportement}\index{Comportement@{Comportement}}
+
+
+{\ttfamily \#include $<$Comportement.\+h$>$}
+
+Inheritance diagram for Comportement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_comportement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_comportement_a0c75007d7346cc14bb680eaa2981cb51}{Comportement}} ()
+\item 
+virtual \mbox{\hyperlink{class_comportement_acbe985635ed33cf141f380720c2e3f77}{$\sim$\+Comportement}} ()
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_comportement_a4404a711b71657ca68c0b199ecf023b8}{aller\+Point}} (\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} pos\+Actuelle, \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} destination, std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$ v\+Capteurs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface donnant la fonction fondamentale de comportement de chaque \mbox{\hyperlink{class_drone}{Drone}}\+: le choix d\textquotesingle{}un nouveau vecteur accélération. \begin{DoxyAuthor}{Author}
+Louis 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_comportement_a0c75007d7346cc14bb680eaa2981cb51}\label{class_comportement_a0c75007d7346cc14bb680eaa2981cb51}} 
+\index{Comportement@{Comportement}!Comportement@{Comportement}}
+\index{Comportement@{Comportement}!Comportement@{Comportement}}
+\subsubsection{\texorpdfstring{Comportement()}{Comportement()}}
+{\footnotesize\ttfamily Comportement\+::\+Comportement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructeur vide. \mbox{\Hypertarget{class_comportement_acbe985635ed33cf141f380720c2e3f77}\label{class_comportement_acbe985635ed33cf141f380720c2e3f77}} 
+\index{Comportement@{Comportement}!````~Comportement@{$\sim$\+Comportement}}
+\index{````~Comportement@{$\sim$\+Comportement}!Comportement@{Comportement}}
+\subsubsection{\texorpdfstring{$\sim$\+Comportement()}{~Comportement()}}
+{\footnotesize\ttfamily Comportement\+::$\sim$\+Comportement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructeur vide. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comportement_a4404a711b71657ca68c0b199ecf023b8}\label{class_comportement_a4404a711b71657ca68c0b199ecf023b8}} 
+\index{Comportement@{Comportement}!aller\+Point@{aller\+Point}}
+\index{aller\+Point@{aller\+Point}!Comportement@{Comportement}}
+\subsubsection{\texorpdfstring{aller\+Point()}{allerPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Comportement\+::aller\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{pos\+Actuelle,  }\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{destination,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$}]{v\+Capteurs }\end{DoxyParamCaption})}
+
+Méthode fondamentale de \mbox{\hyperlink{class_comportement}{Comportement}} des Drones. A partir des positions du \mbox{\hyperlink{class_drone}{Drone}} et de son premier objectif, détermine (la méthode importe peu ici) le vecteur accélération pour la frame suivante. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+Actuelle} & la position du \mbox{\hyperlink{class_drone}{Drone}} au temps t. \\
+\hline
+{\em destination} & la position à atteindre. \\
+\hline
+{\em v\+Capteurs,le} & vecteur des Capteurs donnant l\textquotesingle{}information sensorielle du \mbox{\hyperlink{class_drone}{Drone}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le vecteur accélération 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Comportement.\+h\item 
+Comportement.\+cpp\end{DoxyCompactItemize}

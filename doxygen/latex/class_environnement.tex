@@ -1,0 +1,61 @@
+\hypertarget{class_environnement}{}\section{Environnement Class Reference}
+\label{class_environnement}\index{Environnement@{Environnement}}
+
+
+{\ttfamily \#include $<$Environnement.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_environnement_abcab96a9b547b3a7bf6a12588edf7ad9}{Environnement}} (const float)
+\item 
+\mbox{\hyperlink{class_environnement_a63bc7f1c4687029018c3a1ac452fab4b}{Environnement}} (const std\+::vector$<$ \mbox{\hyperlink{class_obstacle}{Obstacle}} $>$ \&, const \mbox{\hyperlink{class_essaim}{Essaim}} \&, const float \&)
+\item 
+void \mbox{\hyperlink{class_environnement_a9f855742c6fb69335f0852a018d321f4}{operator++}} ()
+\item 
+\mbox{\Hypertarget{class_environnement_acaf11f04594225ef0d76164568855633}\label{class_environnement_acaf11f04594225ef0d76164568855633}} 
+void {\bfseries ajouter\+Obstacle} (std\+::vector$<$ \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} $>$ \&position\+Obstacle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe contenant les éléments de l\textquotesingle{}environnement et leurs positions (i.\+e \mbox{\hyperlink{class_essaim}{Essaim}}, Obstacles, colis) Gère la détection de collision et le calcul de la position des drones. C\textquotesingle{}est le moteur physique du projet.
+
+\begin{DoxyAuthor}{Authors}
+Timothé, Simon 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_environnement_abcab96a9b547b3a7bf6a12588edf7ad9}\label{class_environnement_abcab96a9b547b3a7bf6a12588edf7ad9}} 
+\index{Environnement@{Environnement}!Environnement@{Environnement}}
+\index{Environnement@{Environnement}!Environnement@{Environnement}}
+\subsubsection{\texorpdfstring{Environnement()}{Environnement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Environnement\+::\+Environnement (\begin{DoxyParamCaption}\item[{const float}]{\+\_\+g }\end{DoxyParamCaption})}
+
+Constructeur vide
+
+\begin{DoxyAuthor}{Authors}
+Timothé, Simon 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_environnement_a63bc7f1c4687029018c3a1ac452fab4b}\label{class_environnement_a63bc7f1c4687029018c3a1ac452fab4b}} 
+\index{Environnement@{Environnement}!Environnement@{Environnement}}
+\index{Environnement@{Environnement}!Environnement@{Environnement}}
+\subsubsection{\texorpdfstring{Environnement()}{Environnement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Environnement\+::\+Environnement (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_obstacle}{Obstacle}} $>$ \&}]{,  }\item[{const \mbox{\hyperlink{class_essaim}{Essaim}} \&}]{,  }\item[{const float \&}]{ }\end{DoxyParamCaption})}
+
+Constructeur principal de l\textquotesingle{}\mbox{\hyperlink{class_environnement}{Environnement}} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_environnement_a9f855742c6fb69335f0852a018d321f4}\label{class_environnement_a9f855742c6fb69335f0852a018d321f4}} 
+\index{Environnement@{Environnement}!operator++@{operator++}}
+\index{operator++@{operator++}!Environnement@{Environnement}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily void Environnement\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Surchage de l\textquotesingle{}opérateur ++, afin de passer au temps+1 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Environnement.\+h\item 
+Environnement.\+cpp\end{DoxyCompactItemize}

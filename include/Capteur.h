@@ -1,7 +1,10 @@
 #ifndef CAPTEUR_H
 #define CAPTEUR_H
 
+
 #include "../include/VecteurR3.h"
+
+
 class Environnement;
 /**
 * @authors Timothé
@@ -33,6 +36,7 @@ class Capteur {
       float distanceDectectee;
       /** Direction dans laquelle le Capteur regarde, relativement au Drone. */
       VecteurR3 direction;
+
       /** Environnement dans lequel se trouve le Drone et donc son Capteur. Permet à ce dernier de se donner une valeur à chaque instant. */
       Environnement *env;
       /** Position du Drone associé au Capteur, permettant le calcul de distanceDectectee

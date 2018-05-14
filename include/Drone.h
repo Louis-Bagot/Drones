@@ -4,6 +4,8 @@
 #include "../include/VecteurR3.h"
 #include "../include/Comportement.h"
 #include <cstddef>
+#include<vector>
+#include<queue>
 
 /**
 * Agent du réseau qui a pour principale fonctionnalité de pouvoir se rendre d'un point à un autre, en suivant liste d'objectifs. Il se déplace en se donnant un vecteur accélération, qui donnera sa vitesse et position en temps t+1 via la classe Environnement.
@@ -28,16 +30,18 @@ class Drone {
     /** Ensemble des Capteurs du Drones, répartis autour de ce dernier. Cela permet de discrétiser son voisinage et les informations reçues. */
     std::vector<Capteur> vCapteurs;
     /** Liste des objectifs du Drone - c'est-à-dire liste de colis à livrer ou de position de formation à laquelle aller. */
-    std::vector<VecteurR3> objectifs;
+    std::queue<VecteurR3> vObjectifs;
+    /** Fonction qui renvoie vrai si le drone a atteint le premier de ses objectifs */
+    bool objectifDone();
+    /** Setter de l'accélération */
+    void setAcceleration(const VecteurR3& acc);
 
   public:
 
     /** Constructeur de Drone pour tests */
-    Drone();
+    Drone(const std::vector<Capteur>&);
     /** Constructeur avec simplement la position initiale */
-    Drone(const VecteurR3&);
-    /** Constructeur de Drone pour tests : avec direction Capteurs */
-    Drone(const std::vector<VecteurR3>&);
+    Drone(const std::vector<Capteur>&,const VecteurR3);
     /** Constructeur de Drone, initialisant les attributs spatio-temporels à 0. Nécessite un Comportement, une taille, un nombre de capteurs */
     Drone(const Comportement&, std::vector<VecteurR3>);
     /** Constructeur de Drone, initialisant la position à celle demandée. */
@@ -49,6 +53,7 @@ class Drone {
     /** Constructeur effectif de Drone. Prend une position et vitesse initiales, un rayon et un vecteur de Capteurs. */
     Drone(float rayon, VecteurR3 pos, VecteurR3 vit, std::vector<Capteur>);
 
+    void operator++();
     /** Destructeur de Drone. */
     virtual ~Drone();
 
@@ -74,7 +79,6 @@ class Drone {
     void neFonctionnePlus();
     /** Getter sur l'état du drone */
     bool estFonctionnel() const;
-
     /**
     * Méthode qui ajoute une destination à la liste des objectifs.
     * @param obj le point de R3 à ajouter à la liste d'objectifs.
