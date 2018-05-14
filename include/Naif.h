@@ -1,6 +1,8 @@
 #ifndef NAIF_H
 #define NAIF_H
 
+#include <vector>
+#include "include/VecteurR3.h"
 #include "../include/Comportement.h"
 
 /**
@@ -20,7 +22,21 @@ class Naif : public Comportement {
         * @param vCapteurs, le vecteur des Capteurs donnant l'information sensorielle du Drone.
         * @return le vecteur accélération
         */
-        VecteurR3 allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector<Capteur> vCapteurs);
+        VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, std::vector<Capteur> vCapteurs)const;
+    
+        VecteurR3 setTrajectory(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
+    
+        bool atteintFinal(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
+    
+        bool atteint(const VecteurR3 &posActuelle,const VecteurR3 &destination) const;
+    
+        bool presenceObstacles(std::vector<Capteur> vCapteurs) const;
+    
+        VecteurR3 surmonter(const VecteurR3 &posActuelle) const;
+    
+        VecteurR3 gererHauteur(const VecteurR3 &destination) const;
+    
+    
     protected:
 
     private:
