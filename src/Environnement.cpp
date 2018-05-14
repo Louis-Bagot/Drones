@@ -49,7 +49,8 @@ void Environnement::ajouterObstacle(const Obstacle& obs) {
 
 void Environnement::calculerPos(Drone& drone) {
   // f(t+dt) = f(t) + f'(t)*dt
-  // TODO metter l'acceleration à 0 dans le Drone quand il n'est pas fonctionnel
+  // --TODO-- metter l'acceleration à 0 dans le Drone quand il n'est pas fonctionnel
+  // UPDATE fait dans Drone.cpp
   drone.setVitesse(drone.getVitesse()+(drone.getAcceleration()+g)*dt);
   drone.setPosition(drone.getPosition()+drone.getVitesse()*dt);
 }
@@ -132,7 +133,7 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
       (posy>miny-rayon) && (posy<maxy+rayon) &&
       (posz>minz-rayon) && (posz<maxz+rayon)) {
     drone.neFonctionnePlus();
-    
+
   }
 }
 

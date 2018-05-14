@@ -77,7 +77,15 @@ bool Drone::objectifDone()
 void Drone::operator++()
 {
     objectifDone();
-    setAcceleration(comportement.allerPoint());
+    if(estFonctionnel())
+    {
+        setAcceleration(comportement.allerPoint());
+    }
+    else //Sinon accélération nulle, il ne fonctionne plus...
+    {
+        setAcceleration(new VecteurR3(0,0,0));
+    }
+
 }
 std::vector<Capteur> Drone::getvCapteurs() const
 {

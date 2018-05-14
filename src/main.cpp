@@ -108,7 +108,9 @@ int main(int argc, char *argv[]) {
         // NOUVELLE FRAME ENVIONNEMENT
         env++;
         // UPDATE VECTEURS ACC DRONES
-
+        for (auto& pDrone : essaim.getVDrones()) {
+            pDrone++;
+        }
         // FONCTION D'AFFICHAGE
         aff.draw(camera, droneText);
 
