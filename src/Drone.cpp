@@ -43,6 +43,12 @@ bool Drone::atteintObjectif() {
 }
 
 void Drone::operator++() {
+    //Update capteurs
+    for(const auto &capteur : vCapteurs){
+        capteur.updateDistanceDetectee();
+    }
+
+    //Deplacement
     atteintObjectif();
     if (fonctionne) {
       if (aObjectif()) {

@@ -65,9 +65,10 @@ vector<VecteurR3> Obstacle::getFaceXArriere() const {
 vector<VecteurR3> Obstacle::getFaceZHaut() const {
   std::vector<VecteurR3> vSommetsFace;
   vSommetsFace.push_back(vSommets[7]);
+  vSommetsFace.push_back(vSommets[4]);
   vSommetsFace.push_back(vSommets[6]);
   vSommetsFace.push_back(vSommets[5]);
-  vSommetsFace.push_back(vSommets[4]);
+
   return vSommetsFace;
 }
 vector<VecteurR3> Obstacle::getFaceZBasse() const {
