@@ -2,6 +2,7 @@
 #include "../include/VecteurR3.h"
 #include "../include/Naif.h"
 #include "../include/Capteur.h"
+#include<cmath>
 
 Naif::Naif() {
     //ctor
@@ -39,7 +40,7 @@ VecteurR3 Naif::surmonter(const VecteurR3 &posActuelle) const {
 }
 
 // Méthode qui fait monter le drone s'il est en dessous de l'objectif, descendre s'il est au dessus
-VecteurR3 Naif::gererHauteur(const VecteurR3 &destination) const {
+VecteurR3 Naif::gererHauteur(const VecteurR3 &posActuelle, const VecteurR3 &destination) const {
     return VecteurR3(posActuelle.getX(), posActuelle.getY(), destination.getZ()-posActuelle.getZ());
 }
 
@@ -50,7 +51,7 @@ VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destina
         return surmonter(posActuelle);
     }
     else if (atteint(posActuelle, destination, 0.5)) {
-        return gererHauteur(destination);
+        return gererHauteur(posActuelle, destination);
     }
     else return setTrajectory(posActuelle,destination);
 }

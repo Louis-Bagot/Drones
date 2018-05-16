@@ -1,4 +1,5 @@
 #include "../include/Essaim.h"
+#include<limits>
 #define inf std::numeric_limits<float>::max()
 
 Essaim::Essaim() {
@@ -38,21 +39,21 @@ vector<Drone*> Essaim::getVDrones() const {
   return vDrones;
 }
 void Essaim::ajouterDrone(Drone& drone){
-    vDrones.push_back(drone);
+    vDrones.push_back(&drone);
 }
 void Essaim::retirerColis(VecteurR3 retrait, VecteurR3 depot){
     float minDist = inf;
-    Drone *pDroneMin = essaim.getVDrones()[0];
-    for (auto& pDrone : essaim.getVDrones()) {
+    Drone *pDroneMin = getVDrones()[0];
+    for (auto& pDrone : getVDrones()) {
         if(pDrone->aObjectif()){
-            float distToObj = (pDrone->getPosition()-retrait).norm22();
+            float distToObj = (pDrone->getPosition()-retrait).norme22();
             if(distToObj < minDist) {
                 minDist = distToObj;
                 pDroneMin = pDrone;
             }
-        } 
+        }
     }
-    pDroneMin.livrerColis(retrait, depot);
+    pDroneMin->livrerColis(retrait, depot);
 }
 Essaim::~Essaim()
 

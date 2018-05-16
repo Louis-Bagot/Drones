@@ -20,7 +20,7 @@ class Drone {
     /** Indique si le Drone ne s'est pas pris un Obstacle (fixe) ou un autre Drone. */
     bool fonctionne;
     /** Classe gestionnaire du vecteur accélération, en se basant sur les objectifs et les Capteurs du Drone. */
-    Comportement comportement;
+    Comportement *comportement;
     /** Position du Drone dans l'espace. */
     VecteurR3 position;
     /** Vitesse du Drone, calculée à partir de l'accélération et de la vitesse en t-1. */
@@ -81,6 +81,10 @@ class Drone {
     /** Teste si le drone a atteint son objectif.
      *Le cas échéant, l'objectif est supprimé de la liste. */
     bool atteintObjectif();
+    /**
+    * getter porteColis
+    */
+    bool porteUnColis() const;
     /**
     * Méthode qui ajoute une destination à la liste des objectifs.
     * @param obj le point de R3 à ajouter à la liste d'objectifs.

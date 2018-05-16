@@ -36,7 +36,7 @@ class Capteur {
       /** Distance maximale à laquelle peut "voir" un Capteur */
       float portee;
       /** Distance actuellement détectée. <= portee. */
-      float distanceDectectee;
+      float distanceDetectee;
       /** Direction dans laquelle le Capteur regarde, relativement au Drone. */
       VecteurR3 direction;
 
@@ -45,7 +45,7 @@ class Capteur {
       /** Position du Drone associé au Capteur, permettant le calcul de distanceDectectee
       */
       VecteurR3 positionDrone;
-      /** Sera initiliasité lors de l'attribution du drone */
+      /** Sera initialisé lors de l'attribution du drone */
       float tailleDrone;
 };
 

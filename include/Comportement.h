@@ -21,7 +21,7 @@ class Comportement {
         * @param vCapteurs, le vecteur des Capteurs donnant l'information sensorielle du Drone.
         * @return le vecteur accélération
         */
-        VecteurR3 allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector<Capteur> vCapteurs);
+        virtual VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, const std::vector<Capteur> vCapteurs) =0;
     protected:
 
     private:

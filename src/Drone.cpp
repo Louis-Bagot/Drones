@@ -31,6 +31,7 @@ float Drone::getRayon() const {return rayon;}
 void Drone::neFonctionnePlus() {fonctionne = false;}
 bool Drone::estFonctionnel() const {return fonctionne;}
 bool Drone::aObjectif() const {return vObjectifs.size()>0;}
+bool Drone::porteUnColis() const {return porteColis;}
 
 bool Drone::atteintObjectif() {
   bool ret = false;
@@ -42,10 +43,10 @@ bool Drone::atteintObjectif() {
 }
 
 void Drone::operator++() {
-    objectifDone();
+    atteintObjectif();
     if (fonctionne) {
       if (aObjectif()) {
-        acceleration = comportement.allerPoint(position,getPremierObjectif(),vCapteurs);
+        acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs);
       } else acceleration = gravite*(-1);
     } else //Sinon accélération nulle, il ne fonctionne plus...
       acceleration = VecteurR3();

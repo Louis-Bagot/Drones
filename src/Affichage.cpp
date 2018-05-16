@@ -1,6 +1,6 @@
 #include "../include/Affichage.h"
 
-Affichage::Affichage(const Environnement& _env) {
+Affichage::Affichage(Environnement *_env) {
   env = _env; // Copie par référence : ils pointent maintenant sur le même objet
 }
 
@@ -17,7 +17,7 @@ void Affichage::draw(TrackBallCamera *camera, GLuint droneText) {
   camera->look();
   glClearColor(0.1,0.1,0.1,0.1);
   drawAxis();
-  drawBox(env.getCote());
+  drawBox(env->getCote());
 
   // Affichage des Obstacles
   drawObstacles();
@@ -27,7 +27,7 @@ void Affichage::draw(TrackBallCamera *camera, GLuint droneText) {
   gluQuadricTexture(params,GL_TRUE);
   glBindTexture(GL_TEXTURE_2D,droneText);
 
-  for (const auto & pDrone : env.getEssaimDrones())
+  for (const auto & pDrone : env->getEssaimDrones())
     drawDrone(*pDrone,params);
 
   gluDeleteQuadric(params);
@@ -42,7 +42,7 @@ void Affichage::draw(TrackBallCamera *camera, GLuint droneText) {
 
 void Affichage::drawObstacles() {
   glBegin(GL_QUADS);
-    for (auto& obs : env.getVObstacles()) {
+    for (auto& obs : env->getVObstacles()) {
       int color = 100;
       int colorInc = 20;
       glColor3ub(color,color,color); //face grise claire
@@ -87,7 +87,7 @@ void Affichage::drawObstacles() {
 void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
   if (drone.estFonctionnel()) {
     glColor3ub(255,255,255);
-  }else if(drone.porteColis()) {
+  }else if(drone.porteUnColis()) {
     glColor3ub(0,255,0);
   }else{
     glColor3ub(255,0,0);

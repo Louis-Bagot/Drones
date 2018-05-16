@@ -34,17 +34,17 @@ int main(int argc, char *argv[]) {
     env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
     Essaim essaim = Essaim(env, nbDrones);
-    
+
     //Test retrait colis
-    VecteurR3 retrait = new VecteurR3();
-    VecteurR3 depot = new VecteurR3(0.5,0.5,0.5);
+    VecteurR3 retrait = VecteurR3();
+    VecteurR3 depot = VecteurR3(0.5,0.5,0.5);
     env.ajouterColis(retrait);
     essaim.retirerColis(retrait, depot);
-    
+
     // attribution de l'essaim  l'Environnement
     env.associerEssaim(&essaim);
     // création de l'Affichage et lien à l'Environnement
-    Affichage aff = Affichage(env);
+    Affichage aff = Affichage(&env);
 
     //-- INITIALISATIONS SDL / OPENGL
 
@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
         env++;
         // UPDATE VECTEURS ACC DRONES
         for (auto& pDrone : essaim.getVDrones()) {
-            (*pDrone)++;
+            pDrone++;
         }
         // FONCTION D'AFFICHAGE
         aff.draw(camera, droneText);
