@@ -80,6 +80,11 @@ vector<VecteurR3> Obstacle::getFaceZBasse() const {
   return vSommetsFace;
 }
 
+VecteurR3 Obstacle::getCentre() const {
+  VecteurR3 Centre = VecteurR3(init.getX()+taillex/2.,init.getY()+tailley/2.,init.getZ()+taillez/2.);
+  return Centre;
+}
+
 VecteurR3 Obstacle::getInit() const {return init;}
 float Obstacle::getTailleX() const {return taillex;}
 float Obstacle::getTailleY() const {return tailley;}

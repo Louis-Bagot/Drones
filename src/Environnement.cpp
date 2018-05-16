@@ -4,9 +4,13 @@
 #include "../include/Essaim.h"
 #include <iostream>
 #include<vector>
+#include <cmath>
+#define MAX(a,b) (((a)>(b))?(a):(b))
+#define MAX3(a,b,c) (((MAX(a,b))>(c))?(MAX(a,b)):(c))
+#define sgn(x) ((x >= 0) ? 1 : -1)
 
 /**
-* @authors Timothé, Simon
+* @authors Timothé, Simon, Théau
 */
 Environnement::Environnement(const float tailleCote) {
   cote = tailleCote;
@@ -122,11 +126,38 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
   float maxy = miny + obs.getTailleY();
   float maxz = minz + obs.getTailleZ();
   float rayon = drone.getRayon();
+
+  VecteurR3 posDrone = drone.getPosition();
+  VecteurR3 vecfinal = VecteurR3(0,0,0);
+  VecteurR3 diffPos = obs.getCentre()-posDrone;
+  VecteurR3 Centre = obs.getCentre();
+
+
   // Vérification naïve : considérer la phère comme un cube
   if ((posx>minx-rayon) && (posx<maxx+rayon) &&
       (posy>miny-rayon) && (posy<maxy+rayon) &&
       (posz>minz-rayon) && (posz<maxz+rayon)) {
+
+
+  if ((fabs(diffPos[0]<obs.getTailleX()/2.)) && (fabs(diffPos[1]<obs.getTailleY()/2.)))
+  {
+  vecfinal = VecteurR3(0,0,sgn(posz-Centre[2]));
+  drone.setPosition(VecteurR3(posx,posy,Centre.getZ()+obs.getTailleZ()/2.+sgn(posz-Centre[2])*drone.getRayon()));
+  } else if ((fabs(diffPos[1]<obs.getTailleY()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
+  {
+  vecfinal = VecteurR3(sgn(posx-Centre[0]),0,0);
+  drone.setPosition(VecteurR3(Centre.getX()+obs.getTailleX()/2.+sgn(posx-Centre[0])*drone.getRayon(),posy,posz));
+  } else if ((fabs(diffPos[0]<obs.getTailleX()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
+  {
+  vecfinal = VecteurR3(0,sgn(posy-Centre[1]),0);
+  drone.setPosition(VecteurR3(posx,Centre.getY()+obs.getTailleY()/2.+sgn(posy-Centre[1])*drone.getRayon(),posz));
+  }
+
     drone.neFonctionnePlus();
+<<<<<<< HEAD
+=======
+    drone.setVitesse(vecfinal.reflexionPlanOrtho(drone.getVitesse())*absorb);
+>>>>>>> AffEnv
 
   }
 }
