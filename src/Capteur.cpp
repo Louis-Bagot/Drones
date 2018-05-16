@@ -5,7 +5,7 @@ Capteur::Capteur(const float &p, const VecteurR3 &dir, Environnement *environnem
   portee = p;
   env = environnement;
   direction = dir;
-  distanceDetectee = updateDistanceDetectee();
+  updateDistanceDetectee();
 }
 
 Capteur::~Capteur() {}
@@ -18,12 +18,14 @@ bool Capteur::detecteQQch() const {
   return distanceDetectee<portee;
 }
 
-float Capteur::updateDistanceDetectee() {
+void Capteur::updateDistanceDetectee() {
+    distanceDetectee = portee;
   // TODO
   //On itére sur les obstacles
-
+    /*
     for (auto& obs : env->getVObstacles()){
 
+        std::cout << "      dans for obs" << std::endl;
 
         VecteurR3 centreObs = obs.getCentre();
         vector<VecteurR3> face; //C'est la face de l'obstacle vers lequel le capteur pointe
@@ -51,7 +53,7 @@ float Capteur::updateDistanceDetectee() {
 
         //On calcule les sommets de la face
         float xmin = min(face[0].getX(), face[2].getX());
-        float xmax = min(face[0].getX(), face[2].getX());
+        float xmax = max(face[0].getX(), face[2].getX());
         float ymin = min(face[0].getY(), face[2].getY());
         float ymax = max(face[0].getY(), face[2].getY());
         float zmin = min(face[0].getZ(), face[2].getZ());
@@ -88,7 +90,7 @@ float Capteur::updateDistanceDetectee() {
             }
         }
     }
+    std::cout << "  fin updateDistDet" << std::endl;
+*/
     distanceDetectee = min(portee, distanceDetectee);
-    return distanceDetectee;
-
 }

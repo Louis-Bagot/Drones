@@ -28,21 +28,21 @@ void stop() {
 
 int main(int argc, char *argv[]) {
     //-- INITIALISATION DE L'ENVIRONNEMENT, ESSAIM, AFFICHAGE
-    int nbDrones = 4;
+    int nbDrones = 1;
     float envTailleCote = 2.;
     // Création des instances d'Essaim et Environnement
+
     Environnement env = Environnement(envTailleCote);
+
     //env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
     Essaim essaim = Essaim(env, nbDrones);
-
     //Test retrait colis
     VecteurR3 retrait = VecteurR3();
     VecteurR3 depot = VecteurR3(0.5,0.5,0.5);
     env.ajouterColis(retrait);
     essaim.retirerColis(retrait, depot);
-
     // attribution de l'essaim  l'Environnement
     env.associerEssaim(&essaim);
     // création de l'Affichage et lien à l'Environnement
@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
         env++;
         // UPDATE VECTEURS ACC DRONES
         for (auto& pDrone : essaim.getVDrones()) {
-            pDrone++;
+            (*pDrone)++;
         }
         // FONCTION D'AFFICHAGE
         aff.draw(camera, droneText);

@@ -115,7 +115,6 @@ void Environnement::collisionBords(Drone& drone) {
 }
 
 void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
-  std::cout << "in collisionObstacle" << '\n';
   float posx = drone.getPosition().getX();
   float posy = drone.getPosition().getY();
   float posz = drone.getPosition().getZ();

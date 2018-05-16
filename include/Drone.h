@@ -49,7 +49,7 @@ class Drone {
     /** Constructeur effectif de Drone. Prend une position et (éventuellement) vitesse initiales, un rayon et un vecteur de Capteurs. */
     Drone(const float rayon, VecteurR3 pos, std::vector<Capteur> vCap, const VecteurR3 _gravite,VecteurR3 vit = VecteurR3());
     /**  */
-    void operator++();
+    Drone operator++(int);
     /** Destructeur de Drone. */
     virtual ~Drone();
 

@@ -30,7 +30,7 @@ class Capteur {
          * Calcul la distance entre le drone et les obstacles alentours. La fonction sera appelée par drone,
         de manière itérative.
          */
-        float updateDistanceDetectee();
+        void updateDistanceDetectee();
         /** Getter de la direction du capteur */
         VecteurR3 getDirection() const;
         /** Renvoie un boolean donnant si le capteur detecte un obstacle (distDetectee<portee) */

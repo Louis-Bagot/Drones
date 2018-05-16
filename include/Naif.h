@@ -22,7 +22,7 @@ class Naif : public Comportement {
         * @param vCapteurs, le vecteur des Capteurs donnant l'information sensorielle du Drone.
         * @return le vecteur acc�l�ration
         */
-        virtual VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, const std::vector<Capteur> vCapteurs) override;
+        virtual VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, const std::vector<Capteur> vCapteurs, const VecteurR3 vitesse) override;
 
         VecteurR3 setTrajectory(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
 
@@ -34,7 +34,7 @@ class Naif : public Comportement {
 
         VecteurR3 surmonter(const VecteurR3 &posActuelle) const;
 
-        VecteurR3 gererHauteur(const VecteurR3 &posActuelle,const VecteurR3 &destination) const;
+        VecteurR3 gererHauteur(const VecteurR3 &posActuelle,const VecteurR3 &destination, const VecteurR3 vitesse) const;
 
 
     protected:

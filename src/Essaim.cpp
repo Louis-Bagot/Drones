@@ -10,7 +10,8 @@ Essaim::Essaim(Environnement env, int nbDrones) {
   float rayonDrone = env.getCote()/40. ;
   if (nbDrones <= 7) { // arbitraire pour début de projet
     VecteurR3 posDrone = VecteurR3(-0.9,-0.9,0.5);
-    VecteurR3 vitDrone = VecteurR3(2,0.5,1);
+    //VecteurR3 vitDrone = VecteurR3(2,0.5,1);
+    VecteurR3 vitDrone = VecteurR3();
     int portee = rayonDrone*5;
     vector<Capteur> vCapteur;
     VecteurR3 dirX = VecteurR3(1,0,0);
@@ -28,12 +29,19 @@ Essaim::Essaim(Environnement env, int nbDrones) {
       vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite(),vitDrone));
       posDrone+=incrementPos;
       vitDrone-=incrementVit;
-      std::cout << "drone créé en " << posDrone.getX() <<", "
-                                    << posDrone.getY() <<", "
-                                    << posDrone.getZ() << '\n';
+
+
     }
+    std::cout << "Essaim : apres construction drones" << std::endl;
+
   } else throw std::invalid_argument("Trop de drones ! <=5 pour l'instant please");
 }
+
+Essaim::~Essaim() {
+    for (auto& pDrone : vDrones)
+        delete pDrone;
+}
+
 
 vector<Drone*> Essaim::getVDrones() const {
   return vDrones;
@@ -54,9 +62,5 @@ void Essaim::retirerColis(VecteurR3 retrait, VecteurR3 depot){
         }
     }
     pDroneMin->livrerColis(retrait, depot);
-}
-Essaim::~Essaim()
-
-{
-    //dtor
+    std::cout << pDroneMin->getPremierObjectif()  << std::endl;
 }

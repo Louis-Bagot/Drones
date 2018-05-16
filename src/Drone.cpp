@@ -36,28 +36,33 @@ bool Drone::porteUnColis() const {return porteColis;}
 
 bool Drone::atteintObjectif() {
   bool ret = false;
-  if(position.egal(getPremierObjectif()), rayon*0.1) {
+  if(position.egal(getPremierObjectif(), rayon*0.1)) {
     ret = true;
     vObjectifs.pop();
+    std::cout << "    a attteint obj ............................" << std::endl;
   }
+  std::cout << "    dans att obj" << std::endl;
   return ret;
 }
 
-void Drone::operator++() {
+Drone Drone::operator++(int a) {
     //Update capteurs
     for(auto &capteur : vCapteurs){
         capteur.updateDistanceDetectee();
     }
 
     //Deplacement
-    atteintObjectif();
     if (fonctionne) {
+      atteintObjectif();
       if (aObjectif()) {
-        acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs);
+        acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
       } else acceleration = VecteurR3();
+      //std::cout << acceleration << std::endl;
       acceleration+=gravite*(-1); // il contre la gravité par défaut
-    } else //Sinon accélération nulle, il ne fonctionne plus...
+    } else {//Sinon accélération nulle, il ne fonctionne plus...
       acceleration = VecteurR3();
+    }
+    return *this;
 }
 
 void Drone::ajouterObjectif(const VecteurR3 &obj){
