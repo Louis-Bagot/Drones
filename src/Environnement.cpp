@@ -165,6 +165,11 @@ void Environnement::associerEssaim(Essaim *e) {
   essaim = e;
 }
 
+
+std::vector<VecteurR3> Environnement::getVColis() const{
+ return vColis;
+}
+
 std::vector<Drone*> Environnement::getEssaimDrones() const {
   return essaim->getVDrones();
 }

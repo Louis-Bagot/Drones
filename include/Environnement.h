@@ -62,6 +62,7 @@ class Environnement {
 
         float getCote() const;
         VecteurR3 getGravite() const;
+        std::vector<VecteurR3> getVColis() const;
         VecteurR3 getOrigineEnv() const;
         std::vector<Obstacle> getVObstacles() const;
 
