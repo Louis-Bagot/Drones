@@ -10,6 +10,7 @@
 #include "../include/sdlglutils.h"
 #include "../include/trackballcamera.h"
 #include "../include/Environnement.h"
+#include "../include/VecteurR3.h"
 
 
 /**
@@ -29,7 +30,7 @@ class Affichage {
          * @see draw */
         void drawDrone(const Drone&,GLUquadric*) const;
         void drawObstacles();
-        void drawColis() const;
+        void drawColis(VecteurR3,GLUquadric*) const;
         /** Fonction d'affichage appelée dans la fonction principale 'draw',
         * gère l'affichage des Obstacles. @see draw */
         void drawObstacle();

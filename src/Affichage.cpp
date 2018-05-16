@@ -21,14 +21,17 @@ void Affichage::draw(TrackBallCamera *camera, GLuint droneText) {
 
   // Affichage des Obstacles
   drawObstacles();
-
   // Affichage des Drones (préparation spheres: quadratic)
   GLUquadric* params = gluNewQuadric();
+  GLUquadric* params2 = gluNewQuadric();
   gluQuadricTexture(params,GL_TRUE);
   glBindTexture(GL_TEXTURE_2D,droneText);
 
   for (const auto & pDrone : env->getEssaimDrones())
     drawDrone(*pDrone,params);
+
+  for (const auto & pVecteurR3 : env->getVColis())
+    drawColis(pVecteurR3,params2);
 
   gluDeleteQuadric(params);
 
@@ -85,6 +88,9 @@ void Affichage::drawObstacles() {
 }
 
 void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
+
+  double scale = drone.getRayon()*6;
+
   if (drone.estFonctionnel()) {
     glColor3ub(255,255,255);
   }else if(drone.porteUnColis()) {
@@ -95,8 +101,30 @@ void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
   VecteurR3 pos = drone.getPosition();
   glTranslated(pos.getX(),pos.getY(),pos.getZ());
   gluSphere(params,drone.getRayon(),10,10);
+
+
+    glBegin(GL_LINES);
+        for (auto & capteur : drone.getVCapteurs()) {
+            std::cout << "coucou capteur" << std::endl;
+            if (capteur.detecteQQch()){glColor3ub(255,0,0);}
+            else{glColor3ub(255,255,255);}
+            glVertex3f(0,0,0);
+            double scale =drone.getRayon()*6+capteur.getPortee();
+            glVertex3f(scale*capteur.getDirection()[0],scale*capteur.getDirection()[1],scale*capteur.getDirection()[2]);
+        }
+
+    glEnd();
+    glPopMatrix();
+    glPopAttrib();
+
+
   glTranslated(pos.getX()*-1,pos.getY()*-1,pos.getZ()*-1);
+
+
 }
-void Affichage::drawColis() const {
-    //Louis .. pliz..
+void Affichage::drawColis(VecteurR3 posColis, GLUquadric* params) const {
+    glColor3ub(0,255,0);
+  glTranslated(posColis.getX(),posColis.getY(),posColis.getZ());
+  gluSphere(params,0.03,10,10);
+  glTranslated(posColis.getX()*-1,posColis.getY()*-1,posColis.getZ()*-1);
 }
