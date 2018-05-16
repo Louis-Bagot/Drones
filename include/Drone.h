@@ -3,6 +3,7 @@
 
 #include "../include/VecteurR3.h"
 #include "../include/Comportement.h"
+#include "../include/Naif.h"
 #include <cstddef>
 #include<vector>
 #include<queue>

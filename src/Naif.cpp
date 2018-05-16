@@ -32,11 +32,12 @@ bool Naif::presenceObstacles(const VecteurR3 posActuelle, const VecteurR3 destin
         res = true;
         break;
       }
+    return res;
 }
 
 // Retourne un vecteur direction qui fait seulement monter le drone(+1)
 VecteurR3 Naif::surmonter(const VecteurR3 &posActuelle) const {
-    return VecteurR3(posActuelle.getX(), posActuelle.getY(), posActuelle.getZ()+1);
+    return VecteurR3(0,0,1);
 }
 
 // Méthode qui fait monter le drone s'il est en dessous de l'objectif, descendre s'il est au dessus
@@ -46,11 +47,11 @@ VecteurR3 Naif::gererHauteur(const VecteurR3 &posActuelle, const VecteurR3 &dest
 
 
 // Retourne le vecteur accélération en fonction du cas dans lequel on se trouve
-VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination,const std::vector<Capteur> vCapteurs ) const {
+VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination,const std::vector<Capteur> vCapteurs ) {
     if(presenceObstacles(posActuelle,destination,vCapteurs)) {
         return surmonter(posActuelle);
     }
-    else if (atteint(posActuelle, destination, 0.5)) {
+    else if (atteint(posActuelle, destination, 0.005)) {
         return gererHauteur(posActuelle, destination);
     }
     else return setTrajectory(posActuelle,destination);

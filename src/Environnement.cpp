@@ -154,11 +154,7 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
   }
 
     drone.neFonctionnePlus();
-<<<<<<< HEAD
-=======
     drone.setVitesse(vecfinal.reflexionPlanOrtho(drone.getVitesse())*absorb);
->>>>>>> AffEnv
-
   }
 }
 

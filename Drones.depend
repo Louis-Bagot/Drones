@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1526464529 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Affichage.cpp
+1526477035 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Affichage.cpp
 	"../include/Affichage.h"
 
-1526464534 /home/sd/Documents/GM4/C++/Drones/Drones/include/Affichage.h
+1526477035 /home/sd/Documents/GM4/C++/Drones/Drones/include/Affichage.h
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -13,7 +13,7 @@
 	"../include/trackballcamera.h"
 	"../include/Environnement.h"
 
-1526467242 /home/sd/Documents/GM4/C++/Drones/Drones/include/Environnement.h
+1526477035 /home/sd/Documents/GM4/C++/Drones/Drones/include/Environnement.h
 	<vector>
 	<iostream>
 	"../include/Essaim.h"
@@ -21,7 +21,7 @@
 	"../include/Drone.h"
 	"../include/VecteurR3.h"
 
-1526466415 /home/sd/Documents/GM4/C++/Drones/Drones/include/Essaim.h
+1526477035 /home/sd/Documents/GM4/C++/Drones/Drones/include/Essaim.h
 	<vector>
 	<iostream>
 	<stdexcept>
@@ -39,23 +39,24 @@
 	<vector>
 	"../include/VecteurR3.h"
 
-1526463555 /home/sd/Documents/GM4/C++/Drones/Drones/include/Comportement.h
+1526477702 /home/sd/Documents/GM4/C++/Drones/Drones/include/Comportement.h
 	<vector>
 	"../include/Capteur.h"
 	"../include/VecteurR3.h"
 
-1526471984 /home/sd/Documents/GM4/C++/Drones/Drones/include/Capteur.h
+1526477035 /home/sd/Documents/GM4/C++/Drones/Drones/include/Capteur.h
 	"../include/VecteurR3.h"
 	"../include/Obstacle.h"
 
-1526463575 /home/sd/Documents/GM4/C++/Drones/Drones/include/Drone.h
+1526477627 /home/sd/Documents/GM4/C++/Drones/Drones/include/Drone.h
 	"../include/VecteurR3.h"
 	"../include/Comportement.h"
+	"../include/Naif.h"
 	<cstddef>
 	<vector>
 	<queue>
 
-1526458884 /home/sd/Documents/GM4/C++/Drones/Drones/include/Obstacle.h
+1526477043 /home/sd/Documents/GM4/C++/Drones/Drones/include/Obstacle.h
 	"../include/VecteurR3.h"
 	<vector>
 
@@ -66,11 +67,12 @@
 1526458485 /home/sd/Documents/GM4/C++/Drones/Drones/include/trackballcamera.h
 	<SDL/SDL.h>
 
-1526474210 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Capteur.cpp
+1526477035 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Capteur.cpp
 	"../include/Capteur.h"
 	"../include/Environnement.h"
+	<cmath>
 
-1526463509 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Comportement.cpp
+1526477035 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Comportement.cpp
 	"../include/Comportement.h"
 
 1526458884 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Cubique.cpp
@@ -87,27 +89,28 @@
 1526458485 /home/sd/Documents/GM4/C++/Drones/Drones/include/Dlite.h
 	"../include/Comportement.h"
 
-1526463585 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Drone.cpp
+1526478361 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Drone.cpp
 	"../include/Drone.h"
 	"../include/VecteurR3.h"
 	<cstddef>
 
-1526460629 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Environnement.cpp
+1526477173 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Environnement.cpp
 	"../include/Environnement.h"
 	"../include/Obstacle.h"
 	"../include/Drone.h"
 	"../include/Essaim.h"
 	<iostream>
 	<vector>
+	<cmath>
 
-1526462148 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Essaim.cpp
+1526477043 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Essaim.cpp
 	"../include/Essaim.h"
 	<limits>
 
 1526458485 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Formation.cpp
 	"../include/Formation.h"
 
-1526464455 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/main.cpp
+1526477043 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -118,7 +121,7 @@
 	"../include/Essaim.h"
 	"../include/Affichage.h"
 
-1526474235 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Obstacle.cpp
+1526477381 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Obstacle.cpp
 	"../include/Obstacle.h"
 
 1526458485 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Pyramidale.cpp
@@ -147,14 +150,14 @@
 	"../include/VecteurR3.h"
 	<cmath>
 
-1526462969 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Naif.cpp
+1526478478 source:/home/sd/Documents/GM4/C++/Drones/Drones/src/Naif.cpp
 	<vector>
 	"../include/VecteurR3.h"
 	"../include/Naif.h"
 	"../include/Capteur.h"
 	<cmath>
 
-1526463240 /home/sd/Documents/GM4/C++/Drones/Drones/include/Naif.h
+1526478007 /home/sd/Documents/GM4/C++/Drones/Drones/include/Naif.h
 	<vector>
 	"../include/VecteurR3.h"
 	"../include/Comportement.h"
