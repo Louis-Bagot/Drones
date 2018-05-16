@@ -7,8 +7,12 @@ Capteur::Capteur(const float &p, const VecteurR3 &dir, Environnement *environnem
   distanceDectectee = updateDistanceDetectee();
 }
 
-Capteur::~Capteur() {
+Capteur::~Capteur() {}
 
+float Capteur::getDistanceDetectee() const {return distanceDetectee;}
+VecteurR3 Capteur::getDirection() const {return direction;}
+bool Capteur::detecteQQch() const {
+  return distanceDetectee<portee;
 }
 
 float Capteur::updateDistanceDetectee() {

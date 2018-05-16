@@ -3,11 +3,11 @@
 
 #include <vector>
 #include <iostream>
-#include "../include/Obstacle.h"
 #include "../include/Essaim.h"
+#include "../include/Obstacle.h"
 #include "../include/Drone.h"
 #include "../include/VecteurR3.h"
-
+class Essaim;
 /**
 *
 * Classe contenant les éléments de l'environnement et leurs positions (i.e Essaim, Obstacles, colis)
@@ -28,10 +28,10 @@ class Environnement {
         std::vector<Obstacle> vObstacles;
 
         /** Essaim de drone, c'est l'ensemble de drones */
-        Essaim essaim;
+        Essaim *essaim;
 
         /** Vecteur acceleration de gravité, perpétuellement subie par les drones */
-        VecteurR3 g;
+        VecteurR3 gravite;
         /** Constante de delta temps, dans la formule f(t+dt) = f(t)+dt*f'(t)  */
         float dt;
         /** Liste des colis présents dans l'environnement */
@@ -61,6 +61,7 @@ class Environnement {
         virtual ~Environnement();
 
         float getCote() const;
+        VecteurR3 getGravite() const;
         VecteurR3 getOrigineEnv() const;
         std::vector<Obstacle> getVObstacles() const;
 
@@ -71,7 +72,7 @@ class Environnement {
         /** Ajoute un colis dans la liste à récupérer */
         void ajouterColis(VecteurR3&);
         /** Donne sa valeur à l'attribut essaim une fois ce dernier créé (juste un set) */
-        void associerEssaim(Essaim&);
+        void associerEssaim(Essaim*);
         /** Getter des Drones pour simplifier l'accès lors de l'affichage */
         std::vector<Drone*> getEssaimDrones() const;
     protected:

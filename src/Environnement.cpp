@@ -8,17 +8,10 @@
 /**
 * @authors Timothé, Simon
 */
-Environnement::Environnement() {
-  origineEnv = VecteurR3(-1,-1,-1);
-  cote = 2.;
-  g=VecteurR3(0,0,-3.5); // valeur du vect acc de gravité
-  // Eventuellement créer des obstacles
-}
-
 Environnement::Environnement(const float tailleCote) {
   cote = tailleCote;
   origineEnv = VecteurR3(-cote/2.,-cote/2.,-cote/2.);
-  g=VecteurR3(0,0,-3.5); // valeur du vect acc de gravité
+  gravite = VecteurR3(0,0,-3.5); // valeur du vect acc de gravité
   // Eventuellement créer des obstacles
   dt = 0.015;
   absorb = 0.5;
@@ -29,12 +22,13 @@ Environnement::~Environnement() {
 }
 
 float Environnement::getCote() const {return cote;}
+VecteurR3 Environnement::getGravite() const {return gravite;}
 VecteurR3 Environnement::getOrigineEnv() const {return origineEnv;}
 std::vector<Obstacle> Environnement::getVObstacles() const{return vObstacles;}
 
 Environnement Environnement::operator++(int a) {
   collisionsInterDrones();
-  for (auto& pDrone : essaim.getVDrones()) {
+  for (auto& pDrone : essaim->getVDrones()) {
     collisionBords(*pDrone);
     for (auto& obs : vObstacles)
       collisionObstacle(*pDrone, obs);
@@ -51,12 +45,12 @@ void Environnement::calculerPos(Drone& drone) {
   // f(t+dt) = f(t) + f'(t)*dt
   // --TODO-- metter l'acceleration à 0 dans le Drone quand il n'est pas fonctionnel
   // UPDATE fait dans Drone.cpp
-  drone.setVitesse(drone.getVitesse()+(drone.getAcceleration()+g)*dt);
+  drone.setVitesse(drone.getVitesse()+(drone.getAcceleration()+gravite)*dt);
   drone.setPosition(drone.getPosition()+drone.getVitesse()*dt);
 }
 
 void Environnement::collisionsInterDrones() {
-  std::vector<Drone*> vPDrone = essaim.getVDrones();
+  std::vector<Drone*> vPDrone = essaim->getVDrones();
   size_t sizeV = vPDrone.size(); // éviter deux accès
   for (size_t i = 0; i < sizeV; i++) {
     for (size_t j = i+1; j < sizeV; j++) {
@@ -141,10 +135,10 @@ void Environnement::ajouterColis(VecteurR3& colis){
   vColis.push_back(colis);
 }
 
-void Environnement::associerEssaim(Essaim& e) {
+void Environnement::associerEssaim(Essaim *e) {
   essaim = e;
 }
 
 std::vector<Drone*> Environnement::getEssaimDrones() const {
-  return essaim.getVDrones();
+  return essaim->getVDrones();
 }

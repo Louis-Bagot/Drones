@@ -31,6 +31,9 @@ class Drone {
     std::vector<Capteur> vCapteurs;
     /** Liste des objectifs du Drone - c'est-à-dire liste de colis à livrer ou de position de formation à laquelle aller. */
     std::queue<VecteurR3> vObjectifs;
+    /** Gravite de l'environnement. Le Drone ne connait que ceci de l'Environnement,
+     * pour pouvoir la contrer sans encombrer le Comportement. */
+    VecteurR3 gravite;
     /** Fonction qui renvoie vrai si le drone a atteint le premier de ses objectifs */
     bool objectifDone();
     /** Setter de l'accélération */
@@ -42,25 +45,19 @@ class Drone {
     Drone(const std::vector<Capteur>&);
     /** Constructeur avec simplement la position initiale */
     Drone(const std::vector<Capteur>&,const VecteurR3);
-    /** Constructeur de Drone, initialisant les attributs spatio-temporels à 0. Nécessite un Comportement, une taille, un nombre de capteurs */
-    Drone(const Comportement&, std::vector<VecteurR3>);
-    /** Constructeur de Drone, initialisant la position à celle demandée. */
-    Drone(const Comportement&, std::vector<VecteurR3>, VecteurR3);
-    /** Constructeur de Drone, initialisant la position et la vitesse à celles demandées. */
-    Drone(const Comportement&, std::vector<VecteurR3>, VecteurR3, const VecteurR3&);
-    /** Constructeur effectif de Drone. Prend une position initiale, un rayon et un vecteur de Capteurs. */
-    Drone(float rayon, VecteurR3, std::vector<Capteur>);
-    /** Constructeur effectif de Drone. Prend une position et vitesse initiales, un rayon et un vecteur de Capteurs. */
-    Drone(float rayon, VecteurR3 pos, VecteurR3 vit, std::vector<Capteur>);
-
+    /** Constructeur effectif de Drone. Prend une position et (éventuellement) vitesse initiales, un rayon et un vecteur de Capteurs. */
+    Drone(const float rayon, VecteurR3 pos, std::vector<Capteur> vCap, const VecteurR3 _gravite,VecteurR3 vit = VecteurR3());
+    /**  */
     void operator++();
     /** Destructeur de Drone. */
     virtual ~Drone();
 
+    /** Getter du premier objectif du Drone */
+    VecteurR3 getPremierObjectif() const;
     /** Getter des objectifs du Drone */
-    std::vector<VecteurR3> getObjectifs() const;
+    std::queue<VecteurR3> getVObjectifs() const;
     /** Getter du vecteur de capteurs */
-    std::vector<Capteur> getvCapteurs() const;
+    std::vector<Capteur> getVCapteurs() const;
     /** Getter du vecteur position */
     VecteurR3 getPosition() const;
     /** Getter du vecteur vitesse */
@@ -79,6 +76,11 @@ class Drone {
     void neFonctionnePlus();
     /** Getter sur l'état du drone */
     bool estFonctionnel() const;
+    /** Fonction qui indique si le drone a au moins un objectif (liste non nulle) */
+    bool aObjectif() const;
+    /** Teste si le drone a atteint son objectif.
+     *Le cas échéant, l'objectif est supprimé de la liste. */
+    bool atteintObjectif();
     /**
     * Méthode qui ajoute une destination à la liste des objectifs.
     * @param obj le point de R3 à ajouter à la liste d'objectifs.

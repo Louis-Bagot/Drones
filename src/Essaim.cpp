@@ -24,7 +24,7 @@ Essaim::Essaim(Environnement env, int nbDrones) {
     VecteurR3 incrementPos = VecteurR3(0,0.5,0);
     VecteurR3 incrementVit = VecteurR3(0.5,-0.1,0.2);
     for (size_t i = 0; i < nbDrones; i++) {
-      vDrones.push_back(new Drone(rayonDrone,posDrone,vitDrone,vCapteur));
+      vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite(),vitDrone));
       posDrone+=incrementPos;
       vitDrone-=incrementVit;
       std::cout << "drone créé en " << posDrone.getX() <<", "

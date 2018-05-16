@@ -1,11 +1,9 @@
 #ifndef CAPTEUR_H
 #define CAPTEUR_H
 
-
 #include "../include/VecteurR3.h"
-
-
 class Environnement;
+
 /**
 * @authors Timothé
 * @date 20 Avril 2018
@@ -21,12 +19,17 @@ class Capteur {
 
      /** Déstructeur de Capteur */
         virtual ~Capteur();
-
+    /** Getter de la distance detectee par le capteur */
+    float getDistanceDetectee() const;
     /**
      * Calcul la distance entre le drone et les obstacles alentours. La fonction sera appelée par drone,
     de manière itérative.
      */
-        float updateDistanceDetectee();
+    float updateDistanceDetectee();
+    /** Getter de la direction du capteur */
+    VecteurR3 getDirection() const;
+    /** Renvoie un boolean donnant si le capteur detecte un obstacle (distDetectee<portee) */
+    bool detecteQQch() const;
     protected:
 
     private:

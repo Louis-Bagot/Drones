@@ -1,5 +1,0 @@
-distanceObstacle de Capteur :
-  - Lien entre capteur et Environnement : Capteur a un attribut Environnement
-  - attibut distanceDétectée mis-à-jour par updateDistanceDétectée.
-
-Méthode updateCapteurs

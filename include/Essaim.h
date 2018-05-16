@@ -4,14 +4,12 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include "../include/Environnement.h"
 #include "../include/VecteurR3.h"
 #include "../include/Formation.h"
 #include "../include/Comportement.h"
 #include "../include/Capteur.h"
 #include "../include/Drone.h"
-#include "../include/Environnement.h"
-
-using namespace std;
 
 /**
 * La classe Essaim est celle qui contient l'ensemble des drones
@@ -42,19 +40,19 @@ class Essaim {
         void ajouterDrone(Drone&);
 
         /** getter du vector de Drone */
-        vector<Drone*> getVDrones() const;
+        std::vector<Drone*> getVDrones() const;
     protected:
 
     private:
         /** L'ensemble des drones qui composent l'essaim */
-        vector<Drone*> vDrones;
+        std::vector<Drone*> vDrones;
         /**
         * A partir de la liste des objectifs à atteindre, y affecte les Drones en fonction de leur position actuelle.
         * ex : vector<int> = [2, 1, 3], le drone numéro 2 ira à vPosFormation[1]
         * @param nuagePoints le nuage de points (VecteurR3) à atteindre
         * @return Vecteur permutation qui donne l'ordre des drones de l'Essaim dans le vecteur pos (vecteur d'entrée)
         */
-        vector<int> affecterDronePos(vector<VecteurR3> nuagePoints);
+        std::vector<int> affecterDronePos(vector<VecteurR3> nuagePoints);
 };
 
 #endif // ESSAIM_H

@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
     Essaim essaim = Essaim(env, nbDrones);
     // attribution de l'essaim  l'Environnement
-    env.associerEssaim(essaim);
+    env.associerEssaim(&essaim);
     // création de l'Affichage et lien à l'Environnement
     Affichage aff = Affichage(env);
 
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
         env++;
         // UPDATE VECTEURS ACC DRONES
         for (auto& pDrone : essaim.getVDrones()) {
-            pDrone++;
+            (*pDrone)++;
         }
         // FONCTION D'AFFICHAGE
         aff.draw(camera, droneText);

@@ -2,12 +2,12 @@
 #define NAIF_H
 
 #include <vector>
-#include "include/VecteurR3.h"
+#include "../include/VecteurR3.h"
 #include "../include/Comportement.h"
 
 /**
-* Classe héritant de Comportement, c'est donc un algo possible de déplacement des drones.
-* Il consiste à monter en altitude lorsque le drone rencontre un obstacle devant lui afin de passer au dessus.
+* Classe hÃ©ritant de Comportement, c'est donc un algo possible de dÃ©placement des drones.
+* Il consiste Ã  monter en altitude lorsque le drone rencontre un obstacle devant lui afin de passer au dessus.
 *
 * @author Simon
 */
@@ -15,28 +15,28 @@ class Naif : public Comportement {
     public:
         Naif();
         virtual ~Naif();
-        /** Méthode fondamentale de Comportement des Drones.
-        * A partir des positions du Drone, de son premier objectif et des capteurs, détermine le vecteur accélération pour la frame suivante.
+        /** MÃ©thode fondamentale de Comportement des Drones.
+        * A partir des positions du Drone, de son premier objectif et des capteurs, dï¿½termine le vecteur accï¿½lï¿½ration pour la frame suivante.
         * @param posActuelle la position du Drone au temps t.
-        * @param destination la position à atteindre.
+        * @param destination la position ï¿½ atteindre.
         * @param vCapteurs, le vecteur des Capteurs donnant l'information sensorielle du Drone.
-        * @return le vecteur accélération
+        * @return le vecteur accï¿½lï¿½ration
         */
         VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, std::vector<Capteur> vCapteurs)const;
-    
+
         VecteurR3 setTrajectory(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
-    
+
         bool atteintFinal(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
-    
+
         bool atteint(const VecteurR3 &posActuelle,const VecteurR3 &destination) const;
-    
+
         bool presenceObstacles(std::vector<Capteur> vCapteurs) const;
-    
+
         VecteurR3 surmonter(const VecteurR3 &posActuelle) const;
-    
+
         VecteurR3 gererHauteur(const VecteurR3 &destination) const;
-    
-    
+
+
     protected:
 
     private:
