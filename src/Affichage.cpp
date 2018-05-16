@@ -87,11 +87,16 @@ void Affichage::drawObstacles() {
 void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
   if (drone.estFonctionnel()) {
     glColor3ub(255,255,255);
-  } else {
+  }else if(drone.porteColis()) {
+    glColor3ub(0,255,0);
+  }else{
     glColor3ub(255,0,0);
   }
   VecteurR3 pos = drone.getPosition();
   glTranslated(pos.getX(),pos.getY(),pos.getZ());
   gluSphere(params,drone.getRayon(),10,10);
   glTranslated(pos.getX()*-1,pos.getY()*-1,pos.getZ()*-1);
+}
+void Affichage::drawColis() const {
+    //Louis .. pliz..
 }
