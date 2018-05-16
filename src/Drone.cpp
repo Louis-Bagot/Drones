@@ -6,7 +6,7 @@ Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<
   rayon = rayonDrone;
   position = posInit;
   vitesse = vitInit;
-  acceleration = VecteurR3();
+  acceleration = _gravite*-1;
   vCapteurs = vCap;
   fonctionne = true;
   porteColis = false;
@@ -53,14 +53,19 @@ Drone Drone::operator++(int a) {
 
     //Deplacement
     if (fonctionne) {
-      atteintObjectif();
+    //  acceleration=gravite*-1;
+    std::cout<<getPremierObjectif()<<std::endl;
+//    atteintObjectif();
       if (aObjectif()) {
-        acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
-      } else acceleration = VecteurR3();
+        acceleration = gravite*(-1) + comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
+
+    //    if (position==VecteurR3(0,0,0)) {vObjectifs.pop();}
+
+      } else acceleration = gravite*(-1);
       //std::cout << acceleration << std::endl;
-      acceleration+=gravite*(-1); // il contre la gravité par défaut
-    } else {//Sinon accélération nulle, il ne fonctionne plus...
-      acceleration = VecteurR3();
+    //  acceleration+=gravite*(-1); // il contre la gravité par défaut
+  //  } else {//Sinon accélération nulle, il ne fonctionne plus...
+    //  acceleration = VecteurR3();
     }
     return *this;
 }

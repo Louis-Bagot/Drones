@@ -97,6 +97,11 @@ VecteurR3 VecteurR3::prodVec(const VecteurR3 &v) const {
 }
 
 
+VecteurR3 VecteurR3::valeurAbsolue(const VecteurR3 &a, const VecteurR3 &b) const {
+  return VecteurR3(fabs(a.getX()-b.getX()),fabs(a.getY()-b.getY()),fabs(a.getZ()-b.getZ()));
+}
+
+
 VecteurR3 VecteurR3::reflexionPlanOrtho(const VecteurR3& v) const {
   // return H(u).x = (I-2u'u).x
   return VecteurR3(

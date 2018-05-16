@@ -35,16 +35,14 @@ int main(int argc, char *argv[]) {
     Environnement env = Environnement(envTailleCote);
 
     //env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
-    env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
+  //  env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
 
     Essaim essaim = Essaim(env, nbDrones);
     //Test retrait colis
-    VecteurR3 retrait = VecteurR3(0.2,0.2,0.2);
-    VecteurR3 retrait2 = VecteurR3(0.1,0.2,0.2);
+    VecteurR3 retrait = VecteurR3(-0.4,0.3,0.3);
     VecteurR3 depot = VecteurR3(0.5,0.5,0.5);
     env.ajouterColis(retrait);
-    env.ajouterColis(retrait2);
     essaim.retirerColis(retrait, depot);
     // attribution de l'essaim  l'Environnement
     env.associerEssaim(&essaim);

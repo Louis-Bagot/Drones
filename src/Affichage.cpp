@@ -105,7 +105,6 @@ void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
 
     glBegin(GL_LINES);
         for (auto & capteur : drone.getVCapteurs()) {
-            std::cout << "coucou capteur" << std::endl;
             if (capteur.detecteQQch()){glColor3ub(255,0,0);}
             else{glColor3ub(255,255,255);}
             glVertex3f(0,0,0);

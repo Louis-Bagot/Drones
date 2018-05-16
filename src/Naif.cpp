@@ -51,14 +51,8 @@ VecteurR3 Naif::gererHauteur(const VecteurR3 &posActuelle, const VecteurR3 &dest
 
 // Retourne le vecteur accélération en fonction du cas dans lequel on se trouve
 VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination,const std::vector<Capteur> vCapteurs, const VecteurR3 vitesse ) {
-    if(presenceObstacles(posActuelle,destination,vCapteurs)) {
-        return surmonter(posActuelle);
-    }
-    else if (atteint(posActuelle, destination, 0.1)) {
-        std::cout << "gerer hauteur" << std::endl;
-        return gererHauteur(posActuelle, destination, vitesse);
-    }else{
-        std::cout << "gerer trajectory" << std::endl;
-        return setTrajectory(posActuelle,destination);
-    }
+  //if ((valeurAbsolue(destination,posActuelle)[0]<0.01) || (valeurAbsolue(destination,posActuelle)[1]<0.01) || (valeurAbsolue(destination,posActuelle)[2]<0.01)) {return vitesse*-20;}
+  if (fabs(destination[0]-posActuelle[0])<0.01) {return vitesse*-20;}
+  else if ((destination-posActuelle).norme2()<(destination-VecteurR3()).norme2()*2/3){return (destination-posActuelle)*((destination-posActuelle).norme2())*-2.2;}//(destination-posActuelle)*((destination-posActuelle).norme2()*-3);}//(destination-posActuelle);
+  else {return (destination-posActuelle)*((destination-posActuelle).norme2());}
 }
