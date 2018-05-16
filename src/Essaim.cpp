@@ -8,7 +8,7 @@ Essaim::Essaim() {
 Essaim::Essaim(Environnement env, int nbDrones) {
   float rayonDrone = env.getCote()/40. ;
   if (nbDrones <= 7) { // arbitraire pour début de projet
-    VecteurR3 posDrone = VecteurR3(-0.9,-0.9,0);
+    VecteurR3 posDrone = VecteurR3(-0.9,-0.9,0.5);
     VecteurR3 vitDrone = VecteurR3(2,0.5,1);
     int portee = rayonDrone*5;
     vector<Capteur> vCapteur;
@@ -22,7 +22,7 @@ Essaim::Essaim(Environnement env, int nbDrones) {
     vCapteur.push_back(Capteur(portee,dirZ,&env));
     vCapteur.push_back(Capteur(portee,dirZ*-1,&env));
     VecteurR3 incrementPos = VecteurR3(0,0.5,0);
-    VecteurR3 incrementVit = VecteurR3(0.5,-0.1,0.2);
+    VecteurR3 incrementVit = VecteurR3(0.8,-0.4,0.4);
     for (size_t i = 0; i < nbDrones; i++) {
       vDrones.push_back(new Drone(rayonDrone,posDrone,vitDrone,vCapteur));
       posDrone+=incrementPos;

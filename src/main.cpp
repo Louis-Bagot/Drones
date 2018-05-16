@@ -9,6 +9,7 @@
 #include "../include/Essaim.h"
 #include "../include/Affichage.h"
 
+
 /**
  * \file main.cpp
  * Fichier contenant la fonction main, à lancer pour démarrer l'application Drone
@@ -31,6 +32,7 @@ int main(int argc, char *argv[]) {
     float envTailleCote = 2.;
     // Création des instances d'Essaim et Environnement
     Environnement env = Environnement(envTailleCote);
+    //env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(0,0,env.getOrigineEnv().getZ()),1,0.5,0.5));
     env.ajouterObstacle(Obstacle(VecteurR3(-1,-1,env.getOrigineEnv().getZ()),0.5,0.5,1));
     Essaim essaim = Essaim(env, nbDrones);

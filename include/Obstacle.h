@@ -36,6 +36,8 @@ class Obstacle {
       vector<VecteurR3> getFaceZHaut() const;
       /** Getter face basse, Z constant. (4 sommets) */
       vector<VecteurR3> getFaceZBasse() const;
+      /** Getter centre*/
+      VecteurR3 getCentre() const;
       /** Getter point inital (coordonnées x,y,z minimales) */
       VecteurR3 getInit() const;
       /** Getter taille de cote en x */
