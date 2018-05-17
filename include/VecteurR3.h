@@ -72,7 +72,8 @@ class VecteurR3 {
 
     /** Calcul du produit vectoriel. (Useful pour verifier la colinearite). */
     VecteurR3 prodVec(const VecteurR3&) const;
-    VecteurR3 valeurAbsolue(const VecteurR3&, const VecteurR3&) const;
+    /** Ressort la valeur absolue composante par composante */
+    VecteurR3 valeurAbsolue() const;
     /** Calcul le produit de la matrice de Householder générée par ce VecteurR3 (this)
      * avec un vecteur donné en entrée. Cela donne le vecteur de reflexion par rapport
      * au plan orthogonal à ce vecteur. */

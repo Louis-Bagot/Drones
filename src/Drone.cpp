@@ -11,7 +11,7 @@ Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<
   fonctionne = true;
   porteColis = false;
   gravite = _gravite;
-  comportement = new Naif();
+  comportement = new Naif(position);
 }
 
 Drone::~Drone() {
@@ -35,39 +35,33 @@ bool Drone::aObjectif() const {return vObjectifs.size()>0;}
 bool Drone::porteUnColis() const {return porteColis;}
 
 bool Drone::atteintObjectif() {
+  std::cout << "dans atteintObjectif" << '\n';
   bool ret = false;
-  if(position.egal(getPremierObjectif(), rayon*0.1)) {
+  std::cout << "pos = " << position << '\n';
+  std::cout << "objectif = " << getPremierObjectif()<< '\n';
+  if(position.egal(getPremierObjectif(), rayon*0.2)) {
     ret = true;
     vObjectifs.pop();
     std::cout << "    a attteint obj ............................" << std::endl;
   }
-  std::cout << "    dans att obj" << std::endl;
   return ret;
 }
 
 Drone Drone::operator++(int a) {
-    //Update capteurs
-    for(auto &capteur : vCapteurs){
-        capteur.updateDistanceDetectee();
-    }
+  //Update capteurs
+  for(auto &capteur : vCapteurs){
+      capteur.updateDistanceDetectee();
+  }
 
-    //Deplacement
-    if (fonctionne) {
-    //  acceleration=gravite*-1;
-    std::cout<<getPremierObjectif()<<std::endl;
-//    atteintObjectif();
-      if (aObjectif()) {
-        acceleration = gravite*(-1) + comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
-
-    //    if (position==VecteurR3(0,0,0)) {vObjectifs.pop();}
-
-      } else acceleration = gravite*(-1);
-      //std::cout << acceleration << std::endl;
-    //  acceleration+=gravite*(-1); // il contre la gravité par défaut
-  //  } else {//Sinon accélération nulle, il ne fonctionne plus...
-    //  acceleration = VecteurR3();
-    }
-    return *this;
+  acceleration = VecteurR3();
+  //Deplacement
+  if (fonctionne) {
+    atteintObjectif();
+    if (aObjectif())
+      acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
+    acceleration+=gravite*(-1); // il contre la gravité par défaut
+  }
+  return *this;
 }
 
 void Drone::ajouterObjectif(const VecteurR3 &obj){

@@ -97,8 +97,8 @@ VecteurR3 VecteurR3::prodVec(const VecteurR3 &v) const {
 }
 
 
-VecteurR3 VecteurR3::valeurAbsolue(const VecteurR3 &a, const VecteurR3 &b) const {
-  return VecteurR3(fabs(a.getX()-b.getX()),fabs(a.getY()-b.getY()),fabs(a.getZ()-b.getZ()));
+VecteurR3 VecteurR3::valeurAbsolue() const {
+  return VecteurR3(fabs(x),fabs(y),fabs(z));
 }
 
 
