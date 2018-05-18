@@ -28,7 +28,7 @@ void stop() {
 
 int main(int argc, char *argv[]) {
     //-- INITIALISATION DE L'ENVIRONNEMENT, ESSAIM, AFFICHAGE
-    int nbDrones = 1;
+    int nbDrones = 7;
     float envTailleCote = 2.;
     // Création des instances d'Essaim et Environnement
 
@@ -40,8 +40,13 @@ int main(int argc, char *argv[]) {
 
     Essaim essaim = Essaim(env, nbDrones);
     //Test retrait colis
-    VecteurR3 retrait = VecteurR3(-0.4,0.3,0.3);
-    VecteurR3 depot = VecteurR3(0.5,0.5,0.5);
+    VecteurR3 retrait = VecteurR3(-0.85,-0.3,-0.3);
+    VecteurR3 depot = VecteurR3(0,0,0);
+    env.ajouterColis(retrait);
+    essaim.retirerColis(retrait, depot);
+    //Test retrait 2nd colis
+    retrait = VecteurR3(-0.7,0.7,-0.5);
+    depot = VecteurR3(0.85,0.70,-0.5);
     env.ajouterColis(retrait);
     essaim.retirerColis(retrait, depot);
     // attribution de l'essaim  l'Environnement

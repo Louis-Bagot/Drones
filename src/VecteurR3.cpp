@@ -75,6 +75,14 @@ float VecteurR3::operator*(const VecteurR3 &v) const {
   return(x*v.getX()+y*v.getY()+z*v.getZ());
 }
 
+VecteurR3 VecteurR3::multi(const VecteurR3 &v) const {
+  return (VecteurR3(x*v.getX(),y*v.getY(),z*v.getZ()));
+}
+
+VecteurR3 VecteurR3::div(const VecteurR3 &v) const {
+  return (VecteurR3(x/v.getX(),y/v.getY(),z/v.getZ()));
+}
+
 VecteurR3 VecteurR3::operator*(const float &scal) const{
     float new_x, new_y, new_z;
   new_x=x*scal;

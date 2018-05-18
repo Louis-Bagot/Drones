@@ -6,10 +6,10 @@ Essaim::Essaim() {
 
 }
 
-Essaim::Essaim(Environnement env, int nbDrones) {
+Essaim::Essaim(Environnement &env, int nbDrones) {
   float rayonDrone = env.getCote()/40. ;
   if (nbDrones <= 7) { // arbitraire pour début de projet
-    VecteurR3 posDrone = VecteurR3(0,0,0);
+    VecteurR3 posDrone = VecteurR3(0.85,-0.85,0.5);
     //VecteurR3 vitDrone = VecteurR3(2,0.5,1);
     VecteurR3 vitDrone = VecteurR3();
     int portee = rayonDrone*5;
@@ -23,16 +23,11 @@ Essaim::Essaim(Environnement env, int nbDrones) {
     vCapteur.push_back(Capteur(portee,dirY*-1,&env));
     vCapteur.push_back(Capteur(portee,dirZ,&env));
     vCapteur.push_back(Capteur(portee,dirZ*-1,&env));
-    VecteurR3 incrementPos = VecteurR3(0,0.5,0);
-    VecteurR3 incrementVit = VecteurR3(0,0,0);
+    VecteurR3 incrementPos = VecteurR3(0,0.3,0);
     for (size_t i = 0; i < nbDrones; i++) {
-      vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite(),vitDrone));
+      vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite()));
       posDrone+=incrementPos;
-      vitDrone-=incrementVit;
-
-
     }
-    std::cout << "Essaim : apres construction drones" << std::endl;
 
   } else throw std::invalid_argument("Trop de drones ! <=5 pour l'instant please");
 }
@@ -53,7 +48,7 @@ void Essaim::retirerColis(VecteurR3 retrait, VecteurR3 depot){
     float minDist = inf;
     Drone *pDroneMin = getVDrones()[0];
     for (auto& pDrone : getVDrones()) {
-        if(pDrone->aObjectif()){
+        if(!(pDrone->aObjectif())){
             float distToObj = (pDrone->getPosition()-retrait).norme22();
             if(distToObj < minDist) {
                 minDist = distToObj;

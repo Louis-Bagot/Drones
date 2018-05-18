@@ -4,9 +4,10 @@
 #include "../include/Capteur.h"
 #include<cmath>
 
-Naif::Naif(VecteurR3 _depart) {
+Naif::Naif(VecteurR3 _depart, VecteurR3 _v0) {
   depart = _depart;
   dest = depart;
+  v0=_v0;
 }
 
 Naif::~Naif() {
@@ -54,11 +55,21 @@ VecteurR3 Naif::gererHauteur(const VecteurR3 posActuelle, const VecteurR3 &desti
 // Retourne le vecteur accélération en fonction du cas dans lequel on se trouve
 VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination,const std::vector<Capteur> vCapteurs, const VecteurR3 vitesse ) {
   if (!(dest == destination)) {
-    /* code */
+    depart = posActuelle;
+    v0 = VecteurR3();
+    dest = destination;
   }
-  //if ((valeurAbsolue(destination,posActuelle)[0]<0.01) || (valeurAbsolue(destination,posActuelle)[1]<0.01) || (valeurAbsolue(destination,posActuelle)[2]<0.01)) {return vitesse*-20;}
-  VecteurR3 diffPos = destination - posActuelle;
-  if (diffPos.valeurAbsolue().norme22()<0.01) {return vitesse*-1;}
-  else if ((destination-posActuelle).norme2()<(destination-VecteurR3()).norme2()*2/3){return (destination-posActuelle)*((destination-posActuelle).norme2())*-2.2;}//(destination-posActuelle)*((destination-posActuelle).norme2()*-3);}//(destination-posActuelle);
-  else {return (destination-posActuelle)*((destination-posActuelle).norme2());}
+  /**VecteurR3 diffPos = destination - posActuelle;
+  return (posActuelle*-2 + depart + destination)*(1/4.);*/
+
+  VecteurR3 milieu = (depart+destination).div(VecteurR3(2,2,2));
+
+  std::cout << "v0=" <<v0 << '\n';
+
+  return v0.multi((posActuelle*2-(destination+milieu)).div(((depart-milieu).multi(depart-destination))))+(posActuelle*-2)+destination+depart;
+  /*
+  if (diffPos.norme22()<0.1) {return vitesse*-1;}
+  else if ((destination-posActuelle).norme2()<(destination-depart).norme2()*1/5) { return VecteurR3();}
+//  else if ((destination-posActuelle).norme2()<(destination-depart).norme2()*2/3){return (destination-posActuelle)*((destination-posActuelle).norme2())*-2.2;}
+  else {return (diffPos)*(1/diffPos.norme2()/2);} */
 }

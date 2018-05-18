@@ -11,7 +11,7 @@ Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<
   fonctionne = true;
   porteColis = false;
   gravite = _gravite;
-  comportement = new Naif(position);
+  comportement = new Naif(position,vitesse);
 }
 
 Drone::~Drone() {
@@ -35,19 +35,18 @@ bool Drone::aObjectif() const {return vObjectifs.size()>0;}
 bool Drone::porteUnColis() const {return porteColis;}
 
 bool Drone::atteintObjectif() {
-  std::cout << "dans atteintObjectif" << '\n';
   bool ret = false;
-  std::cout << "pos = " << position << '\n';
-  std::cout << "objectif = " << getPremierObjectif()<< '\n';
   if(position.egal(getPremierObjectif(), rayon*0.2)) {
     ret = true;
+    std::cout << "    a atteint obj =" << getPremierObjectif() << std::endl;
+    std::cout << "    avec vitesse =" << vitesse << '\n';
     vObjectifs.pop();
-    std::cout << "    a attteint obj ............................" << std::endl;
   }
   return ret;
 }
 
 Drone Drone::operator++(int a) {
+  std::cout << "pos =" << position << '\n';
   //Update capteurs
   for(auto &capteur : vCapteurs){
       capteur.updateDistanceDetectee();
@@ -56,9 +55,12 @@ Drone Drone::operator++(int a) {
   acceleration = VecteurR3();
   //Deplacement
   if (fonctionne) {
-    atteintObjectif();
     if (aObjectif())
+      {
+
+          atteintObjectif();
       acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
+    }else acceleration = vitesse*-5; // le faire freiner pour atteindre v=0
     acceleration+=gravite*(-1); // il contre la gravité par défaut
   }
   return *this;

@@ -24,7 +24,7 @@ class Essaim {
         /** Constructeur vide */
         Essaim();
         /** Constructeur principal (utilisé dans le main de l'application) prenant l'Environnement et le nombre de Drones */
-        Essaim(Environnement env, int nbDrones);
+        Essaim(Environnement &env, int nbDrones);
 
         virtual ~Essaim();
         /** Ordre d'aller retirer un colis. Le drone qui doit aller le colis au point B est determiné dans le corps de la fonction et non passé en entrée

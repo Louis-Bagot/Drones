@@ -50,6 +50,12 @@ class VecteurR3 {
     /**Soustraction de deux vecteurs composante par composante */
     VecteurR3 operator-(const VecteurR3&) const;
 
+    /**division de deux vecteurs composante par composante */
+    VecteurR3 div(const VecteurR3&) const;
+
+    /**multiplication de deux vecteurs composante par composante */
+    VecteurR3 multi(const VecteurR3&) const;
+
     /**Affectation d'un vecteur à partir d'un autre*/
     void operator=(const VecteurR3&);
 
