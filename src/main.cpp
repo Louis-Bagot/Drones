@@ -25,7 +25,7 @@ void stop() {
     delete camera;
     SDL_Quit();
 }
-
+/*
 int main(int argc, char *argv[]) {
     //-- INITIALISATION DE L'ENVIRONNEMENT, ESSAIM, AFFICHAGE
     int nbDrones = 7;
@@ -138,3 +138,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+*/

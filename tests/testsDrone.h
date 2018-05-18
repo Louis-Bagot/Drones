@@ -3,8 +3,19 @@
 
 #include <iostream>
 #include <string>
-#include <cppunit/*>
-
+#include <list>
+#include <cppunit/TestCase.h>
+#include <cppunit/TestFixture.h>
+#include <cppunit/ui/text/TextTestRunner.h>
+#include <cppunit/extensions/HelperMacros.h>
+#include <cppunit/extensions/TestFactoryRegistry.h>
+#include <cppunit/TestResult.h>
+#include <cppunit/TestResultCollector.h>
+#include <cppunit/TestRunner.h>
+#include <cppunit/BriefTestProgressListener.h>
+#include <cppunit/CompilerOutputter.h>
+#include <cppunit/XmlOutputter.h>
+#include <netinet/in.h>
 #include "../include/Drone.h"
 
 class testsDrone : public CppUnit::TestFixture {
@@ -31,7 +42,7 @@ class testsDrone : public CppUnit::TestFixture {
         void testLivrerColis(void);
 
         /** Teste la modification des capteurs.
-          * Vérifie que les méthodes updateDistanceDetectee ont bien été appelées. 
+          * Vérifie que les méthodes updateDistanceDetectee ont bien été appelées.
           */
         void testUpdateCapteurs(void);
     private:

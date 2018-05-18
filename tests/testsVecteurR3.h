@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <list>
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
 #include <cppunit/ui/text/TextTestRunner.h>
@@ -14,6 +15,7 @@
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
+#include <netinet/in.h>
 
 #include "../include/VecteurR3.h"
 
@@ -42,8 +44,9 @@ class testsVecteurR3 : public CppUnit::TestFixture
         void testIncrementation(void);
         void testNorme22(void);
         void testprodVec(void);
-    
+
     private:
+        VecteurR3 vec1,vec2;
 };
 
 #endif // TESTSVECTEURR3_H
