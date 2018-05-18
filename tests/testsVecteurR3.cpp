@@ -1,85 +1,49 @@
 #include "../tests/testsVecteurR3.h"
+#include <cmath>
 
-
-void testsVecteurR3::testAddition(void)
-{
-    vec1 = VecteurR3(1,2,3);
-    vec2 = VecteurR3(3,2,1);
-    VecteurR3 vecRes = vec1 + vec2;
-
-    CPPUNIT_ASSERT(vecRes.getX()==4 && vecRes.getY()==4 && vecRes.getZ()==4);
-}
-
-void testsVecteurR3::testSoustraction(void)
-{
-    vec1 = VecteurR3(3,2,3);
-    vec2 = VecteurR3(-1,2,1);
-    VecteurR3 vecRes = vec1 - vec2;
-
-    CPPUNIT_ASSERT(vecRes.getX()==4 && vecRes.getY()==0 && vecRes.getZ()==2);
-}
-
-void testsVecteurR3::testAffectation(void)
-{
-    vec1 = VecteurR3(1,1,1);
-    VecteurR3 vecRes = vec1;
-
-    CPPUNIT_ASSERT(vecRes.getX()==1 && vecRes.getY()==1 && vecRes.getZ()==1);
-}
-
-void testsVecteurR3::testMultiplication(void)
-{
-    vec1 = VecteurR3(1,2,1);
-    vec2 = VecteurR3(2,1,2);
-    float res = vec1*vec2;
-
-    CPPUNIT_ASSERT(res==6);
-}
-
-void testsVecteurR3::testMultiplicationScalaire(void)
-{
-    vec1 = VecteurR3(1,2,1);
-    float scal = 2.0;
-    VecteurR3 vecRes = vec1;//scal*vec1;
-
-    CPPUNIT_ASSERT(vecRes.getX()==2 && vecRes.getY()==4 && vecRes.getZ()==2);
-}
-
-void testsVecteurR3::testIncrementation(void)
-{
-    vec1 = VecteurR3(1,1,1);
-    vec1 += vec1;
-
-    CPPUNIT_ASSERT(vec1.getX()==2 && vec1.getY()==2 && vec1.getZ()==2);
-}
-
-void testsVecteurR3::testNorme22(void)
-{
-    vec1 = VecteurR3(1,1,1);
-    float res = vec1.norme22();
-
-    CPPUNIT_ASSERT(res==3);
-}
-
-void testsVecteurR3::testprodVec(void)
-{
-    vec1 = VecteurR3(1,2,3);
-    vec2 = VecteurR3(3,2,1);
-    VecteurR3 vecRes = vec1.prodVec(vec2);
-
-    CPPUNIT_ASSERT(vec1.getX()==-4 && vec1.getY()==8 && vec1.getZ()==-4);
-}
-
-
-void testsVecteurR3::setUp(void)
-{
+void testsVecteurR3::setUp(void) {
     //Methode appel� d�s le debut, c'est ici qu'on est cens� cr�er les objets
+    v1 = VecteurR3(1,2,3);
+    v2 = VecteurR3(2,3,4);
 }
 
-void testsVecteurR3::tearDown(void)
-{
+void testsVecteurR3::tearDown(void) {
     //C'est ici qu'on d�truit les objets
 }
 
+void testsVecteurR3::testEgalite(void) {
+  VecteurR3 vTemp = v1;
+  CPPUNIT_ASSERT((v1[0]==vTemp[0])&&(v1[1]==vTemp[1])&&(v1[2]==vTemp[2]));
+}
 
+void testsVecteurR3::testAddition(void) {
+    VecteurR3 add = v1 + v2;
+    CPPUNIT_ASSERT(add==VecteurR3(3,5,7));
+}
 
+void testsVecteurR3::testSoustraction(void) {
+    VecteurR3 sub = v1 - v2;
+    CPPUNIT_ASSERT(sub==VecteurR3(-1,-1,-1));
+}
+
+void testsVecteurR3::testProdScal(void) {
+    CPPUNIT_ASSERT((v1*v2)==(2+6+12));
+}
+
+void testsVecteurR3::testMultiplicationScalaire(void) {
+    CPPUNIT_ASSERT(v1*2 == VecteurR3(1*2,2*2,3*2));
+}
+
+void testsVecteurR3::testIncrementation(void) {
+    VecteurR3 vTemp = VecteurR3(1,1,1);
+    vTemp += v2;
+    CPPUNIT_ASSERT(vTemp==VecteurR3(3,4,5));
+}
+
+void testsVecteurR3::testNorme22(void) {
+    CPPUNIT_ASSERT(v1.norme22()==14);
+}
+
+void testsVecteurR3::testprodVec(void) {
+  CPPUNIT_ASSERT(v1.prodVec(v2)==VecteurR3(-1,2,-1));
+}
