@@ -1,6 +1,9 @@
 #include "../include/Drone.h"
 #include "../include/VecteurR3.h"
 #include <cstddef>
+Drone::Drone(const VecteurR3 pos) {
+  position = pos;
+}
 
 Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<Capteur> vCap, const VecteurR3 _gravite,const VecteurR3 vitInit) {
   rayon = rayonDrone;

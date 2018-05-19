@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+TESTSVECTEURR3_H	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.h	/^#define TESTSVECTEURR3_H$/;"	macro	line:2
+testsVecteurR3	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.h	/^class testsVecteurR3 : public CppUnit::TestFixture$/;"	class	line:22
+v1	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.h	/^        VecteurR3 v1;$/;"	member	line:49	class:testsVecteurR3
+v2	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.h	/^        VecteurR3 v2;$/;"	member	line:50	class:testsVecteurR3
+setUp	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::setUp(void) {$/;"	function	line:4	class:testsVecteurR3	signature:(void)
+tearDown	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::tearDown(void) {$/;"	function	line:10	class:testsVecteurR3	signature:(void)
+testEgalite	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testEgalite(void) {$/;"	function	line:14	class:testsVecteurR3	signature:(void)
+testAddition	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testAddition(void) {$/;"	function	line:19	class:testsVecteurR3	signature:(void)
+testSoustraction	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testSoustraction(void) {$/;"	function	line:24	class:testsVecteurR3	signature:(void)
+testProdScal	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testProdScal(void) {$/;"	function	line:29	class:testsVecteurR3	signature:(void)
+testMultiplicationScalaire	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testMultiplicationScalaire(void) {$/;"	function	line:33	class:testsVecteurR3	signature:(void)
+testIncrementation	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testIncrementation(void) {$/;"	function	line:37	class:testsVecteurR3	signature:(void)
+testNorme22	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testNorme22(void) {$/;"	function	line:43	class:testsVecteurR3	signature:(void)
+testprodVec	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsVecteurR3.cpp	/^void testsVecteurR3::testprodVec(void) {$/;"	function	line:47	class:testsVecteurR3	signature:(void)
+TESTSESSAIM_H	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.h	/^#define TESTSESSAIM_H$/;"	macro	line:2
+testsEssaim	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.h	/^class testsEssaim  : public CppUnit::TestFixture$/;"	class	line:28
+essaim	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.h	/^        Essaim essaim;$/;"	member	line:52	class:testsEssaim
+testsVecteurR3	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/TEST.cpp	/^CPPUNIT_TEST_SUITE_REGISTRATION( testsVecteurR3 );$/;"	variable	line:18
+testsEssaim	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/TEST.cpp	/^CPPUNIT_TEST_SUITE_REGISTRATION( testsEssaim );$/;"	variable	line:19
+main	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/TEST.cpp	/^int main(int argc, char* argv[])$/;"	function	line:22	signature:(int argc, char* argv[])
+setUp	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.cpp	/^void testsEssaim::setUp(void){$/;"	function	line:7	class:testsEssaim	signature:(void)
+tearDown	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.cpp	/^void testsEssaim::tearDown(){$/;"	function	line:14	class:testsEssaim	signature:()
+testRetirerColis	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.cpp	/^void testsEssaim::testRetirerColis() {$/;"	function	line:17	class:testsEssaim	signature:()
+testAffectationDronePos	/home/louis/Dropbox/GM4/Projets/C++/Drones/tests/testsEssaim.cpp	/^void testsEssaim::testAffectationDronePos(){$/;"	function	line:41	class:testsEssaim	signature:()

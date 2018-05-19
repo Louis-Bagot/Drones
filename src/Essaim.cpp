@@ -33,8 +33,8 @@ Essaim::Essaim(Environnement &env, int nbDrones) {
 }
 
 Essaim::~Essaim() {
-    for (auto& pDrone : vDrones)
-        delete pDrone;
+  for (auto& pDrone : vDrones)
+      delete pDrone;
 }
 
 

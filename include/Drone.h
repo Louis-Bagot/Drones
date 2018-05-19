@@ -41,7 +41,8 @@ class Drone {
     void setAcceleration(const VecteurR3& acc);
 
   public:
-
+    /** Constructeur avec position seule pour tests */
+    Drone(const VecteurR3);
     /** Constructeur de Drone pour tests */
     Drone(const std::vector<Capteur>&);
     /** Constructeur avec simplement la position initiale */
