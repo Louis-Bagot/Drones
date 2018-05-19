@@ -1,3 +1,4 @@
+/*
 #ifndef TESTSCOMPORTEMENT_H
 #define TESTSCOMPORTEMENT_H
 
@@ -23,14 +24,15 @@ class testsComportement : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(testsComportement);
     CPPUNIT_TEST(testAllerPoint);
     CPPUNIT_TEST_SUITE_END();
-    
+
 public:
     void setUp(void);
     void testAllerPoint(void);
     void tearDown(void);
-    
+
 protected:
-    
+
 };
 
 #endif // TESTSCOMPORTEMENT_H
+*/

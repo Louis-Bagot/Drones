@@ -13,8 +13,10 @@
 #include <netinet/in.h>
 
 #include "testsVecteurR3.h"
+#include "testsEssaim.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION( testsVecteurR3 );
+CPPUNIT_TEST_SUITE_REGISTRATION( testsEssaim );
 
 
 int main(int argc, char* argv[])
@@ -47,4 +49,3 @@ int main(int argc, char* argv[])
     // return 0 if tests were successful
     return collectedresults.wasSuccessful() ? 0 : 1;
 }
-

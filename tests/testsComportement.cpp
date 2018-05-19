@@ -1,3 +1,4 @@
+/*
 #include "../tests/testsComportement.h"
 #include<vector>
 #include "../include/Capteur.h"
@@ -21,10 +22,10 @@ void testsComportement::testAllerPoint(void)
 
     CPPUNIT_ASSERT(vecVerif.getX()==0 && vecVerif.getY()==0 && vecVerif.getZ()==0);
     */
-}
+//}
 
 
-
+/*
 void testsComportement::setUp(void)
 {
     //Methode appelÈ dËs le debut, c'est ici qu'on est censÈ crÈer les objets
@@ -34,4 +35,5 @@ void testsComportement::tearDown(void)
 {
     //C'est ici qu'on dÈtruit les objets
 }
+*/
 

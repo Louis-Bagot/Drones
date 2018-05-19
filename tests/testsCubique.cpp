@@ -1,3 +1,4 @@
+/*
 #include "../tests/testsCubique.h"
 #include "../include/VecteurR3.h"
 
@@ -32,3 +33,4 @@ testsCubique::testsGenererMaillage()
 
 
 }
+*/

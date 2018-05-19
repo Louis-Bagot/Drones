@@ -1,3 +1,4 @@
+/*
 #ifndef TESTSENVIRONNEMENT_H
 #define TESTSENVIRONNEMENT_H
 
@@ -36,3 +37,4 @@ class testsEnvironnement
 };
 
 #endif // TESTSENVIRONNEMENT_H
+*/

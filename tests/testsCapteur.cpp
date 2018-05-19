@@ -1,3 +1,4 @@
+/*
 #include "../include/Capteur.h"
 #include "../include/Environnement.h"
 #include <cmath>
@@ -25,4 +26,4 @@ void testsCapteur::testUpdateDistanceDetectee(void)
 /** Je vérifie que mon capteur detecte bien l'obstacle*/
   //CCPUNIT_ASSERT(capteur.distanceDectectee == 4);
 
-}
+//}

@@ -1,3 +1,4 @@
+/*
 #include "../tests/testsDrone.h"
 
 void testsDrone::testAjouterObjectif(void) {
@@ -6,9 +7,9 @@ void testsDrone::testAjouterObjectif(void) {
     d.ajouterObjectif(posObj);
     CPPUNIT_ASSERT(d.getObjectifs().size == 1 && d.getObjectifs().at(0) == posObj);
 */
-}
+//}
 
-void testsDrone::testLivrerColis(void) {
+//void testsDrone::testLivrerColis(void) {
   /*Drone d = new Drone();
   VecteurR3 posRetrait = new VecteurR3(0,0,0);
   VecteurR3 posDepot = new VecteurR3(0.5,0.25,0);
@@ -16,9 +17,9 @@ void testsDrone::testLivrerColis(void) {
   CPPUNIT_ASSERT(d.getObjectifs().size == 2 && d.getObjectifs().at(0) == posRetrait
                                             && d.getObjectifs().at(1) == posDepot);
 */
-}
+//}
 
-void testsDrone::testUpdateCapteurs(void) {
+//void testsDrone::testUpdateCapteurs(void) {
  /* Drone d = new Drone();
   VecteurR3 posRetrait = new VecteurR3(0,0,0);
   VecteurR3 posDepot = new VecteurR3(0.5,0.25,0);
@@ -26,7 +27,7 @@ void testsDrone::testUpdateCapteurs(void) {
   CPPUNIT_ASSERT(d.getObjectifs().size == 2 && d.getObjectifs().at(0) == posRetrait
                                            && d.getObjectifs().at(1) == posDepot);
 */
-}
+//}
 
 //void testsDrone::testUpdateCapteurs(void) {
   // On crée un Environnement d'1 Drone à 1 Capteur avec 1 Obstacle
