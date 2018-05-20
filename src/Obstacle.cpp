@@ -30,7 +30,7 @@ vector<VecteurR3> Obstacle::getVSommets() const {
     return vSommets;
 }
 
-vector<VecteurR3> Obstacle::getFaceYGauche() const {
+vector<VecteurR3> Obstacle::getFaceYMin() const {
   std::vector<VecteurR3> vSommetsFace;
   vSommetsFace.push_back(vSommets[0]);
   vSommetsFace.push_back(vSommets[5]);
@@ -38,7 +38,7 @@ vector<VecteurR3> Obstacle::getFaceYGauche() const {
   vSommetsFace.push_back(vSommets[3]);
   return vSommetsFace;
 }
-vector<VecteurR3> Obstacle::getFaceYDroite() const {
+vector<VecteurR3> Obstacle::getFaceYMax() const {
   std::vector<VecteurR3> vSommetsFace;
   vSommetsFace.push_back(vSommets[2]);
   vSommetsFace.push_back(vSommets[1]);
@@ -46,15 +46,7 @@ vector<VecteurR3> Obstacle::getFaceYDroite() const {
   vSommetsFace.push_back(vSommets[7]);
   return vSommetsFace;
 }
-vector<VecteurR3> Obstacle::getFaceXAvant() const {
-  std::vector<VecteurR3> vSommetsFace;
-  vSommetsFace.push_back(vSommets[3]);
-  vSommetsFace.push_back(vSommets[2]);
-  vSommetsFace.push_back(vSommets[7]);
-  vSommetsFace.push_back(vSommets[4]);
-  return vSommetsFace;
-}
-vector<VecteurR3> Obstacle::getFaceXArriere() const {
+vector<VecteurR3> Obstacle::getFaceXMin() const {
   std::vector<VecteurR3> vSommetsFace;
   vSommetsFace.push_back(vSommets[1]);
   vSommetsFace.push_back(vSommets[6]);
@@ -62,21 +54,29 @@ vector<VecteurR3> Obstacle::getFaceXArriere() const {
   vSommetsFace.push_back(vSommets[0]);
   return vSommetsFace;
 }
-vector<VecteurR3> Obstacle::getFaceZHaut() const {
+vector<VecteurR3> Obstacle::getFaceXMax() const {
+  std::vector<VecteurR3> vSommetsFace;
+  vSommetsFace.push_back(vSommets[3]);
+  vSommetsFace.push_back(vSommets[2]);
+  vSommetsFace.push_back(vSommets[7]);
+  vSommetsFace.push_back(vSommets[4]);
+  return vSommetsFace;
+}
+vector<VecteurR3> Obstacle::getFaceZMin() const {
+  std::vector<VecteurR3> vSommetsFace;
+  vSommetsFace.push_back(vSommets[3]);
+  vSommetsFace.push_back(vSommets[2]);
+  vSommetsFace.push_back(vSommets[1]);
+  vSommetsFace.push_back(vSommets[0]);
+  return vSommetsFace;
+}
+vector<VecteurR3> Obstacle::getFaceZMax() const {
   std::vector<VecteurR3> vSommetsFace;
   vSommetsFace.push_back(vSommets[7]);
   vSommetsFace.push_back(vSommets[6]);
   vSommetsFace.push_back(vSommets[5]);
   vSommetsFace.push_back(vSommets[4]);
 
-  return vSommetsFace;
-}
-vector<VecteurR3> Obstacle::getFaceZBasse() const {
-  std::vector<VecteurR3> vSommetsFace;
-  vSommetsFace.push_back(vSommets[3]);
-  vSommetsFace.push_back(vSommets[2]);
-  vSommetsFace.push_back(vSommets[1]);
-  vSommetsFace.push_back(vSommets[0]);
   return vSommetsFace;
 }
 

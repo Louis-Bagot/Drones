@@ -9,10 +9,10 @@ Essaim::Essaim() {
 Essaim::Essaim(Environnement &env, int nbDrones) {
   float rayonDrone = env.getCote()/40. ;
   if (nbDrones <= 7) { // arbitraire pour début de projet
-    VecteurR3 posDrone = VecteurR3(0.85,-0.85,0.5);
+    VecteurR3 posDrone = VecteurR3(0.85,-0.85,-0.51);
     //VecteurR3 vitDrone = VecteurR3(2,0.5,1);
     VecteurR3 vitDrone = VecteurR3();
-    int portee = rayonDrone*5;
+    float portee = rayonDrone*5;
     vector<Capteur> vCapteur;
     VecteurR3 dirX = VecteurR3(1,0,0);
     VecteurR3 dirY = VecteurR3(0,1,0);
@@ -25,7 +25,7 @@ Essaim::Essaim(Environnement &env, int nbDrones) {
     vCapteur.push_back(Capteur(portee,dirZ*-1,&env));
     VecteurR3 incrementPos = VecteurR3(0,0.3,0);
     for (size_t i = 0; i < nbDrones; i++) {
-      vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite()));
+      vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite(),vitDrone));
       posDrone+=incrementPos;
     }
 
@@ -57,5 +57,4 @@ void Essaim::retirerColis(VecteurR3 retrait, VecteurR3 depot){
         }
     }
     pDroneMin->livrerColis(retrait, depot);
-    std::cout << pDroneMin->getPremierObjectif()  << std::endl;
 }

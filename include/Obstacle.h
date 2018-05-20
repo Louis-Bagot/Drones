@@ -25,17 +25,17 @@ class Obstacle {
       vector<VecteurR3> getVSommets() const;
       // Getters des faces de l'Obstacle
       /** Getter face gauche, Y constant. (4 sommets) */
-      vector<VecteurR3> getFaceYGauche() const;
+      vector<VecteurR3> getFaceYMin() const;
       /** Getter face droite, Y constant. (4 sommets) */
-      vector<VecteurR3> getFaceYDroite() const;
-      /** Getter face avant, X constant. (4 sommets) */
-      vector<VecteurR3> getFaceXAvant() const;
+      vector<VecteurR3> getFaceYMax() const;
       /** Getter face arriere, X constant. (4 sommets) */
-      vector<VecteurR3> getFaceXArriere() const;
-      /** Getter face haute, Z constant. (4 sommets) */
-      vector<VecteurR3> getFaceZHaut() const;
+      vector<VecteurR3> getFaceXMin() const;
+      /** Getter face avant, X constant. (4 sommets) */
+      vector<VecteurR3> getFaceXMax() const;
       /** Getter face basse, Z constant. (4 sommets) */
-      vector<VecteurR3> getFaceZBasse() const;
+      vector<VecteurR3> getFaceZMin() const;
+      /** Getter face haute, Z constant. (4 sommets) */
+      vector<VecteurR3> getFaceZMax() const;
       /** Getter centre*/
       VecteurR3 getCentre() const;
       /** Getter point inital (coordonnées x,y,z minimales) */

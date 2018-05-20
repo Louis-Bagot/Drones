@@ -18,79 +18,79 @@ bool Capteur::detecteQQch() const {
   return distanceDetectee<portee;
 }
 
-void Capteur::updateDistanceDetectee() {
-    distanceDetectee = portee;
-  // TODO
+void Capteur::associerInfoDrone(const float rayon, VecteurR3 *_pPositionDrone) {
+  tailleDrone = rayon;
+  pPositionDrone = _pPositionDrone;
+}
+
+void Capteur::updateDistanceDetecteeObstacle() {
   //On itére sur les obstacles
-    /*
-    for (auto& obs : env->getVObstacles()){
 
-        std::cout << "      dans for obs" << std::endl;
+  for (auto& obs : env->getVObstacles()){
+    VecteurR3 centreObs = obs.getCentre();
+    vector<VecteurR3> face; //C'est la face de l'obstacle vers lequel le capteur pointe
 
-        VecteurR3 centreObs = obs.getCentre();
-        vector<VecteurR3> face; //C'est la face de l'obstacle vers lequel le capteur pointe
-
-        //On répère la face pointée le capteur
-        if(direction.getX() != 0){
-            if((centreObs - positionDrone).getX() > 0 ){ //C'est la face arriere
-                face = obs.getFaceXArriere();
-            }else{
-                face = obs.getFaceXAvant();
-            }
-        }else if(direction.getY() != 0){
-            if((centreObs - positionDrone).getY() > 0 ){
-                face = obs.getFaceYGauche();
-            }else{
-                face = obs.getFaceYDroite();
-            }
-        }else if(direction.getZ() != 0){
-            if((centreObs - positionDrone).getZ() > 0 ){
-                face = obs.getFaceZBasse();
-            }else{
-                face = obs.getFaceZHaut();
-            }
-        }
-
-        //On calcule les sommets de la face
-        float xmin = min(face[0].getX(), face[2].getX());
-        float xmax = max(face[0].getX(), face[2].getX());
-        float ymin = min(face[0].getY(), face[2].getY());
-        float ymax = max(face[0].getY(), face[2].getY());
-        float zmin = min(face[0].getZ(), face[2].getZ());
-        float zmax = max(face[0].getZ(), face[2].getZ());
-
-        //On calcule la distance détectée
-        //Pour cela il faut vérifier que le drone est bien en face de la face et non pas en dehors
-        //Dans ce cas la distance détectée est calculée
-        //Sinon elle est "infinie" du coup on renverra la portée du capteur
-        if(direction.getX() != 0){
-            if(positionDrone.getY() >= ymin && positionDrone.getY() <= ymax && positionDrone.getZ() >= zmin && positionDrone.getZ() <= zmax){
-                if((centreObs - positionDrone).getX() > 0 ){ //Face arriere
-                    distanceDetectee = abs(positionDrone.getX() - xmin);
-                }else{ //face avant
-                    distanceDetectee = abs(xmax - positionDrone.getX());
-                }
-            }
-
-        }else if(direction.getY() != 0){
-            if(positionDrone.getX() >= xmin && positionDrone.getX() <= xmax && positionDrone.getZ() >= zmin && positionDrone.getZ() <= zmax){
-                if((centreObs - positionDrone).getY() > 0 ){
-                    distanceDetectee = abs(ymin - positionDrone.getY());
-                }else{
-                    distanceDetectee = abs(ymax - positionDrone.getY());
-                }
-            }
-        }else if(direction.getZ() != 0){
-            if(positionDrone.getY() >= ymin && positionDrone.getY() <= ymax && positionDrone.getX() >= xmin && positionDrone.getX() <= xmax){
-                if((centreObs - positionDrone).getZ() > 0 ){
-                    distanceDetectee = abs(zmin - positionDrone.getZ());
-                }else{
-                    distanceDetectee = abs(zmax - positionDrone.getZ());
-                }
-            }
-        }
+    //On répère la face pointée le capteur
+    if(direction[0] != 0){
+      if((centreObs - (*pPositionDrone))[0] > 0 ) face = obs.getFaceXMin();
+      else face = obs.getFaceXMax();
+    } else if(direction[1] != 0){
+      if((centreObs - (*pPositionDrone))[1] > 0 ) face = obs.getFaceYMin();
+      else face = obs.getFaceYMax();
+    } else if(direction[2] != 0){
+      if((centreObs - (*pPositionDrone))[2] > 0 ) face = obs.getFaceZMin();
+      else face = obs.getFaceZMax();
     }
-    std::cout << "  fin updateDistDet" << std::endl;
-*/
-    distanceDetectee = min(portee, distanceDetectee);
+
+    //On calcule les sommets de la face
+    float xmin = min(face[0][0], face[2][0]);
+    float xmax = max(face[0][0], face[2][0]);
+    float ymin = min(face[0][1], face[2][1]);
+    float ymax = max(face[0][1], face[2][1]);
+    float zmin = min(face[0][2], face[2][2]);
+    float zmax = max(face[0][2], face[2][2]);
+
+    //On calcule la distance détectée
+    //Pour cela il faut vérifier que le drone est bien en face de la face et non pas en dehors
+    //Dans ce cas la distance détectée est calculée
+    //Sinon elle est "infinie" du coup on renverra la portée du capteur
+    if(direction[0] != 0){
+      if(((*pPositionDrone)[1] >= ymin) && ((*pPositionDrone)[1] <= ymax) &&
+      ((*pPositionDrone)[2] >= zmin) && ((*pPositionDrone)[2] <= zmax) &&
+      ((xmin-(*pPositionDrone)[0])*direction[0]>0)) {
+        distanceDetectee = abs(xmin - (*pPositionDrone)[0] + tailleDrone); // xmin == xmax ici
+      } else distanceDetectee = portee;
+
+    }else if(direction[1] != 0){
+      if(((*pPositionDrone)[0] >= xmin) && ((*pPositionDrone)[0] <= xmax) &&
+      ((*pPositionDrone)[2] >= zmin) && ((*pPositionDrone)[2] <= zmax) &&
+      ((ymin-(*pPositionDrone)[1])*direction[1]>0)) {
+        distanceDetectee = abs(ymin - (*pPositionDrone)[1] + tailleDrone);
+      } else distanceDetectee = portee;
+    }else if(direction[2] != 0){
+      if(((*pPositionDrone)[1] >= ymin) && ((*pPositionDrone)[1] <= ymax) &&
+      ((*pPositionDrone)[0] >= xmin) && ((*pPositionDrone)[0] <= xmax) &&
+      ((zmin-(*pPositionDrone)[2])*direction[2]>0)) {
+        distanceDetectee = abs(zmin - (*pPositionDrone)[2] + tailleDrone);
+      } else distanceDetectee = portee;
+    }
+  }
+  distanceDetectee = min(portee, distanceDetectee);
+}
+
+void Capteur::updateDistanceDetecteeBords() {
+  for (size_t i = 0; i < 3; i++) {
+    // Une seule des directions est non nulle dans notre cas
+    if (direction[i]>0) {
+      distanceDetectee = min(distanceDetectee, (env->getOrigineEnv()[i]+env->getCote())-(*pPositionDrone)[i]-tailleDrone);
+    } else if (direction[i]<0) {
+      distanceDetectee = min(distanceDetectee, (*pPositionDrone)[i]-tailleDrone-env->getOrigineEnv()[i]);
+    }
+  }
+}
+
+void Capteur::updateDistanceDetectee() {
+  distanceDetectee = portee;
+  updateDistanceDetecteeObstacle();
+  //updateDistanceDetecteeBords();
 }

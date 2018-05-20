@@ -14,7 +14,7 @@
 class Naif : public Comportement {
     public:
         /** Initialise le point duquel le Drone part et sa vitesse */
-        Naif(VecteurR3,VecteurR3);
+        Naif(const VecteurR3, const VecteurR3);
         virtual ~Naif();
         /** Méthode fondamentale de Comportement des Drones.
         * A partir des positions du Drone, de son premier objectif et des capteurs, d�termine le vecteur acc�l�ration pour la frame suivante.
@@ -25,17 +25,11 @@ class Naif : public Comportement {
         */
         virtual VecteurR3 allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destination, const std::vector<Capteur> vCapteurs, const VecteurR3 vitesse) override;
 
-        VecteurR3 setTrajectory(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
-
         bool atteintFinal(const VecteurR3 &posActuelle,const VecteurR3 &destination)const;
 
         bool atteint(const VecteurR3 &posActuelle,const VecteurR3 &destination, const float &epsilon) const;
 
-        bool presenceObstacles(const VecteurR3 posActuelle, const VecteurR3 destination,  const std::vector<Capteur> vCapteurs);
-
-        VecteurR3 surmonter(const VecteurR3 &posActuelle) const;
-
-        VecteurR3 gererHauteur(const VecteurR3 posActuelle,const VecteurR3 &destination, const VecteurR3 vitesse) const;
+        bool presenceObstacles(const VecteurR3 posActuelle, const VecteurR3 destination,  const std::vector<Capteur> vCapteurs, const VecteurR3&);
 
         // ATTRIBUTS
         /** Position à laquelle le Drone a commencé à aller à l'objectif. Permet de réduire sa vitesse avant d'atteindre l'objectif.*/

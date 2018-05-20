@@ -52,34 +52,33 @@ void Affichage::drawObstacles() {
 
       // Affichage de chaque face :
       // Faces Y constant
-      for (auto& point : obs.getFaceYGauche())
+      for (auto& point : obs.getFaceYMin())
         glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
 
-      for (auto& point : obs.getFaceYDroite())
+      for (auto& point : obs.getFaceYMax())
         glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
 
       //Faces X constant
-      for (auto& point : obs.getFaceXAvant())
-        glVertex3d(point.getX(), point.getY(), point.getZ());
+      for (auto& point : obs.getFaceXMin())
+      glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
 
-      for (auto& point : obs.getFaceXArriere())
+      for (auto& point : obs.getFaceXMax())
         glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
 
       // Faces Z constant
-      for (auto& point : obs.getFaceZHaut())
-        glVertex3d(point.getX(), point.getY(), point.getZ());
+      for (auto& point : obs.getFaceZMin())
+      glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
-
-      for (auto& point : obs.getFaceZBasse())
+      for (auto& point : obs.getFaceZMax())
         glVertex3d(point.getX(), point.getY(), point.getZ());
       color+=colorInc;
       glColor3ub(color,color,color);
@@ -92,12 +91,10 @@ void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
   double scale = drone.getRayon()*6;
 
   if (drone.estFonctionnel()) {
-    glColor3ub(255,255,255);
-  }else if(drone.porteUnColis()) {
-    glColor3ub(0,255,0);
-  }else{
-    glColor3ub(255,0,0);
+    if (drone.porteUnColis())    glColor3ub(0,255,0);
+    else glColor3ub(255,255,255);
   }
+  else glColor3ub(255,0,0);
   VecteurR3 pos = drone.getPosition();
   glTranslated(pos.getX(),pos.getY(),pos.getZ());
   gluSphere(params,drone.getRayon(),10,10);
@@ -108,7 +105,7 @@ void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
             if (capteur.detecteQQch()){glColor3ub(255,0,0);}
             else{glColor3ub(255,255,255);}
             glVertex3f(0,0,0);
-            double scale =drone.getRayon()*6+capteur.getPortee();
+            double scale = drone.getRayon()+capteur.getPortee();
             glVertex3f(scale*capteur.getDirection()[0],scale*capteur.getDirection()[1],scale*capteur.getDirection()[2]);
         }
 

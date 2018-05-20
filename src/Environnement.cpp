@@ -47,8 +47,6 @@ void Environnement::ajouterObstacle(const Obstacle& obs) {
 
 void Environnement::calculerPos(Drone& drone) {
   // f(t+dt) = f(t) + f'(t)*dt
-  // --TODO-- metter l'acceleration à 0 dans le Drone quand il n'est pas fonctionnel
-  // UPDATE fait dans Drone.cpp
   drone.setVitesse(drone.getVitesse()+(drone.getAcceleration()+gravite)*dt);
   drone.setPosition(drone.getPosition()+drone.getVitesse()*dt);
 }
@@ -114,6 +112,7 @@ void Environnement::collisionBords(Drone& drone) {
   }
 }
 
+
 void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
   float posx = drone.getPosition().getX();
   float posy = drone.getPosition().getY();
@@ -128,7 +127,7 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
 
   VecteurR3 posDrone = drone.getPosition();
   VecteurR3 vecfinal = VecteurR3(0,0,0);
-  VecteurR3 diffPos = obs.getCentre()-posDrone;
+  VecteurR3 diffPos = (obs.getCentre()-posDrone).valeurAbsolue();
   VecteurR3 Centre = obs.getCentre();
 
 
@@ -141,15 +140,23 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
   if ((fabs(diffPos[0]<obs.getTailleX()/2.)) && (fabs(diffPos[1]<obs.getTailleY()/2.)))
   {
   vecfinal = VecteurR3(0,0,sgn(posz-Centre[2]));
-  drone.setPosition(VecteurR3(posx,posy,Centre.getZ()+obs.getTailleZ()/2.+sgn(posz-Centre[2])*drone.getRayon()));
-  } else if ((fabs(diffPos[1]<obs.getTailleY()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
+  drone.setPosition(VecteurR3(posx,posy,Centre.getZ()+sgn(posz-Centre[2])*obs.getTailleZ()/2.+sgn(posz-Centre[2])*drone.getRayon()));
+
+  }
+
+  if ((fabs(diffPos[1]<obs.getTailleY()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
   {
   vecfinal = VecteurR3(sgn(posx-Centre[0]),0,0);
-  drone.setPosition(VecteurR3(Centre.getX()+obs.getTailleX()/2.+sgn(posx-Centre[0])*drone.getRayon(),posy,posz));
-  } else if ((fabs(diffPos[0]<obs.getTailleX()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
+  drone.setPosition(VecteurR3(Centre.getX()+sgn(posx-Centre[0])*obs.getTailleX()/2.+sgn(posx-Centre[0])*drone.getRayon(),posy,posz));
+  //drone.setPosition(VecteurR3(0,0,0));
+  }
+
+  if ((fabs(diffPos[0]<obs.getTailleX()/2.)) && (fabs(diffPos[2]<obs.getTailleZ()/2.)))
   {
   vecfinal = VecteurR3(0,sgn(posy-Centre[1]),0);
-  drone.setPosition(VecteurR3(posx,Centre.getY()+obs.getTailleY()/2.+sgn(posy-Centre[1])*drone.getRayon(),posz));
+  drone.setPosition(VecteurR3(posx,Centre.getY()+sgn(posy-Centre[1])*obs.getTailleY()/2.+sgn(posy-Centre[1])*drone.getRayon(),posz));
+  //drone.setPosition(VecteurR3(0.5,0,0));
+
   }
 
     drone.neFonctionnePlus();
