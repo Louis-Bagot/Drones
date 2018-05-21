@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     Essaim essaim = Essaim(env, nbDrones);
     //Test retrait colis
     VecteurR3 retrait = VecteurR3(-0.85,-0.3,-0.3);
-    VecteurR3 depot = VecteurR3(0,-0.65,-0.6);
+    VecteurR3 depot = VecteurR3(-0.85,0.70,0.5);
     env.ajouterColis(retrait);
     essaim.retirerColis(retrait, depot);
     //Test retrait 2nd colis
