@@ -37,15 +37,13 @@ class Drone {
     VecteurR3 gravite;
     /** Fonction qui renvoie vrai si le drone a atteint le premier de ses objectifs */
     bool objectifDone();
-    /** Setter de l'accélération */
-    void setAcceleration(const VecteurR3& acc);
 
   public:
 
-    /** Constructeur de Drone pour tests */
-    Drone(const std::vector<Capteur>&);
-    /** Constructeur avec simplement la position initiale */
-    Drone(const std::vector<Capteur>&,const VecteurR3);
+    /** Constructeur de Drone pour tests, avec position */
+    Drone(const VecteurR3);
+    /** Constructeur de test des Capteurs */
+    Drone(const float, const VecteurR3, const std::vector<Capteur>&);
     /** Constructeur effectif de Drone. Prend une position et (éventuellement) vitesse initiales, un rayon et un vecteur de Capteurs. */
     Drone(const float rayon, VecteurR3 pos, std::vector<Capteur> vCap, const VecteurR3 _gravite,VecteurR3 vit = VecteurR3());
     /**  */

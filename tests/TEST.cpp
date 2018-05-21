@@ -14,9 +14,11 @@
 
 #include "testsVecteurR3.h"
 #include "testsEssaim.h"
+#include "testsDrone.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION( testsVecteurR3 );
 CPPUNIT_TEST_SUITE_REGISTRATION( testsEssaim );
+CPPUNIT_TEST_SUITE_REGISTRATION( testsDrone );
 
 
 int main(int argc, char* argv[])

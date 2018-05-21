@@ -2,6 +2,16 @@
 #include "../include/VecteurR3.h"
 #include <cstddef>
 
+Drone::Drone(const VecteurR3 pos) {
+  position = pos;
+}
+
+Drone::Drone(const float rayonDrone, const VecteurR3 pos, const std::vector<Capteur>& vCap) {
+  rayon = rayonDrone;
+  position = pos;
+  vCapteurs = vCap;
+}
+
 Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<Capteur> vCap, const VecteurR3 _gravite,const VecteurR3 vitInit) {
   rayon = rayonDrone;
   position = posInit;
@@ -21,7 +31,6 @@ Drone::~Drone() {
 VecteurR3 Drone::getPremierObjectif() const {return vObjectifs.front();}
 std::queue<VecteurR3> Drone::getVObjectifs() const {return vObjectifs;}
 std::vector<Capteur> Drone::getVCapteurs() const {return vCapteurs;}
-void Drone::setAcceleration(const VecteurR3& _acc) {acceleration = _acc;}
 VecteurR3 Drone::getPosition() const {return position;}
 VecteurR3 Drone::getVitesse() const {return vitesse;}
 VecteurR3 Drone::getAcceleration() const {return acceleration;}
@@ -38,15 +47,12 @@ bool Drone::atteintObjectif() {
   bool ret = false;
   if(position.egal(getPremierObjectif(), rayon*0.2)) {
     ret = true;
-    std::cout << "    a atteint obj =" << getPremierObjectif() << std::endl;
-    std::cout << "    avec vitesse =" << vitesse << '\n';
     vObjectifs.pop();
   }
   return ret;
 }
 
 Drone Drone::operator++(int a) {
-  std::cout << "pos =" << position << '\n';
   //Update capteurs
   for(auto &capteur : vCapteurs){
       capteur.updateDistanceDetectee();
@@ -69,8 +75,7 @@ Drone Drone::operator++(int a) {
 void Drone::ajouterObjectif(const VecteurR3 &obj){
     vObjectifs.push(obj);
 }
-void Drone::livrerColis(const VecteurR3& retrait, const VecteurR3& depot)
-{
+void Drone::livrerColis(const VecteurR3& retrait, const VecteurR3& depot) {
     ajouterObjectif(retrait);
     ajouterObjectif(depot);
 }

@@ -84,12 +84,7 @@ VecteurR3 VecteurR3::div(const VecteurR3 &v) const {
 }
 
 VecteurR3 VecteurR3::operator*(const float &scal) const{
-    float new_x, new_y, new_z;
-  new_x=x*scal;
-  new_y=y*scal;
-  new_z=z*scal;
-
-  return VecteurR3(new_x,new_y,new_z);
+  return VecteurR3(x*scal,y*scal,z*scal);
 }
 
 float VecteurR3::norme22() const {
