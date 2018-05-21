@@ -1,4 +1,4 @@
-/*
+
 #ifndef TESTSCAPTEUR_H
 #define TESTSCAPTEUR_H
 
@@ -25,7 +25,7 @@
 *
 */
 
-/*
+
 class testsCapteur : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(testsCapteur);
@@ -42,4 +42,4 @@ class testsCapteur : public CppUnit::TestFixture
 };
 
 #endif // TESTSVECTEURR3_H
-*/
+

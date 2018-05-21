@@ -24,6 +24,7 @@ class testsDrone : public CppUnit::TestFixture {
     CPPUNIT_TEST(testAjouterObjectif);
     CPPUNIT_TEST(testLivrerColis);
     CPPUNIT_TEST(testAtteintObjectif);
+    CPPUNIT_TEST(testplusplus);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -43,6 +44,8 @@ class testsDrone : public CppUnit::TestFixture {
         void testLivrerColis();
         /** Teste si l'objectif est bien considéré comme atteint et bien supprimé de la liste */
         void testAtteintObjectif();
+        /** Teste si la position est bien actualisé */
+        void testplusplus();
     private:
 };
 

@@ -23,3 +23,24 @@ void testsDrone::testAtteintObjectif() {
   d.ajouterObjectif(VecteurR3());
   CPPUNIT_ASSERT(d.atteintObjectif() && !d.aObjectif());
 }
+void testsDrone::testplusplus(){
+    //Test si le drone contre la gravité
+    Drone d = Drone(VecteurR3());
+    VecteurR3 anciennePos = d.getPosition();
+    d++;
+    VecteurR3 nouvellePos = d.getPosition();
+    CPPUNIT_ASSERT(nouvellePos == anciennePos);
+    //Maintenant s'il a un objectif il devrait bouger
+    d = Drone(VecteurR3());
+    d.ajouterObjectif(VecteurR3(0.4,0.4,0.4));
+    anciennePos = d.getPosition();
+    d++;
+    d++;
+    d++;
+    nouvellePos = d.getPosition();
+    CPPUNIT_ASSERT(!(nouvellePos == anciennePos));
+
+}
+void testsDrone::tearDown(){
+}
+void testsDrone::setUp(){}
