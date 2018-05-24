@@ -5,7 +5,7 @@ Capteur::Capteur(const float &p, const VecteurR3 &dir, Environnement *environnem
   portee = p;
   env = environnement;
   direction = dir;
-  updateDistanceDetectee();
+  distanceDetectee = portee;
 }
 
 Capteur::~Capteur() {}

@@ -30,8 +30,13 @@ void Affichage::draw(TrackBallCamera *camera, GLuint droneText) {
   for (const auto & pDrone : env->getEssaimDrones())
     drawDrone(*pDrone,params);
 
-  for (const auto & pVecteurR3 : env->getVColis())
-    drawColis(pVecteurR3,params2);
+  glColor3ub(0,255,0);
+  for (const auto & pVecteurR3 : env->getVRetraits())
+    drawSphere(pVecteurR3,params2);
+
+  glColor3ub(255,0,255);
+  for (const auto & pVecteurR3 : env->getVDepots())
+    drawSphere(pVecteurR3,params2);
 
   gluDeleteQuadric(params);
 
@@ -118,9 +123,8 @@ void Affichage::drawDrone(const Drone& drone, GLUquadric* params) const {
 
 
 }
-void Affichage::drawColis(VecteurR3 posColis, GLUquadric* params) const {
-    glColor3ub(0,255,0);
-  glTranslated(posColis.getX(),posColis.getY(),posColis.getZ());
+void Affichage::drawSphere(VecteurR3 pos, GLUquadric* params) const {
+  glTranslated(pos.getX(),pos.getY(),pos.getZ());
   gluSphere(params,0.03,10,10);
-  glTranslated(posColis.getX()*-1,posColis.getY()*-1,posColis.getZ()*-1);
+  glTranslated(pos.getX()*-1,pos.getY()*-1,pos.getZ()*-1);
 }

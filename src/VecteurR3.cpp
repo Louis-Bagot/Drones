@@ -96,7 +96,7 @@ float VecteurR3::norme2() const {
 }
 
 VecteurR3 VecteurR3::prodVec(const VecteurR3 &v) const {
-    return VecteurR3(y*v.getZ()-z*getY(),z*v.getX()-x*getZ(),x*v.getY()-y*getX());
+    return VecteurR3(y*v[2]-z*v[1],z*v[0]-x*v[2],x*v[1]-y*v[0]);
 }
 
 

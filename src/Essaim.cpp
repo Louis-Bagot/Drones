@@ -8,7 +8,7 @@ Essaim::Essaim() {
 
 Essaim::Essaim(Environnement &env, int nbDrones) {
   float rayonDrone = env.getCote()/40. ;
-  if (nbDrones <= 7) { // arbitraire pour début de projet
+  if (nbDrones <= 6) { // arbitraire pour début de projet
     VecteurR3 posDrone = VecteurR3(0.85,-0.85,-0.51);
     //VecteurR3 vitDrone = VecteurR3(2,0.5,1);
     VecteurR3 vitDrone = VecteurR3();
@@ -27,14 +27,15 @@ Essaim::Essaim(Environnement &env, int nbDrones) {
     for (size_t i = 0; i < nbDrones; i++) {
       vDrones.push_back(new Drone(rayonDrone,posDrone,vCapteur,env.getGravite(),vitDrone));
       posDrone+=incrementPos;
+
     }
 
-  } else throw std::invalid_argument("Trop de drones ! <=5 pour l'instant please");
+  } else throw std::invalid_argument("Trop de drones ! <=6 pour génération automatique svp");
 }
 
 Essaim::~Essaim() {
-    for (auto& pDrone : vDrones)
-        delete pDrone;
+  // Opération finalement inutile puisqu'il semble que C++ le fasse seul
+  //  for (auto& pDrone : vDrones) delete pDrone;
 }
 
 

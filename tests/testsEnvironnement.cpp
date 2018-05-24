@@ -1,3 +1,4 @@
+/*
 #include "testsEnvironnement.h"
 
 testsEnvironnement::testsEnvironnement()
@@ -17,12 +18,12 @@ void testsEnvironnement::testcalculerPos(void)
  * puis une fois arrivé, on calculera la position du drone et vérifiera qu'elle coincide
  * avec celle demandée.
  */
-}
+//}
 
-void testcolision(void)
-{
+//void testcolision(void)
+//{
   /** On demande à deux drone d'entrer en colision (on aura au préalable crée un
    *  environnement et un essaim de 2 drones) et on vérifie que le bolean ressorti est
    * true.
    */
-}
+//}

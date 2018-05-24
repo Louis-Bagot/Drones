@@ -34,8 +34,10 @@ class Environnement {
         VecteurR3 gravite;
         /** Constante de delta temps, dans la formule f(t+dt) = f(t)+dt*f'(t)  */
         float dt;
-        /** Liste des colis présents dans l'environnement */
-        std::vector<VecteurR3> vColis;
+        /** Liste des points de Retrait présents dans l'environnement */
+        std::vector<VecteurR3> vRetraits;
+        /** Liste des points de Depot présents dans l'environnement */
+        std::vector<VecteurR3> vDepots;
 
         /** Calcule la position d'un drone en prenant en compte le vecteur accélération du drone et la gravité de l'environnement */
         void calculerPos(Drone&);
@@ -62,7 +64,8 @@ class Environnement {
 
         float getCote() const;
         VecteurR3 getGravite() const;
-        std::vector<VecteurR3> getVColis() const;
+        std::vector<VecteurR3> getVRetraits() const;
+        std::vector<VecteurR3> getVDepots() const;
         VecteurR3 getOrigineEnv() const;
         std::vector<Obstacle> getVObstacles() const;
 
@@ -71,7 +74,7 @@ class Environnement {
         /** Ajoute directement un objet Obstacle à la liste de l'Environnement */
         void ajouterObstacle(const Obstacle&);
         /** Ajoute un colis dans la liste à récupérer */
-        void ajouterColis(VecteurR3&);
+        void ajouterColis(const VecteurR3&, const VecteurR3&);
         /** Donne sa valeur à l'attribut essaim une fois ce dernier créé (juste un set) */
         void associerEssaim(Essaim*);
         /** Getter des Drones pour simplifier l'accès lors de l'affichage */

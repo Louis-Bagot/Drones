@@ -2,6 +2,16 @@
 #include "../include/VecteurR3.h"
 #include <cstddef>
 
+Drone::Drone(const VecteurR3 pos) {
+  position = pos;
+}
+
+Drone::Drone(const float rayonDrone, const VecteurR3 pos, const std::vector<Capteur>& vCap) {
+  rayon = rayonDrone;
+  position = pos;
+  vCapteurs = vCap;
+}
+
 Drone::Drone(const float rayonDrone, const VecteurR3 posInit, const std::vector<Capteur> vCap, const VecteurR3 _gravite,const VecteurR3 vitInit) {
   rayon = rayonDrone;
   position = posInit;
@@ -22,13 +32,12 @@ Drone::~Drone() {
 VecteurR3 Drone::getPremierObjectif() const {return vObjectifs.front();}
 std::queue<VecteurR3> Drone::getVObjectifs() const {return vObjectifs;}
 std::vector<Capteur> Drone::getVCapteurs() const {return vCapteurs;}
-void Drone::setAcceleration(const VecteurR3& _acc) {acceleration = _acc;}
 VecteurR3 Drone::getPosition() const {return position;}
 VecteurR3 Drone::getVitesse() const {return vitesse;}
 VecteurR3 Drone::getAcceleration() const {return acceleration;}
 void Drone::setPosition(const VecteurR3 nvllPos) {position=nvllPos;}
 void Drone::setVitesse(const VecteurR3 nvllVit) {vitesse=nvllVit;}
-void Drone::setAcceleration(const VecteurR3 nvllAcc) {acceleration=nvllAcc;}
+void Drone::setAcceleration(const VecteurR3& _acc) {acceleration = _acc;}
 float Drone::getRayon() const {return rayon;}
 void Drone::neFonctionnePlus() {fonctionne = false;}
 bool Drone::estFonctionnel() const {return fonctionne;}

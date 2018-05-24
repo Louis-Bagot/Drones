@@ -77,6 +77,7 @@ void Environnement::collisionBords(Drone& drone) {
   VecteurR3 dronePos = drone.getPosition();
   // Plans Z
   if (dronePos.getZ()-rayon < origineEnv.getZ()) {
+    drone.neFonctionnePlus();
     dronePos.setZ(origineEnv.getZ()+rayon);
     drone.setPosition(dronePos);
     drone.setVitesse(VecteurR3(0,0,1).reflexionPlanOrtho(drone.getVitesse())*absorb);
@@ -164,8 +165,9 @@ void Environnement::collisionObstacle(Drone& drone, Obstacle& obs) {
   }
 }
 
-void Environnement::ajouterColis(VecteurR3& colis){
-  vColis.push_back(colis);
+void Environnement::ajouterColis(const VecteurR3& retrait, const VecteurR3& depot){
+  vRetraits.push_back(retrait);
+  vDepots.push_back(depot);
 }
 
 void Environnement::associerEssaim(Essaim *e) {
@@ -173,9 +175,8 @@ void Environnement::associerEssaim(Essaim *e) {
 }
 
 
-std::vector<VecteurR3> Environnement::getVColis() const{
- return vColis;
-}
+std::vector<VecteurR3> Environnement::getVRetraits() const{return vRetraits;}
+std::vector<VecteurR3> Environnement::getVDepots() const{return vDepots;}
 
 std::vector<Drone*> Environnement::getEssaimDrones() const {
   return essaim->getVDrones();

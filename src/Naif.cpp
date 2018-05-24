@@ -47,9 +47,11 @@ VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destina
   VecteurR3 diffPos = destination - posActuelle;
   return (posActuelle*-2 + depart + destination)*(1/4.); */
   VecteurR3 diffPos = dest - posActuelle;
+  // S'il y a un obstacle et que nous ne sommes pas au dessus du but
   if (presenceObstacles(posActuelle, dest, vCapteurs, vitesse) &&
-     !diffPos.egal(VecteurR3(0,0,diffPos[2]),0.05)) {
-    acc = VecteurR3(0,0,5) - vitesse*10;
+      !diffPos.egal(VecteurR3(0,0,diffPos[2]),0.05)) {
+    acc -= vitesse*10; // Freine brutalement
+    acc += VecteurR3(0,0,3); // on monte
   } else {
     VecteurR3 milieu = (dest+depart)*0.5;
     acc = depart+dest-posActuelle*2;

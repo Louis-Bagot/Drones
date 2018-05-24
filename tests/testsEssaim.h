@@ -2,6 +2,21 @@
 #define TESTSESSAIM_H
 
 #include<vector>
+#include <iostream>
+#include <string>
+#include <list>
+#include <cppunit/TestCase.h>
+#include <cppunit/TestFixture.h>
+#include <cppunit/ui/text/TextTestRunner.h>
+#include <cppunit/extensions/HelperMacros.h>
+#include <cppunit/extensions/TestFactoryRegistry.h>
+#include <cppunit/TestResult.h>
+#include <cppunit/TestResultCollector.h>
+#include <cppunit/TestRunner.h>
+#include <cppunit/BriefTestProgressListener.h>
+#include <cppunit/CompilerOutputter.h>
+#include <cppunit/XmlOutputter.h>
+#include <netinet/in.h>
 #include"../include/VecteurR3.h"
 #include"../include/Essaim.h"
 
@@ -9,31 +24,33 @@
 * classe de test pour la classe Essaim
 * @author Simon
 */
-class testsEssaim  : public CppUnit::TestFixture
-{
+
+class testsEssaim  : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(testsEssaim);
-    CPPUNIT_TEST(testRetirerColis());
-    CPPUNIT_TEST(testAffectationDronePos());
+    CPPUNIT_TEST(testAjouterDrone);
+    CPPUNIT_TEST(testRetirerColis);
     CPPUNIT_TEST_SUITE_END();
 
     public:
         void setUp(void);
         void tearDown(void);
     protected:
-
-        /** teste la méthode retirer colis. On va faire apparaitre un colis a un endroit et on vérifie que le drone le plus proche a bien reçu l'ordre de s'y rendre.
-        * Pour cela on regarde que les points de retrait et dépose ont été ajouté à la liste des objectifs du drone le plus proche.
+        void testAjouterDrone();
+        /** teste si la mï¿½thode affecterDronePos affecte au drone le noeud du maillage le plus proche de sa position
+        * C'est une mï¿½thode fastidieuse ï¿½ tester. On va tester un exemple simple.
+        * Etant donnï¿½ 8 noeuds issus d'un maillage d'une formation cubique, on crï¿½ï¿½ 8 drones lï¿½gï¿½rement dï¿½calï¿½ au 8 sommets.
+        * On vï¿½rifie que chaque drone a comme objectif d'aller au sommet ï¿½ cotï¿½ de lui.
+        */
+        /** teste la mï¿½thode retirer colis. On va faire apparaitre un colis a un endroit et on vï¿½rifie que le drone le plus proche a bien reï¿½u l'ordre de s'y rendre.
+        * Pour cela on regarde que les points de retrait et dï¿½pose ont ï¿½tï¿½ ajoutï¿½ ï¿½ la liste des objectifs du drone le plus proche.
         */
         void testRetirerColis();
-        /** teste si la méthode affecterDronePos affecte au drone le noeud du maillage le plus proche de sa position
-        * C'est une méthode fastidieuse à tester. On va tester un exemple simple.
-        * Etant donné 8 noeuds issus d'un maillage d'une formation cubique, on créé 8 drones légèrement décalé au 8 sommets.
-        * On vérifie que chaque drone a comme objectif d'aller au sommet à coté de lui.
-        */
-        void testAffectationDronePos(vector<VecteurR3>) vector<int>;
+        /** Appelle la fonction et vÃ©rifie si le bon Drone est bien dans la liste */
+        void testAffectationDronePos();
+
+
     private:
-        /** Objet à tester */
-        Essaim essaim;
+      // Nous ne crÃ©ons pas un essaim gÃ©nÃ©ral pour Ã©viter les pb de croisement entre tests (liste Drones)
 };
 
 #endif // TESTSESSAIM_H

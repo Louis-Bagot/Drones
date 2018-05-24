@@ -30,7 +30,7 @@ class Affichage {
          * @see draw */
         void drawDrone(const Drone&,GLUquadric*) const;
         void drawObstacles();
-        void drawColis(VecteurR3,GLUquadric*) const;
+        void drawSphere(VecteurR3,GLUquadric*) const;
         /** Fonction d'affichage appelée dans la fonction principale 'draw',
         * gère l'affichage des Obstacles. @see draw */
         void drawObstacle();
