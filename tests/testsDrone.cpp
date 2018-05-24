@@ -24,23 +24,34 @@ void testsDrone::testAtteintObjectif() {
   CPPUNIT_ASSERT(d.atteintObjectif() && !d.aObjectif());
 }
 void testsDrone::testplusplus(){
-    //Test si le drone contre la gravité
-    Drone d = Drone(VecteurR3());
-    VecteurR3 anciennePos = d.getPosition();
-    d++;
-    VecteurR3 nouvellePos = d.getPosition();
-    CPPUNIT_ASSERT(nouvellePos == anciennePos);
-    //Maintenant s'il a un objectif il devrait bouger
-    d = Drone(VecteurR3());
-    d.ajouterObjectif(VecteurR3(0.4,0.4,0.4));
-    anciennePos = d.getPosition();
-    d++;
-    d++;
-    d++;
-    nouvellePos = d.getPosition();
-    CPPUNIT_ASSERT(!(nouvellePos == anciennePos));
+  Environnement env = Environnement(2.);
+  // Obstacle qui obstruit la direction X
+  env.ajouterObstacle(Obstacle(VecteurR3(0.5,-1,-1),0.5,2,2));
+  vector<Capteur> vCapteur;
+  vCapteur.push_back(Capteur(1,VecteurR3(1,0,0),&env));
+  Drone d = Drone(0.1,VecteurR3(),vCapteur,env.getGravite());
+  std::cout << " | capteur detecte ? : " << (d.getVCapteurs()[0].detecteQQch() ? "OUI <3":"NON, PB") << '\n';
+  std::cout << "(insérer ce test dans le résultat après la fusion de tests)" << '\n';
+  //Test si le drone contre la gravité (n'a pas d'objectif)
+  VecteurR3 vAcc = VecteurR3(1,1,1);
+  d.setAcceleration(vAcc);
+  d++;
+  bool testContreGravite = (d.getAcceleration()==env.getGravite()*-1);
 
+  //Maintenant s'il a un objectif il devrait bouger
+  d.ajouterObjectif(VecteurR3(1,1,1));
+  d++;
+  bool testObj = !((d.getAcceleration()==VecteurR3()) ||
+                   (d.getAcceleration()==env.getGravite()*-1));
+
+  // Teste si le drone ne fait bien aucune action s'il n'est plus fonctionnel
+  d.neFonctionnePlus();
+  d++;
+  bool testNonFonctionnel = (d.getAcceleration()==VecteurR3());
+
+  CPPUNIT_ASSERT(testContreGravite && testObj && testNonFonctionnel);
 }
+
 void testsDrone::tearDown(){
 }
 void testsDrone::setUp(){}

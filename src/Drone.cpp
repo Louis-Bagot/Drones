@@ -64,8 +64,8 @@ Drone Drone::operator++(int a) {
     if (aObjectif()){
         atteintObjectif();
         acceleration = comportement->allerPoint(position,getPremierObjectif(),vCapteurs, vitesse);
-    }else acceleration = vitesse*-5; // le faire freiner pour atteindre v=0
-    acceleration+=gravite*(-1); // il contre la gravité par défaut
+    } else acceleration = vitesse*-5; // le faire freiner pour atteindre v=0
+    acceleration += gravite*(-1); // il contre la gravité par défaut
   }
   return *this;
 }

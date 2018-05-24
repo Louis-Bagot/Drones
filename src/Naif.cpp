@@ -36,7 +36,6 @@ bool Naif::presenceObstacles(const VecteurR3 posActuelle, const VecteurR3 destin
         depart = posActuelle;
         break;
       }
-    std::cout << "in presenceObstacles : " << res << std::endl;
     return res;
 }
 
@@ -62,9 +61,7 @@ VecteurR3 Naif::allerPoint(const VecteurR3 &posActuelle,const VecteurR3 &destina
   /**VecteurR3 diffPos = destination - posActuelle;
   return (posActuelle*-2 + depart + destination)*(1/4.);*/
 
-  VecteurR3 milieu = (depart+destination).div(VecteurR3(2,2,2));
-
-  std::cout << "v0=" <<v0 << '\n';
+  VecteurR3 milieu = (depart+destination)*0.5;
 
   return v0.multi((posActuelle*2-(destination+milieu)).div(((depart-milieu).multi(depart-destination))))+(posActuelle*-2)+destination+depart;
   /*

@@ -25,6 +25,8 @@ class testsVecteurR3 : public CppUnit::TestFixture
     CPPUNIT_TEST(testEgalite);
     CPPUNIT_TEST(testAddition);
     CPPUNIT_TEST(testSoustraction);
+    CPPUNIT_TEST(testMulti);
+    CPPUNIT_TEST(testDiv);
     CPPUNIT_TEST(testProdScal);
     CPPUNIT_TEST(testMultiplicationScalaire);
     CPPUNIT_TEST(testIncrementation);
@@ -39,6 +41,8 @@ class testsVecteurR3 : public CppUnit::TestFixture
         void testEgalite(void);
         void testAddition(void);
         void testSoustraction(void);
+        void testMulti(void);
+        void testDiv(void);
         void testProdScal(void);
         void testMultiplicationScalaire(void);
         void testIncrementation(void);

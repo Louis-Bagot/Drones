@@ -26,6 +26,14 @@ void testsVecteurR3::testSoustraction(void) {
     CPPUNIT_ASSERT(sub==VecteurR3(-1,-1,-1));
 }
 
+void testsVecteurR3::testMulti(void) {
+    CPPUNIT_ASSERT(v1.multi(v2)==VecteurR3(2,6,12));
+}
+
+void testsVecteurR3::testDiv(void) {
+    CPPUNIT_ASSERT(v1.div(v2)==VecteurR3(1/2.,2/3.,3/4.));
+}
+
 void testsVecteurR3::testProdScal(void) {
     CPPUNIT_ASSERT((v1*v2)==(2+6+12));
 }
