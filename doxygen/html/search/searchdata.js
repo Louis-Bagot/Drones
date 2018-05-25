@@ -3,8 +3,9 @@ var indexSectionsWithContent =
   0: "acdefglmnoprstuv~",
   1: "acdefnoptv",
   2: "m",
-  3: "acdefglnoprtuv~",
-  4: "alnosv"
+  3: "acdefglmnoprstuv~",
+  4: "adlnosv",
+  5: "o"
 };
 
 var indexSectionNames =
@@ -13,15 +14,17 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables"
+  4: "variables",
+  5: "related"
 };
 
 var indexSectionLabels =
 {
-  0: "All",
+  0: "Tout",
   1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables"
+  2: "Fichiers",
+  3: "Fonctions",
+  4: "Variables",
+  5: "Amis"
 };
 

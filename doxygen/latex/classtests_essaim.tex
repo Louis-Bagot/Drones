@@ -1,16 +1,16 @@
-\hypertarget{classtests_essaim}{}\section{tests\+Essaim Class Reference}
+\hypertarget{classtests_essaim}{}\section{RÃ©fÃ©rence de la classe tests\+Essaim}
 \label{classtests_essaim}\index{tests\+Essaim@{tests\+Essaim}}
 
 
 {\ttfamily \#include $<$tests\+Essaim.\+h$>$}
 
-Inheritance diagram for tests\+Essaim\+:\begin{figure}[H]
+Graphe d\textquotesingle{}hÃ©ritage de tests\+Essaim\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classtests_essaim}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classtests_essaim_a11f3fd6586834e4fda0f7e2957e6f85d}\label{classtests_essaim_a11f3fd6586834e4fda0f7e2957e6f85d}} 
@@ -19,37 +19,40 @@ void {\bfseries set\+Up} (void)
 \mbox{\Hypertarget{classtests_essaim_aeffed1c0f08751a477df994ba6e7dd48}\label{classtests_essaim_aeffed1c0f08751a477df994ba6e7dd48}} 
 void {\bfseries tear\+Down} (void)
 \end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
+\subsection*{Fonctions membres protÃ©gÃ©es}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtests_essaim_aecfe81de4a26fe35f16cfe73db6dd298}\label{classtests_essaim_aecfe81de4a26fe35f16cfe73db6dd298}} 
+void {\bfseries test\+Ajouter\+Drone} ()
 \item 
 void \mbox{\hyperlink{classtests_essaim_ac6af8267d8e85120a6b1e5b66b247f5b}{test\+Retirer\+Colis}} ()
 \item 
-void \mbox{\hyperlink{classtests_essaim_a4003b90f92dd07e4a191a660c1f5fc3f}{test\+Affectation\+Drone\+Pos}} (vector$<$ \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} $>$) vector$<$ int $>$
+void \mbox{\hyperlink{classtests_essaim_a602aca58210132a947410123c130665e}{test\+Affectation\+Drone\+Pos}} ()
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-classe de test pour la classe \mbox{\hyperlink{class_essaim}{Essaim}} \begin{DoxyAuthor}{Author}
+\subsection{Description dÃ©taillÃ©e}
+classe de test pour la classe \mbox{\hyperlink{class_essaim}{Essaim}} \begin{DoxyAuthor}{Auteur}
 Simon 
 \end{DoxyAuthor}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{classtests_essaim_a4003b90f92dd07e4a191a660c1f5fc3f}\label{classtests_essaim_a4003b90f92dd07e4a191a660c1f5fc3f}} 
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classtests_essaim_a602aca58210132a947410123c130665e}\label{classtests_essaim_a602aca58210132a947410123c130665e}} 
 \index{tests\+Essaim@{tests\+Essaim}!test\+Affectation\+Drone\+Pos@{test\+Affectation\+Drone\+Pos}}
 \index{test\+Affectation\+Drone\+Pos@{test\+Affectation\+Drone\+Pos}!tests\+Essaim@{tests\+Essaim}}
 \subsubsection{\texorpdfstring{test\+Affectation\+Drone\+Pos()}{testAffectationDronePos()}}
-{\footnotesize\ttfamily void tests\+Essaim\+::test\+Affectation\+Drone\+Pos (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void tests\+Essaim\+::test\+Affectation\+Drone\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-teste si la méthode affecter\+Drone\+Pos affecte au drone le noeud du maillage le plus proche de sa position C\textquotesingle{}est une méthode fastidieuse à tester. On va tester un exemple simple. Etant donné 8 noeuds issus d\textquotesingle{}un maillage d\textquotesingle{}une formation cubique, on créé 8 drones légèrement décalé au 8 sommets. On vérifie que chaque drone a comme objectif d\textquotesingle{}aller au sommet à coté de lui. \mbox{\Hypertarget{classtests_essaim_ac6af8267d8e85120a6b1e5b66b247f5b}\label{classtests_essaim_ac6af8267d8e85120a6b1e5b66b247f5b}} 
+Appelle la fonction et vÃ©rifie si le bon \mbox{\hyperlink{class_drone}{Drone}} est bien dans la liste \mbox{\Hypertarget{classtests_essaim_ac6af8267d8e85120a6b1e5b66b247f5b}\label{classtests_essaim_ac6af8267d8e85120a6b1e5b66b247f5b}} 
 \index{tests\+Essaim@{tests\+Essaim}!test\+Retirer\+Colis@{test\+Retirer\+Colis}}
 \index{test\+Retirer\+Colis@{test\+Retirer\+Colis}!tests\+Essaim@{tests\+Essaim}}
 \subsubsection{\texorpdfstring{test\+Retirer\+Colis()}{testRetirerColis()}}
 {\footnotesize\ttfamily void tests\+Essaim\+::test\+Retirer\+Colis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-teste la méthode retirer colis. On va faire apparaitre un colis a un endroit et on vérifie que le drone le plus proche a bien reçu l\textquotesingle{}ordre de s\textquotesingle{}y rendre. Pour cela on regarde que les points de retrait et dépose ont été ajouté à la liste des objectifs du drone le plus proche. 
+teste si la mï¿½thode affecter\+Drone\+Pos affecte au drone le noeud du maillage le plus proche de sa position C\textquotesingle{}est une mï¿½thode fastidieuse ï¿½ tester. On va tester un exemple simple. Etant donnï¿½ 8 noeuds issus d\textquotesingle{}un maillage d\textquotesingle{}une formation cubique, on crï¿½ï¿½ 8 drones lï¿½gï¿½rement dï¿½calï¿½ au 8 sommets. On vï¿½rifie que chaque drone a comme objectif d\textquotesingle{}aller au sommet ï¿½ cotï¿½ de lui. teste la mï¿½thode retirer colis. On va faire apparaitre un colis a un endroit et on vï¿½rifie que le drone le plus proche a bien reï¿½u l\textquotesingle{}ordre de s\textquotesingle{}y rendre. Pour cela on regarde que les points de retrait et dï¿½pose ont ï¿½tï¿½ ajoutï¿½ ï¿½ la liste des objectifs du drone le plus proche. 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+La documentation de cette classe a Ã©tÃ© gÃ©nÃ©rÃ©e Ã  partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 tests\+Essaim.\+h\item 
 tests\+Essaim.\+cpp\end{DoxyCompactItemize}

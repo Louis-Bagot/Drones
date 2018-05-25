@@ -1,10 +1,10 @@
-\hypertarget{class_vecteur_r3}{}\section{Vecteur\+R3 Class Reference}
+\hypertarget{class_vecteur_r3}{}\section{Référence de la classe Vecteur\+R3}
 \label{class_vecteur_r3}\index{Vecteur\+R3@{Vecteur\+R3}}
 
 
 {\ttfamily \#include $<$Vecteur\+R3.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_vecteur_r3_a265cb675642abf1db0fbd99eed4590e7}{Vecteur\+R3}} ()
@@ -22,6 +22,15 @@ float {\bfseries getY} () const
 \mbox{\Hypertarget{class_vecteur_r3_a144eb3201fcb8235f86ea56fbe60898f}\label{class_vecteur_r3_a144eb3201fcb8235f86ea56fbe60898f}} 
 float {\bfseries getZ} () const
 \item 
+\mbox{\Hypertarget{class_vecteur_r3_a2d5f95e3b84ce304f46750e4d7d32505}\label{class_vecteur_r3_a2d5f95e3b84ce304f46750e4d7d32505}} 
+void {\bfseries setX} (const float \&)
+\item 
+\mbox{\Hypertarget{class_vecteur_r3_a4ef6cac63a9a31d071dacea892129e47}\label{class_vecteur_r3_a4ef6cac63a9a31d071dacea892129e47}} 
+void {\bfseries setY} (const float \&)
+\item 
+\mbox{\Hypertarget{class_vecteur_r3_a8266502ca7bdc70ec97672520f34b85f}\label{class_vecteur_r3_a8266502ca7bdc70ec97672520f34b85f}} 
+void {\bfseries setZ} (const float \&)
+\item 
 float \mbox{\hyperlink{class_vecteur_r3_afb4fb3f4cd023a67cb74e906117ca30c}{operator\mbox{[}$\,$\mbox{]}}} (const int \&) const
 \item 
 \mbox{\Hypertarget{class_vecteur_r3_a0372c4411592d0a3adb4cf052e1b098d}\label{class_vecteur_r3_a0372c4411592d0a3adb4cf052e1b098d}} 
@@ -33,9 +42,15 @@ bool \mbox{\hyperlink{class_vecteur_r3_a3e37c4a2e567844b4c32bede3f1b357e}{egal}}
 \item 
 \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_a1a041eb37d796dcbb6e9a4d67df2e364}{operator-\/}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
 \item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_adba111a3a9795f2cbeaa01efb99bb368}{div}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_ad03b38659a6e2454727487afb8842f0d}{multi}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
+\item 
 void \mbox{\hyperlink{class_vecteur_r3_ab001030cf179f0b78c4b57366132a87c}{operator=}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&)
 \item 
 void \mbox{\hyperlink{class_vecteur_r3_ab50dc680b31f24957d39c60b63b71daf}{operator+=}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&)
+\item 
+void \mbox{\hyperlink{class_vecteur_r3_a4cda50fa8f9233ed982d01b855cd6782}{operator-\/=}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&)
 \item 
 float \mbox{\hyperlink{class_vecteur_r3_adba51a9c03c057ddafd76d4e62de3866}{operator$\ast$}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
 \item 
@@ -46,11 +61,20 @@ float \mbox{\hyperlink{class_vecteur_r3_a014e36cfadce987c292edcf1db615cfd}{norme
 float \mbox{\hyperlink{class_vecteur_r3_a6c8bbc72999a06fd23e4213729f585b2}{norme2}} () const
 \item 
 \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_a4fa29ea43737c79245a9ba049308d90b}{prod\+Vec}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_a9cef6d7525f81938e2a7e71aa73c442c}{valeur\+Absolue}} () const
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_vecteur_r3_a8191355529fdc2c4fa22cad27d6ad305}{reflexion\+Plan\+Ortho}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&) const
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_vecteur_r3_a1ef8b2a2f31c15f4f7765caad34796ca}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Classe d\textquotesingle{}un vecteur dans R3, avec trois coordonnées et les opérations classiques des ensembles vectoriels. \begin{DoxyAuthor}{Authors}
+\subsection{Description détaillée}
+Classe d\textquotesingle{}un vecteur dans R3, avec trois coordonnées et les opérations classiques des ensembles vectoriels. \begin{DoxyAuthor}{Auteurs}
 \+: Margot, Morgan, Théau, Louis 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
@@ -58,7 +82,7 @@ Classe d\textquotesingle{}un vecteur dans R3, avec trois coordonnées et les op�
 \end{DoxyVersion}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{Documentation des constructeurs et destructeur}
 \mbox{\Hypertarget{class_vecteur_r3_a265cb675642abf1db0fbd99eed4590e7}\label{class_vecteur_r3_a265cb675642abf1db0fbd99eed4590e7}} 
 \index{Vecteur\+R3@{Vecteur\+R3}!Vecteur\+R3@{Vecteur\+R3}}
 \index{Vecteur\+R3@{Vecteur\+R3}!Vecteur\+R3@{Vecteur\+R3}}
@@ -79,24 +103,36 @@ Constructeur de \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} à partir de tr
 
 Destructeur d\textquotesingle{}un \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}. 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_vecteur_r3_a3e37c4a2e567844b4c32bede3f1b357e}\label{class_vecteur_r3_a3e37c4a2e567844b4c32bede3f1b357e}} 
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_vecteur_r3_adba111a3a9795f2cbeaa01efb99bb368}\label{class_vecteur_r3_adba111a3a9795f2cbeaa01efb99bb368}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!div@{div}}
+\index{div@{div}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{div()}{div()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::div (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption}) const}
+
+division de deux vecteurs composante par composante \mbox{\Hypertarget{class_vecteur_r3_a3e37c4a2e567844b4c32bede3f1b357e}\label{class_vecteur_r3_a3e37c4a2e567844b4c32bede3f1b357e}} 
 \index{Vecteur\+R3@{Vecteur\+R3}!egal@{egal}}
 \index{egal@{egal}!Vecteur\+R3@{Vecteur\+R3}}
 \subsubsection{\texorpdfstring{egal()}{egal()}}
 {\footnotesize\ttfamily bool Vecteur\+R3\+::egal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v\+Comp,  }\item[{const float \&}]{epsilon = {\ttfamily 0} }\end{DoxyParamCaption}) const}
 
 Comparaison de deux vecteurs à un voisinage de rayon donné près 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Paramètres}
 {\em v\+Comp} & le \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} auquel se comparer \\
 \hline
 {\em epsilon} & la marge d\textquotesingle{}erreur que l\textquotesingle{}on se laisse \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Renvoie}
 si le vecteur est bien le même que celui en entrée, à une précision epsilon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vecteur_r3_a6c8bbc72999a06fd23e4213729f585b2}\label{class_vecteur_r3_a6c8bbc72999a06fd23e4213729f585b2}} 
+\mbox{\Hypertarget{class_vecteur_r3_ad03b38659a6e2454727487afb8842f0d}\label{class_vecteur_r3_ad03b38659a6e2454727487afb8842f0d}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!multi@{multi}}
+\index{multi@{multi}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{multi()}{multi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::multi (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption}) const}
+
+multiplication de deux vecteurs composante par composante \mbox{\Hypertarget{class_vecteur_r3_a6c8bbc72999a06fd23e4213729f585b2}\label{class_vecteur_r3_a6c8bbc72999a06fd23e4213729f585b2}} 
 \index{Vecteur\+R3@{Vecteur\+R3}!norme2@{norme2}}
 \index{norme2@{norme2}!Vecteur\+R3@{Vecteur\+R3}}
 \subsubsection{\texorpdfstring{norme2()}{norme2()}}
@@ -132,13 +168,19 @@ Addition de deux vecteurs composante par composante \mbox{\Hypertarget{class_vec
 \subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
 {\footnotesize\ttfamily void Vecteur\+R3\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption})}
 
-Addition des coordonnées acutelles avec celles d\textquotesingle{}un autre (raccourci +=) \mbox{\Hypertarget{class_vecteur_r3_a1a041eb37d796dcbb6e9a4d67df2e364}\label{class_vecteur_r3_a1a041eb37d796dcbb6e9a4d67df2e364}} 
+Addition des coordonnées actuelles avec celles d\textquotesingle{}un autre (raccourci +=) \mbox{\Hypertarget{class_vecteur_r3_a1a041eb37d796dcbb6e9a4d67df2e364}\label{class_vecteur_r3_a1a041eb37d796dcbb6e9a4d67df2e364}} 
 \index{Vecteur\+R3@{Vecteur\+R3}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!Vecteur\+R3@{Vecteur\+R3}}
 \subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption}) const}
 
-Soustraction de deux vecteurs composante par composante \mbox{\Hypertarget{class_vecteur_r3_ab001030cf179f0b78c4b57366132a87c}\label{class_vecteur_r3_ab001030cf179f0b78c4b57366132a87c}} 
+Soustraction de deux vecteurs composante par composante \mbox{\Hypertarget{class_vecteur_r3_a4cda50fa8f9233ed982d01b855cd6782}\label{class_vecteur_r3_a4cda50fa8f9233ed982d01b855cd6782}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily void Vecteur\+R3\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption})}
+
+Soustraction des coordonnées actuelles avec celles d\textquotesingle{}un autre (raccourci -\/=) \mbox{\Hypertarget{class_vecteur_r3_ab001030cf179f0b78c4b57366132a87c}\label{class_vecteur_r3_ab001030cf179f0b78c4b57366132a87c}} 
 \index{Vecteur\+R3@{Vecteur\+R3}!operator=@{operator=}}
 \index{operator=@{operator=}!Vecteur\+R3@{Vecteur\+R3}}
 \subsubsection{\texorpdfstring{operator=()}{operator=()}}
@@ -156,9 +198,30 @@ Alternative aux getters \+: operateur \mbox{[}\mbox{]} \mbox{\Hypertarget{class_
 \subsubsection{\texorpdfstring{prod\+Vec()}{prodVec()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::prod\+Vec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption}) const}
 
-Calcul du produit vectoriel. (Useful pour verifier la colinearite). 
+Calcul du produit vectoriel. (Useful pour verifier la colinearite). \mbox{\Hypertarget{class_vecteur_r3_a8191355529fdc2c4fa22cad27d6ad305}\label{class_vecteur_r3_a8191355529fdc2c4fa22cad27d6ad305}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!reflexion\+Plan\+Ortho@{reflexion\+Plan\+Ortho}}
+\index{reflexion\+Plan\+Ortho@{reflexion\+Plan\+Ortho}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{reflexion\+Plan\+Ortho()}{reflexionPlanOrtho()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::reflexion\+Plan\+Ortho (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption}) const}
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Calcul le produit de la matrice de Householder générée par ce \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} (this) avec un vecteur donné en entrée. Cela donne le vecteur de reflexion par rapport au plan orthogonal à ce vecteur. \mbox{\Hypertarget{class_vecteur_r3_a9cef6d7525f81938e2a7e71aa73c442c}\label{class_vecteur_r3_a9cef6d7525f81938e2a7e71aa73c442c}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!valeur\+Absolue@{valeur\+Absolue}}
+\index{valeur\+Absolue@{valeur\+Absolue}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{valeur\+Absolue()}{valeurAbsolue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Vecteur\+R3\+::valeur\+Absolue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Ressort la valeur absolue composante par composante 
+
+\subsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_vecteur_r3_a1ef8b2a2f31c15f4f7765caad34796ca}\label{class_vecteur_r3_a1ef8b2a2f31c15f4f7765caad34796ca}} 
+\index{Vecteur\+R3@{Vecteur\+R3}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vecteur\+R3@{Vecteur\+R3}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Methode d\textquotesingle{}affichage pour debug 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Vecteur\+R3.\+h\item 
 Vecteur\+R3.\+cpp\end{DoxyCompactItemize}

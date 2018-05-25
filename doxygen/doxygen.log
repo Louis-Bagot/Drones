@@ -1,33 +1,13 @@
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsCapteur.cpp:5: warning: no matching class member found for 
-  void testsCapteur::testUpdateDistanceDetectee(void)
-
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsEssaim.cpp:29: warning: documented symbol `void testsEssaim::affectationDronePos' was not declared or defined.
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsVecteurR3.cpp:56: warning: no matching class member found for 
-  void testVecteurR3::testNorme22(void)
-
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsVecteurR3.cpp:64: warning: no matching class member found for 
-  void testVecteurR3::testprodVec(void)
-
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsEnvironnement.cpp:3: warning: documented symbol `testsEnvironnement::testsEnvironnement' was not declared or defined.
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsEnvironnement.cpp:8: warning: documented symbol `testsEnvironnement::~testsEnvironnement' was not declared or defined.
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsCubique.cpp:6: warning: no uniquely matching class member found for 
-  testsCubique::setUp()
-
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsCubique.cpp:11: warning: documented symbol `testsCubique::~tearDown' was not declared or defined.
-C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsCubique.cpp:15: warning: no matching class member found for 
-  testsCubique::testsGenererMaillage()
-
-error: Problems running epstopdf. Check your TeX installation!
-C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Comportement.h:17: warning: argument 'le' of command @param is not found in the argument list of Comportement::allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector< Capteur > vCapteurs)
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
+C:/Users/s1m0n/Documents/GM4/c++/Drones/src/testsCapteur.cpp:30: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 15, 10)
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/testsCubique.h:48: warning: Reached end of file while still inside a (nested) comment. Nesting level 3 (probable line reference: 41, 26, 1)
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Comportement.h:17: warning: argument 'le' of command @param is not found in the argument list of Comportement::allerPoint(const VecteurR3 &posActuelle, const VecteurR3 &destination, const std::vector< Capteur > vCapteurs, const VecteurR3 vitesse)=0
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Comportement.h:24: warning: The following parameters of Comportement::allerPoint(const VecteurR3 &posActuelle, const VecteurR3 &destination, const std::vector< Capteur > vCapteurs, const VecteurR3 vitesse)=0 are not documented:
+  parameter 'vitesse'
 C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Dlite.h:15: warning: argument 'le' of command @param is not found in the argument list of Dlite::allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector< Capteur > vCapteurs)
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
-C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Naif.h:16: warning: argument 'le' of command @param is not found in the argument list of Naif::allerPoint(VecteurR3 posActuelle, VecteurR3 destination, std::vector< Capteur > vCapteurs)
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
-error: Problems running epstopdf. Check your TeX installation!
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Naif.h:19: warning: argument 'le' of command @param is not found in the argument list of Naif::allerPoint(const VecteurR3 &posActuelle, const VecteurR3 &destination, const std::vector< Capteur > vCapteurs, const VecteurR3 vitesse)
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Naif.h:26: warning: The following parameters of Naif::allerPoint(const VecteurR3 &posActuelle, const VecteurR3 &destination, const std::vector< Capteur > vCapteurs, const VecteurR3 vitesse) are not documented:
+  parameter 'vitesse'
+C:/Users/s1m0n/Documents/GM4/c++/Drones/include/Obstacle.h:22: warning: The following parameters of Obstacle::Obstacle(VecteurR3 init, float taillex, float tailley, float taillez) are not documented:
+  parameter 'taillex'
+  parameter 'tailley'
+  parameter 'taillez'

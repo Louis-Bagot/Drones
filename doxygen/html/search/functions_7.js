@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['norme2',['norme2',['../class_vecteur_r3.html#a6c8bbc72999a06fd23e4213729f585b2',1,'VecteurR3']]],
-  ['norme22',['norme22',['../class_vecteur_r3.html#a014e36cfadce987c292edcf1db615cfd',1,'VecteurR3']]]
+  ['multi',['multi',['../class_vecteur_r3.html#ad03b38659a6e2454727487afb8842f0d',1,'VecteurR3']]]
 ];

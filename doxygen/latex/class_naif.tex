@@ -1,52 +1,106 @@
-\hypertarget{class_naif}{}\section{Naif Class Reference}
+\hypertarget{class_naif}{}\section{Référence de la classe Naif}
 \label{class_naif}\index{Naif@{Naif}}
 
 
 {\ttfamily \#include $<$Naif.\+h$>$}
 
-Inheritance diagram for Naif\+:\begin{figure}[H]
+Graphe d\textquotesingle{}héritage de Naif\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_naif}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}{aller\+Point}} (\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} pos\+Actuelle, \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} destination, std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$ v\+Capteurs)
+\mbox{\hyperlink{class_naif_acc816dcabca7caddbb282ec1bd232505}{Naif}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}})
+\item 
+virtual \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_a67a1d4cfa924c6f1f2d8c1a9421ae120}{aller\+Point}} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&pos\+Actuelle, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&destination, const std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$ v\+Capteurs, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} vitesse) override
+\item 
+\mbox{\Hypertarget{class_naif_a71d7556cd1c9bc323820e052d34d2e2d}\label{class_naif_a71d7556cd1c9bc323820e052d34d2e2d}} 
+bool {\bfseries atteint\+Final} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&pos\+Actuelle, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&destination) const
+\item 
+\mbox{\Hypertarget{class_naif_aa5eaa77d98fe48768a8f6f031c287b8f}\label{class_naif_aa5eaa77d98fe48768a8f6f031c287b8f}} 
+bool {\bfseries atteint} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&pos\+Actuelle, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&destination, const float \&epsilon) const
+\item 
+\mbox{\Hypertarget{class_naif_a2bb16e2776f7e6cbb8cf75a4e78f6bc7}\label{class_naif_a2bb16e2776f7e6cbb8cf75a4e78f6bc7}} 
+bool {\bfseries presence\+Obstacles} (const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} pos\+Actuelle, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} destination, const std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$ v\+Capteurs, const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&)
+\end{DoxyCompactItemize}
+\subsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_a0fde7dd2f98b4c8f163866ba7cd7d489}{depart}}
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_a330eb7baf76efe3f36b7779669cccf64}{dest}}
+\item 
+\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \mbox{\hyperlink{class_naif_a11d7d76e77efcb9a2f47c4154bbfd55e}{v0}}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Classe h�ritant de \mbox{\hyperlink{class_comportement}{Comportement}}, c\textquotesingle{}est donc un algo possible de d�placement des drones. Il consiste � monter en altitude lorsque le drone rencontre un obstacle devant lui afin de passer au dessus.
+\subsection{Description détaillée}
+Classe héritant de \mbox{\hyperlink{class_comportement}{Comportement}}, c\textquotesingle{}est donc un algo possible de déplacement des drones. Il consiste à monter en altitude lorsque le drone rencontre un obstacle devant lui afin de passer au dessus.
 
-\begin{DoxyAuthor}{Author}
+\begin{DoxyAuthor}{Auteur}
 Simon 
 \end{DoxyAuthor}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}\label{class_naif_ac84cee4c23dea12b9e84789a41dc1d38}} 
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_naif_acc816dcabca7caddbb282ec1bd232505}\label{class_naif_acc816dcabca7caddbb282ec1bd232505}} 
+\index{Naif@{Naif}!Naif@{Naif}}
+\index{Naif@{Naif}!Naif@{Naif}}
+\subsubsection{\texorpdfstring{Naif()}{Naif()}}
+{\footnotesize\ttfamily Naif\+::\+Naif (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{\+\_\+depart,  }\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{\+\_\+v0 }\end{DoxyParamCaption})}
+
+Initialise le point duquel le \mbox{\hyperlink{class_drone}{Drone}} part et sa vitesse 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_naif_a67a1d4cfa924c6f1f2d8c1a9421ae120}\label{class_naif_a67a1d4cfa924c6f1f2d8c1a9421ae120}} 
 \index{Naif@{Naif}!aller\+Point@{aller\+Point}}
 \index{aller\+Point@{aller\+Point}!Naif@{Naif}}
 \subsubsection{\texorpdfstring{aller\+Point()}{allerPoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::aller\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{pos\+Actuelle,  }\item[{\mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{destination,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$}]{v\+Capteurs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::aller\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{pos\+Actuelle,  }\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} \&}]{destination,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_capteur}{Capteur}} $>$}]{v\+Capteurs,  }\item[{const \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}}}]{vitesse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-M�thode fondamentale de \mbox{\hyperlink{class_comportement}{Comportement}} des Drones. A partir des positions du \mbox{\hyperlink{class_drone}{Drone}}, de son premier objectif et des capteurs, d�termine le vecteur acc�l�ration pour la frame suivante. 
-\begin{DoxyParams}{Parameters}
+Méthode fondamentale de \mbox{\hyperlink{class_comportement}{Comportement}} des Drones. A partir des positions du \mbox{\hyperlink{class_drone}{Drone}}, de son premier objectif et des capteurs, d�termine le vecteur acc�l�ration pour la frame suivante. 
+\begin{DoxyParams}{Paramètres}
 {\em pos\+Actuelle} & la position du \mbox{\hyperlink{class_drone}{Drone}} au temps t. \\
 \hline
-{\em destination} & la position � atteindre. \\
+{\em destination} & la position � atteindre. \\
 \hline
 {\em v\+Capteurs,le} & vecteur des Capteurs donnant l\textquotesingle{}information sensorielle du \mbox{\hyperlink{class_drone}{Drone}}. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-le vecteur acc�l�ration 
+\begin{DoxyReturn}{Renvoie}
+le vecteur acc�l�ration 
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Implémente \mbox{\hyperlink{class_comportement_a38544976fc589cb8243c0c8071a692a6}{Comportement}}.
+
+
+
+\subsection{Documentation des données membres}
+\mbox{\Hypertarget{class_naif_a0fde7dd2f98b4c8f163866ba7cd7d489}\label{class_naif_a0fde7dd2f98b4c8f163866ba7cd7d489}} 
+\index{Naif@{Naif}!depart@{depart}}
+\index{depart@{depart}!Naif@{Naif}}
+\subsubsection{\texorpdfstring{depart}{depart}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::depart}
+
+Position à laquelle le \mbox{\hyperlink{class_drone}{Drone}} a commencé à aller à l\textquotesingle{}objectif. Permet de réduire sa vitesse avant d\textquotesingle{}atteindre l\textquotesingle{}objectif. \mbox{\Hypertarget{class_naif_a330eb7baf76efe3f36b7779669cccf64}\label{class_naif_a330eb7baf76efe3f36b7779669cccf64}} 
+\index{Naif@{Naif}!dest@{dest}}
+\index{dest@{dest}!Naif@{Naif}}
+\subsubsection{\texorpdfstring{dest}{dest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::dest}
+
+Destination à atteindre. Permet de réinitialiser le depart en cas de changement d\textquotesingle{}objectif. \mbox{\Hypertarget{class_naif_a11d7d76e77efcb9a2f47c4154bbfd55e}\label{class_naif_a11d7d76e77efcb9a2f47c4154bbfd55e}} 
+\index{Naif@{Naif}!v0@{v0}}
+\index{v0@{v0}!Naif@{Naif}}
+\subsubsection{\texorpdfstring{v0}{v0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur_r3}{Vecteur\+R3}} Naif\+::v0}
+
+Vitesse à laquelle le drone est parti 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
 Naif.\+h\item 
 Naif.\+cpp\end{DoxyCompactItemize}

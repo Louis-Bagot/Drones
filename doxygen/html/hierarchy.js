@@ -15,14 +15,10 @@ var hierarchy =
     ] ],
     [ "Obstacle", "class_obstacle.html", null ],
     [ "TestFixture", null, [
-      [ "testsComportement", "classtests_comportement.html", null ],
+      [ "testsCapteur", "classtests_capteur.html", null ],
       [ "testsDrone", "classtests_drone.html", null ],
       [ "testsEssaim", "classtests_essaim.html", null ],
-      [ "testsVecteurR3", "classtests_vecteur_r3.html", null ],
       [ "testsVecteurR3", "classtests_vecteur_r3.html", null ]
-    ] ],
-    [ "TestFixture", null, [
-      [ "CppUnit", "class_cpp_unit.html", null ]
     ] ],
     [ "testsEnvironnement", "classtests_environnement.html", null ],
     [ "TrackBallCamera", "class_track_ball_camera.html", null ],
